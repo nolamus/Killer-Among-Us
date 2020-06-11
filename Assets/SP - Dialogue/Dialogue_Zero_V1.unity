@@ -677,10 +677,16 @@ MonoBehaviour:
   textDisplay: {fileID: 1500409328}
   sentences:
   - 'Boy: Uh, hi.'
-  - 'Lifeguard: What are doing here?'
+  - 'Lifeguard: What are you doing here?'
   - 'Boy: Why do you have chicken legs?'
   - 'Lifeguard: Mind your own business.'
   - 'Boy: Can I get a chicken sandwich tho.'
+  - 'Lifeguard: Bruh, I don''t eat chicken.'
+  - 'Boy: Is there a Subway nearby?'
+  - 'Lifeguard: Yeah, there''s one down the block.'
+  - 'Boy: Can you buy me a sub?'
+  - 'Lifeguard: Just buy the subs bruh.'
+  - 'Lifeguard: Broke boy.'
   typingSpeed: 0.02
   continueButton: {fileID: 283531818}
 --- !u!4 &1265072082
