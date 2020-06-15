@@ -8,20 +8,29 @@ public class Player : MonoBehaviour
     //Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] Vector2 deathLaunch = new Vector2(1f,1f); 
+
+    bool isAlive = true;
 
     //Cached component references
     Rigidbody2D playerRigidBody;
     Animator playerAnimator;
+    CapsuleCollider2D bodyCollider;
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
     {
+        if(!isAlive)        //if player is dead, disable player control
+            return;
+
         Run();
         flipSprite();
+        Death();
     }
 
     private void Run()
@@ -32,6 +41,16 @@ public class Player : MonoBehaviour
 
         bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon;
         playerAnimator.SetBool("Running", playerHasHorizontalSpeed);
+    }
+
+    private void Death()
+    {
+        if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) //if player is touching enemy layer
+        {
+            isAlive = false;
+            playerAnimator.SetTrigger("Dying");
+            GetComponent<Rigidbody2D>().velocity = deathLaunch;            
+        }
     }
 
 
