@@ -29,18 +29,28 @@ public class Player : MonoBehaviour
             return;
 
         Run();
+        Jump();
         flipSprite();
         Death();
     }
 
     private void Run()
     {
-        float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // [-1,1]
-        Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, playerRigidBody.velocity.y);
+        float controlRun = CrossPlatformInputManager.GetAxis("Horizontal"); // [-1,1] allows for us to use input regardless of platform
+        Vector2 playerVelocity = new Vector2(controlRun * runSpeed, playerRigidBody.velocity.y);
         playerRigidBody.velocity = playerVelocity;
 
         bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon;
         playerAnimator.SetBool("Running", playerHasHorizontalSpeed);
+    }
+
+    private void Jump()
+    {
+        if(CrossPlatformInputManager.GetButtonDown("Jump"))
+        {
+            Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
+            playerRigidBody.velocity += jumpVelocity;
+        }
     }
 
     private void Death()
