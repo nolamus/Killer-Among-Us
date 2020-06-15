@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ghost Background
+  - Main Character
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ghost Background
+    uniqueID: 3833081317
+    locked: 0
+  - name: Player
+    uniqueID: 438600865
     locked: 0
