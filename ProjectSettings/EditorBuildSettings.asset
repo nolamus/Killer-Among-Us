@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: 005a30f567e78a043bee7a2ed591daf3
   - enabled: 1
-    path: Assets/Level_Zero.unity
+    path: Assets/Dummy Scene.unity
     guid: 8f33540451dce164093878ea7172c09b
   - enabled: 0
     path: Assets/Scenes/TutorialScene.unity
