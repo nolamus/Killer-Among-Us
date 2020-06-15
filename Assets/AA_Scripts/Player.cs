@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Jump") && bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(CrossPlatformInputManager.GetButtonDown("Jump") && bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) //make sure the player is touching the ground before jumping
         {
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
