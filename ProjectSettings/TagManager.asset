@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Audio
-  - Audio Controls
-  - Textbox
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ghost Background
+  - Main Character
   - 
   - 
   - 
@@ -41,9 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1595326237
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ghost Background
+    uniqueID: 3833081317
+    locked: 0
+  - name: Player
+    uniqueID: 438600865
     locked: 0
