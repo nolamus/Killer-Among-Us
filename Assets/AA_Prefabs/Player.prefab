@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 784021509898523234}
   - component: {fileID: -5572678860362054728}
   - component: {fileID: 906371424944548050}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1883907165
-  m_SortingLayer: 3
+  m_SortingLayerID: -1106895559
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 6861797250112410188, guid: 36eaf9f0ed88289479879475421c87b6,
     type: 3}
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!70 &-5572678860362054728
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -156,4 +156,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpSpeed: 5
-  deathLaunch: {x: 5, y: 5}
