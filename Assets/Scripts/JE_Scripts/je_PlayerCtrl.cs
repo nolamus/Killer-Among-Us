@@ -1,7 +1,8 @@
 ﻿
 using UnityEngine;
-
-public class PlayerCtrl : MonoBehaviour
+// Remember that this is a script made by Anika
+// Rename it once anika files have been merged with the branch
+public class je_PlayerCtrl : MonoBehaviour
 {
 
     bool isGrounded;

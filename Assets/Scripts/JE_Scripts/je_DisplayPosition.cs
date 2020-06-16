@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayPosition : MonoBehaviour
+public class je_DisplayPosition : MonoBehaviour
 {
     
 

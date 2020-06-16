@@ -287,7 +287,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1595326237
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 413e1f8cb841f4c4990e3a5e2d995534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -473,10 +473,10 @@ GameObject:
   - component: {fileID: 1462232465}
   - component: {fileID: 1462232464}
   - component: {fileID: 1462232463}
-  - component: {fileID: 1462232467}
   - component: {fileID: 1462232466}
   - component: {fileID: 1462232462}
   - component: {fileID: 1462232468}
+  - component: {fileID: 1462232467}
   m_Layer: 0
   m_Name: technician_idle1_0
   m_TagString: Untagged
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462232461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f59b03c4ea732f04e9a04afdb3e2bfbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a56b11bf0017e741846074885ce6fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1462232468
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462232461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a56b11bf0017e741846074885ce6fad, type: 3}
+  m_Script: {fileID: 11500000, guid: f59b03c4ea732f04e9a04afdb3e2bfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2007612610
