@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
-        if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) //if player is touching enemy layer
+        if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard"))) //if player is touching enemy layer
         {
             isAlive = false;
             playerAnimator.SetTrigger("Dying");
