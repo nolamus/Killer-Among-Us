@@ -30,13 +30,13 @@ public class je_PlayerCtrl : MonoBehaviour
 
         if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            rb.velocity = new Vector2(-2, rb.velocity.y);
+            rb.velocity = new Vector2(-5, rb.velocity.y);
             animator.Play("Player_run"); // player movement to left animation name
             spRender.flipX = true;
         }
         else if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            rb.velocity = new Vector2(2, rb.velocity.y);
+            rb.velocity = new Vector2(5, rb.velocity.y);
             animator.Play("Player_run"); // player movement to right animation name
             spRender.flipX = false;
         }
