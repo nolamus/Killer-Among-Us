@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Jump") && bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) //make sure the player is touching the ground before jumping
+        if(CrossPlatformInputManager.GetButtonDown("Jump") && bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping  
         {
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
@@ -71,9 +71,9 @@ public class Player : MonoBehaviour
         if(playerHasHorizontalSpeed)
         {
             if(Mathf.Sign(playerRigidBody.velocity.x) > 0)
-                transform.localScale = new Vector2(3f, 3f); //- left or + right
+                transform.localScale = new Vector2(1f, 1f); //- left or + right
             else
-                transform.localScale = new Vector2(-3f, 3f); //- left or + right 
+                transform.localScale = new Vector2(-1f, 1f); //- left or + right 
         }
     }
 }
