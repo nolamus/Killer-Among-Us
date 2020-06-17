@@ -16,12 +16,20 @@ public class PlayerMovement : MonoBehaviour
     private float verticalMove;     // holds value for vertical movement
     public float speedY = 5;        // speed for up movement
 
+    bool isAlive = true;            // From AA Player Script
+    Animator playerAnimator;
+    CapsuleCollider2D bodyCollider;
+    [SerializeField] Vector2 deathLaunch = new Vector2(1f, 1f);
+
 
     // Start is called before the first frame update
     void Start()
     {
         // sets up object + defaults
         rb = GetComponent<Rigidbody2D>();
+
+        playerAnimator = GetComponent<Animator>();  // From AA Player Script
+        bodyCollider = GetComponent<CapsuleCollider2D>();  // From AA Player Script
 
         moveLeft = false;
         moveRight = false;
@@ -76,7 +84,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive)        //if player is dead, disable player control
+            return;         // From AA Player Script
+
         MovementPlayer();
+        Death(); // From AA Player Script
     }
 
     // speed value assigning based on button action
@@ -144,5 +156,17 @@ public class PlayerMovement : MonoBehaviour
         // for horizontal axis movement ; left/right movement
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
         
+    }
+
+    
+    // From AA Player Script
+    private void Death()
+    {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard"))) //if player is touching enemy layer
+        {
+            isAlive = false;
+            playerAnimator.SetTrigger("Dying");
+            GetComponent<Rigidbody2D>().velocity = deathLaunch;
+        }
     }
 }
