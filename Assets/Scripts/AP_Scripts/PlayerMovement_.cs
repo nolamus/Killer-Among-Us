@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement_ : MonoBehaviour
+    
+{/*
     private Rigidbody2D rb;         // object for player movement
 
     private bool moveLeft;          // bool for left button
@@ -16,13 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private float verticalMove;     // holds value for vertical movement
     public float speedY = 5;        // speed for up movement
 
-    bool Left;
-    bool Right;
-
     bool isAlive = true;            // From AA Player Script
     Animator playerAnimator;
     CapsuleCollider2D bodyCollider;
-    SpriteRenderer spRender;
     [SerializeField] Vector2 deathLaunch = new Vector2(1f, 1f);
 
 
@@ -38,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
         moveLeft = false;
         moveRight = false;
         moveUp = false;
-        Left = false;
-        Right = false;
     }
 
     // ------------- Left Button Action -------------
@@ -105,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = -speedX;    // horizontal speed is (-)
             verticalMove = speedY;       // vertical speed is (+)
-            Left = true;
         }
 
         // right + up button
@@ -113,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = speedX;     // horizontal speed if (+)
             verticalMove = speedY;       // vertical speed is (+)
-            Right = true;
         }
 
         // left + right button
@@ -128,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = -speedX;    // horizontal speed is (-)
             verticalMove = 0;            // no vertical
-            Left = true;
         }
 
         // right button
@@ -136,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = speedX;     // horizontal speed is (+)
             verticalMove = 0;            // no vertical
-            Right = true;
         }
 
         // jump button
@@ -144,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = 0;          // no horizontal
             verticalMove = speedY;       // vertical speed is (+)
-        }   
+        }
 
         // no button
         else
@@ -157,64 +148,18 @@ public class PlayerMovement : MonoBehaviour
     // player movement based on button action
     private void FixedUpdate()
     {
-
-        // for horizontal axis movement ; left/right movement
-        if (Left && moveUp)
+        if (rb.velocity.y == 0) // can only jump once
         {
-            rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
-            if (rb.velocity.y == 0) // can only jump once
-            {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
-                spRender.flipX = true;
-            }
-        }
-
-        if (Right && moveUp)
-        {
-            rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
-            if (rb.velocity.y == 0) // can only jump once
-            {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
-                spRender.flipX = false;
-            }
-        }
-
-        if (moveUp)
-        {
-            if (rb.velocity.y == 0) // can only jump once
-            {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
-            }
+            // for vertical axis movement ; up movement
+            rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
         }
 
         // for horizontal axis movement ; left/right movement
-        if(Left)
-        {
-            rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
-            playerAnimator.Play("Player_Walk");
-            spRender.flipX = true;
-
-        }
-
-        if (Right)
-        {
-            rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
-            playerAnimator.Play("Player_Walk");
-            spRender.flipX = false;
-
-        }
-
-        playerAnimator.Play("Player_Idle");
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
 
     }
 
-    
+
     // From AA Player Script
     private void Death()
     {
@@ -224,5 +169,5 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetTrigger("Dying");
             GetComponent<Rigidbody2D>().velocity = deathLaunch;
         }
-    }
+    }*/
 }
