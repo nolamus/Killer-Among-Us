@@ -173,68 +173,61 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
             
-            // for horizontal axis movement ; left/right movement
-
+        // for horizontal axis movement ; left/right movement
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
 
         // left + jump
-        if(horizontalMove < 0)
+        if(moveLeft)
         {
             if (rb.velocity.y == 0 && moveUp) // can only jump once
             {
                 // for vertical axis movement ; up movement
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
+                playerAnimator.SetTrigger("playerJump");
                 spRender.flipX = true;
             }
         }
 
         // right + jump
-        if(horizontalMove > 0)
+        if(moveRight)
         {
             if (rb.velocity.y == 0 && moveUp) // can only jump once
             {
                 // for vertical axis movement ; up movement
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
+                playerAnimator.SetTrigger("playerJump");
                 spRender.flipX = false;
 
             }
         }
 
         // jump only
-        if (horizontalMove == 0)
+        if (rb.velocity.y == 0 && moveUp) // can only jump once
         {
-            if (rb.velocity.y == 0 && moveUp) // can only jump once
-            {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("Player_Jump");
-            }
+            // for vertical axis movement ; up movement
+            rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
+            playerAnimator.SetTrigger("playerJump");
         }
 
         // left only
-        if (horizontalMove < 0)
+        if (moveLeft)
         {
-            playerAnimator.Play("Player_Walk");
+            playerAnimator.Play("playerMove");
             spRender.flipX = true;
 
         }
 
         // right only
-        if (horizontalMove > 0)
+        if (moveRight)
         {
-            playerAnimator.Play("Player_Walk");
+            playerAnimator.SetTrigger("playerMove");
             spRender.flipX = false;
 
         }
 
-
-        // for horizontal axis movement ; left/right movement
-
         // nothing
         if (horizontalMove == 0 && verticalMove == 0)
-            playerAnimator.Play("Player_Idle");
+            playerAnimator.SetTrigger("playerIdle");
     }
 
     
