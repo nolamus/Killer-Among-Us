@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/SP_Dialogue/Dialogue_Zero_V1.unity
+    guid: c45846fcc17953d4d96311e118ae19bf
+  - enabled: 1
+    path: Assets/SP_Dialogue/Dialogue_Zero_V2.unity
+    guid: 118675233fe81a44180f9f46f397a012
   m_configObjects: {}
