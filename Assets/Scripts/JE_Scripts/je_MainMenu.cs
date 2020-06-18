@@ -8,7 +8,7 @@ public class je_MainMenu : MonoBehaviour
     public void StartGame()
     {
         //transitioner.SaveScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("AA_Level_Zero");
     }
 
     public void DisplaySettings()
@@ -22,7 +22,7 @@ public class je_MainMenu : MonoBehaviour
     }
     public void DiplayMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("je_MainMenu");
     }
     public void ExitGame()
     {
