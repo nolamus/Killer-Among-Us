@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     bool isAlive = true;            // From AA Player Script
     Animator playerAnimator;
     CapsuleCollider2D bodyCollider;
-    SpriteRenderer spRender;
+    public SpriteRenderer spRender;
     [SerializeField] Vector2 deathLaunch = new Vector2(1f, 1f);
 
 
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // sets up object + defaults
         rb = GetComponent<Rigidbody2D>();
+        
 
         playerAnimator = GetComponent<Animator>();  // From AA Player Script
         bodyCollider = GetComponent<CapsuleCollider2D>();  // From AA Player Script
@@ -106,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             horizontalMove = -speedX;    // horizontal speed is (-)
             verticalMove = speedY;       // vertical speed is (+)
             Left = true;
+            spRender.flipX = true;
         }
 
         // right + up button
@@ -114,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
             horizontalMove = speedX;     // horizontal speed if (+)
             verticalMove = speedY;       // vertical speed is (+)
             Right = true;
+            spRender.flipX = false;
         }
 
         // left + right button
@@ -129,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
             horizontalMove = -speedX;    // horizontal speed is (-)
             verticalMove = 0;            // no vertical
             Left = true;
+            spRender.flipX = true;
         }
 
         // right button
@@ -137,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
             horizontalMove = speedX;     // horizontal speed is (+)
             verticalMove = 0;            // no vertical
             Right = true;
+            spRender.flipX = true;
         }
 
         // jump button
@@ -196,17 +201,19 @@ public class PlayerMovement : MonoBehaviour
         // for horizontal axis movement ; left/right movement
         if(Left)
         {
+            spRender.flipX = true;
             rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
             playerAnimator.Play("Player_Walk");
-            spRender.flipX = true;
+            
 
         }
 
         if (Right)
         {
+            spRender.flipX = false;
             rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
             playerAnimator.Play("Player_Walk");
-            spRender.flipX = false;
+            
 
         }
 
