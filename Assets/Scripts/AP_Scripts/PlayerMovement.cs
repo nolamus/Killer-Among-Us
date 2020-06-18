@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private bool moveLeft;          // bool for left button
     private bool moveRight;         // bool for right button
     private bool moveUp;            // bool for jump button
+    private bool moveNext;          // bool for next button
 
     private float horizontalMove;   // holds value for horizontal movement
     public float speedX = 5;        // speed for left + right movements
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         moveLeft = false;
         moveRight = false;
         moveUp = false;
+        moveNext = false;
         Left = false;
         Right = false;
     }
@@ -86,6 +89,19 @@ public class PlayerMovement : MonoBehaviour
         moveUp = false;
     }
 
+    // ------------- Next Button Action ------------- 
+
+    // pressing down on right button
+    public void PointerDownNext()
+    {
+        moveNext = true;
+    }
+
+    // default right button (not pressing)
+    public void PointerUpNext()
+    {
+        moveNext = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -151,6 +167,12 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = 0;         // no horizontal
             verticalMove = 0;           // no vertical
+        }
+
+        // next button
+        if(moveNext)
+        {
+            SceneManager.LoadScene("Dialogue_Zero_V1");
         }
     }
 
