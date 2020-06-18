@@ -22,7 +22,7 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadGameSceneZero()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("AA_Level_Zero.unity");
     }
 
     // Exits the game and hold all potential exit game transition sequences
