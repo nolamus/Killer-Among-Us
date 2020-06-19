@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class je_MainMenu : MonoBehaviour

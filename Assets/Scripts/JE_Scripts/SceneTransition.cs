@@ -1,6 +1,11 @@
-﻿using JetBrains.Annotations;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+// This script is supposed to hold functions that allows for consistent scene transition processes for the project
+// This will later include fade in and fade out transition timings and title cards between each killer among us level
+// The script will later control which level buttons are revealed on the je_LevelSelect Scene as the player completes each level
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,11 +20,15 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene((string)SceneHistory.Pop());
     }
+    
+   /*
+    * Store Scene name in a stack to be used when a scene needs to reload the scene before it
     public void SaveScene(string sceneName)
     {
         SceneHistory.Push(sceneName);
-    }
+    }*/
 
+    // Load the that should be run when Level Zero is selected in je_LevelSelect
     public void LoadGameSceneZero()
     {
         SceneManager.LoadScene("AA_Level_Zero.unity");
