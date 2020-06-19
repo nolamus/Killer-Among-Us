@@ -13,17 +13,17 @@ TagManager:
   - UI
   - 
   - 
+  - Background
+  - Enemy
+  - Ghost Background
+  - Player
+  - Foreground
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hazard
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1578631745
+    locked: 0
+  - name: Enemy
+    uniqueID: 2560882353
+    locked: 0
+  - name: Hazard
+    uniqueID: 1474450225
+    locked: 0
+  - name: Player
+    uniqueID: 2912759157
+    locked: 0
+  - name: Foreground
+    uniqueID: 2593672883
+    locked: 0
+  - name: Ghost Background
+    uniqueID: 1406416475
     locked: 0
