@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement_ : MonoBehaviour
+public class PlayerMovement_ : MonoBehaviour // backup player script
     
 {/*
     private Rigidbody2D rb;         // object for player movement
