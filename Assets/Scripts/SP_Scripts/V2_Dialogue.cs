@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This method for running the dialogue in the text-based scene was not used
+
 [System.Serializable]
 public class V2_Dialogue
 {
