@@ -6,9 +6,8 @@ public class Ghost_Float : MonoBehaviour
 {
     float originalY;
 
-    public float floatStrength = 1; // You can change this in the Unity Editor to
-                                    // change the range of y positions that are possible.
-                                    //originally 1
+    public float floatStrength = 1; // changes floating level of ghost, can also
+                                    //manually change in unity
 
     void Start()
     {
@@ -20,6 +19,6 @@ public class Ghost_Float : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x,
             originalY + ((float)Math.Sin(Time.time) * floatStrength),
-            transform.position.z);
+            transform.position.z); //makes ghost float!!
     }
 }
