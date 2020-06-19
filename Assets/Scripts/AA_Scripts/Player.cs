@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
+//EXTRA SCRIPT FOR TESTING CURRENTLY NOT USED
 public class Player : MonoBehaviour
 {
     //Config

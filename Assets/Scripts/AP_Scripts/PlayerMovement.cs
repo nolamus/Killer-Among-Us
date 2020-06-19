@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // sets up object + defaults
         rb = GetComponent<Rigidbody2D>();
-        
+
 
         playerAnimator = GetComponent<Animator>();  // From AA Player Script
         bodyCollider = GetComponent<CapsuleCollider2D>();  // From AA Player Script
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = 0;          // no horizontal
             verticalMove = speedY;       // vertical speed is (+)
-        }   
+        }
 
         // no button
         else
@@ -163,8 +163,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // next button
-        if(moveNext)
+        if (moveNext)
         {
+            // loads dialogue scene
             SceneManager.LoadScene("Dialogue_Zero_V1");
         }
     }
@@ -172,31 +173,31 @@ public class PlayerMovement : MonoBehaviour
     // player movement based on button action
     private void FixedUpdate()
     {
-            
+
         // for horizontal axis movement ; left/right movement
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
 
         // left + jump
-        if(moveLeft)
+        if (moveLeft)
         {
             if (rb.velocity.y == 0 && moveUp) // can only jump once
             {
                 // for vertical axis movement ; up movement
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.SetTrigger("playerJump");
-                spRender.flipX = true;
+                playerAnimator.Play("playerJump");                      // calls jump animation
+                spRender.flipX = true;                                  // flips for direction
             }
         }
 
         // right + jump
-        if(moveRight)
+        if (moveRight)
         {
             if (rb.velocity.y == 0 && moveUp) // can only jump once
             {
                 // for vertical axis movement ; up movement
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.SetTrigger("playerJump");
-                spRender.flipX = false;
+                playerAnimator.Play("playerJump");                      // calls jump animation
+                spRender.flipX = false;                                 // no direction flip
 
             }
         }
@@ -206,31 +207,31 @@ public class PlayerMovement : MonoBehaviour
         {
             // for vertical axis movement ; up movement
             rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-            playerAnimator.SetTrigger("playerJump");
+            playerAnimator.Play("playerJump");                      // calls jump animation
         }
 
         // left only
         if (moveLeft)
         {
-            playerAnimator.Play("playerMove");
-            spRender.flipX = true;
+            playerAnimator.Play("playerMove");                      // calls move animation
+            spRender.flipX = true;                                  // flips for direction
 
         }
 
         // right only
         if (moveRight)
         {
-            playerAnimator.SetTrigger("playerMove");
-            spRender.flipX = false;
+            playerAnimator.Play("playerMove");                      // calls move animation
+            spRender.flipX = false;                                 // no direction flip
 
         }
 
-        // nothing
+        // nothing, idle player
         if (horizontalMove == 0 && verticalMove == 0)
-            playerAnimator.SetTrigger("playerIdle");
+            playerAnimator.Play("playerIdle");                      // calls idle animation
     }
 
-    
+
     // From AA Player Script
     private void Death()
     {

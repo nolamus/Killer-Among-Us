@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// This is the main script for running the dialogue in the text-based scene
+// Used for scene "Dialogue_Zero_V1"
+
 public class Dialogue : MonoBehaviour
 {
     // Graphical user interface access
@@ -17,11 +20,13 @@ public class Dialogue : MonoBehaviour
     // Prevent garbage text
     public GameObject continueButton;
 
+    // Start is called before the first frame update   
     void Start()
     {
         StartCoroutine(Type());
     }
-    
+
+    // Update is called once per frame    
     void Update()
     {
         // Check if display text is equal to current sentence
@@ -50,12 +55,14 @@ public class Dialogue : MonoBehaviour
         // Prevent button spamming
         continueButton.SetActive(false);
         
+        // Reset display for next sentence
         if(index < sentences.Length - 1)
         {
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
         }
+        // Reset display after sentences are done
         else
         {
             textDisplay.text = "";
