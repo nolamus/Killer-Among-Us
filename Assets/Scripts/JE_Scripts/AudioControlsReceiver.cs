@@ -1,4 +1,4 @@
-﻿us/*
+﻿/*
  * Project: Killer Among Us 
  * This script was initially created by Joseph Ene
  */
