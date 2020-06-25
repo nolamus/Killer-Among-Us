@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 deathLaunch = new Vector2(1f,1f); 
 
     bool isAlive = true;
+    //private bool moveLeft, moveRight, moveUp, moveNext;
 
     //Cached component references
     Rigidbody2D playerRigidBody;
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
+
+        //moveLeft = moveRight = moveNext = moveUp = false;
     }
 
     void Update()
@@ -64,7 +67,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
     private void flipSprite()
     {
         //if player is moving horizontally then flip or reverse current scaling of x axis
@@ -77,4 +79,6 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector2(-1f, 1f); //- left or + right 
         }
     }
+
+
 }

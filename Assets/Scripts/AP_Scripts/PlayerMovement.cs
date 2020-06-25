@@ -5,24 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;         // object for player movement
+    //Serialized Fields
+    [SerializeField] Vector2 deathLaunch = new Vector2(1f, 1f);
+    [SerializeField] float speedX = 5f; //horizontal speed
+    [SerializeField] float speedY = 5f; //vertical speed
 
+    //Cached Components
+    private Rigidbody2D rb;         // object for player movement
+    Animator playerAnimator;
+    CapsuleCollider2D bodyCollider;
+    public SpriteRenderer spRender;
+
+    //local variables
     private bool moveLeft;          // bool for left button
     private bool moveRight;         // bool for right button
     private bool moveUp;            // bool for jump button
     private bool moveNext;          // bool for next button
 
     private float horizontalMove;   // holds value for horizontal movement
-    public float speedX = 5;        // speed for left + right movements
 
     private float verticalMove;     // holds value for vertical movement
-    public float speedY = 5;        // speed for up movement
 
-    bool isAlive = true;            // From AA Player Script
-    Animator playerAnimator;
-    CapsuleCollider2D bodyCollider;
-    public SpriteRenderer spRender;
-    [SerializeField] Vector2 deathLaunch = new Vector2(1f, 1f);
+    private bool isAlive = true;            // From AA Player Script
 
 
     // Start is called before the first frame update
@@ -103,11 +107,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isAlive)        //if player is dead, disable player control
-            return;         // From AA Player Script
+        if (!isAlive)                           //if player is dead, disable player control
+            return;                             // From AA Player Script
 
         MovementPlayer();
-        Death(); // From AA Player Script
+        Death();                                // From AA Player Script
     }
 
     // speed value assigning based on button action
@@ -116,119 +120,126 @@ public class PlayerMovement : MonoBehaviour
         // left + up button
         if (moveLeft && moveUp)
         {
-            horizontalMove = -speedX;    // horizontal speed is (-)
-            verticalMove = speedY;       // vertical speed is (+)
+            horizontalMove = -speedX;           // horizontal speed is (-)
+            verticalMove = speedY;              // vertical speed is (+)
+            playerAnimator.Play("playerMove");
         }
 
         // right + up button
         else if (moveRight && moveUp)
         {
-            horizontalMove = speedX;     // horizontal speed if (+)
-            verticalMove = speedY;       // vertical speed is (+)
+            horizontalMove = speedX;            // horizontal speed if (+)
+            verticalMove = speedY;              // vertical speed is (+)
+            playerAnimator.Play("playerMove");
         }
 
         // left + right button
         else if (moveLeft && moveRight)
         {
-            horizontalMove = 0;           // no horizontal
-            verticalMove = 0;             // no vertical
+            horizontalMove = 0;                 // no horizontal
+            verticalMove = 0;                   // no vertical
+            playerAnimator.Play("playerIdle");
         }
 
         // left button
         else if (moveLeft)
         {
-            horizontalMove = -speedX;    // horizontal speed is (-)
-            verticalMove = 0;            // no vertical
+            horizontalMove = -speedX;           // horizontal speed is (-)
+            verticalMove = 0;                   // no vertical
+            playerAnimator.Play("playerMove");  //enables moving when left button pressed
         }
 
         // right button
         else if (moveRight)
         {
-            horizontalMove = speedX;     // horizontal speed is (+)
-            verticalMove = 0;            // no vertical
+            horizontalMove = speedX;            // horizontal speed is (+)
+            verticalMove = 0;                   // no vertical
+            playerAnimator.Play("playerMove");  //enables moving when right button pressed
         }
 
         // jump button
         else if (moveUp)
         {
-            horizontalMove = 0;          // no horizontal
-            verticalMove = speedY;       // vertical speed is (+)
+            horizontalMove = 0;                 // no horizontal
+            verticalMove = speedY;              // vertical speed is (+)
+            if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+                playerAnimator.Play("playerClimb");
         }
 
         // no button
         else
         {
-            horizontalMove = 0;         // no horizontal
-            verticalMove = 0;           // no vertical
+            horizontalMove = 0;                 // no horizontal
+            verticalMove = 0;                   // no vertical
+            playerAnimator.Play("playerIdle");
         }
 
-        // next button
+        // next button -> loads dialogue scene
         if (moveNext)
         {
-            // loads dialogue scene
             SceneManager.LoadScene("Dialogue_Zero_V1");
         }
     }
 
-    // player movement based on button action
+    // player movement based on button action, runs whenever physics 
     private void FixedUpdate()
     {
-
         // for horizontal axis movement ; left/right movement
-        rb.velocity = new Vector2(horizontalMove, rb.velocity.y); // (set horizontal, default vertical)
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);                    // (set horizontal, default vertical)
+        bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;    // boolean checking if player is moving
+        bool playerIdle = rb.velocity.x == 0;                                        // boolean checking if player is idling
+        bool playerHasVerticalSpeed = rb.velocity.y > 0;                             // boolean checking if player is midair
 
-        // left + jump
-        if (moveLeft)
+        if(isAlive)
         {
-            if (rb.velocity.y == 0 && moveUp) // can only jump once
+            //if player has no horizontal speed enable idling boolean, else enable running boolean (Animator Controller)
+            if (playerHasHorizontalSpeed)                        
+                playerAnimator.SetBool("Running", playerIdle);
+            else
+                playerAnimator.SetBool("Idling", playerHasHorizontalSpeed);
+
+            //Ladders
+            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+                playerAnimator.SetBool("playerClimb", playerHasVerticalSpeed);
+            else
+                playerAnimator.SetBool("Idling", playerIdle);
+ 
+            //responds to left input, ensures gravity mid air
+            // (default horizontal, set vertical)
+            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveLeft)     
             {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("playerJump");                      // calls jump animation
-                spRender.flipX = true;                                  // flips for direction
+                rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
+                spRender.flipX = true;
             }
-        }
 
-        // right + jump
-        if (moveRight)
-        {
-            if (rb.velocity.y == 0 && moveUp) // can only jump once
+            if (playerHasVerticalSpeed && moveLeft)                          //flips sprite if left or right pressed mid-air
             {
-                // for vertical axis movement ; up movement
-                rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-                playerAnimator.Play("playerJump");                      // calls jump animation
-                spRender.flipX = false;                                 // no direction flip
-
+                rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
+                spRender.flipX = true;
             }
-        }
 
-        // jump only
-        if (rb.velocity.y == 0 && moveUp) // can only jump once
-        {
-            // for vertical axis movement ; up movement
-            rb.velocity = new Vector2(rb.velocity.x, verticalMove); // (default horizontal, set vertical)
-            playerAnimator.Play("playerJump");                      // calls jump animation
-        }
+            if (playerHasVerticalSpeed && moveRight)                         //flips sprite if left or right pressed mid-air
+            {
+                rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
+                spRender.flipX = false;
+            }
 
-        // left only
-        if (moveLeft)
-        {
-            playerAnimator.Play("playerMove");                      // calls move animation
-            spRender.flipX = true;                                  // flips for direction
+            //responds to right input, ensures gravity mid air
+            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveRight)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
+                spRender.flipX = false;
+            }
+            
+            //if user input is up, check if we're on a ladder layer or just on the foreground to determine behavior and animation
+            if (moveUp)
+                if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")))
+                    rb.velocity = new Vector2(rb.velocity.x, verticalMove);
 
-        }
-
-        // right only
-        if (moveRight)
-        {
-            playerAnimator.Play("playerMove");                      // calls move animation
-            spRender.flipX = false;                                 // no direction flip
 
         }
-
-        // nothing, idle player
-        if (horizontalMove == 0 && verticalMove == 0)
-            playerAnimator.Play("playerIdle");                      // calls idle animation
+        else
+            rb.velocity = new Vector2(0f, 0f);                          //ensures player won't move if isAlive == false
     }
 
 
@@ -242,4 +253,13 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = deathLaunch;
         }
     }
+
+    /*private void Climb()
+    {
+        if(!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) return;
+        else
+        {
+            float controlThrow = 
+        }
+    }*/
 }
