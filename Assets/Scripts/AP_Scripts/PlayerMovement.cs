@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;         // object for player movement
     Animator playerAnimator;
     CapsuleCollider2D bodyCollider;
+    BoxCollider2D feetCollider;     //used to prevent wall jumps
     public SpriteRenderer spRender;
 
     //local variables
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float verticalMove;     // holds value for vertical movement
 
-    private bool isAlive = true;            // From AA Player Script
+    private bool isAlive = true;           
 
 
     // Start is called before the first frame update
@@ -34,10 +35,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // sets up object + defaults
         rb = GetComponent<Rigidbody2D>();
-
-
-        playerAnimator = GetComponent<Animator>();  // From AA Player Script
-        bodyCollider = GetComponent<CapsuleCollider2D>();  // From AA Player Script
+        feetCollider = GetComponent<BoxCollider2D>();
+        playerAnimator = GetComponent<Animator>();  
+        bodyCollider = GetComponent<CapsuleCollider2D>();  
         spRender = GetComponent<SpriteRenderer>();
 
         moveLeft = false;
@@ -199,14 +199,14 @@ public class PlayerMovement : MonoBehaviour
                 playerAnimator.SetBool("Idling", playerHasHorizontalSpeed);
 
             //Ladders
-            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+            if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
                 playerAnimator.SetBool("playerClimb", playerHasVerticalSpeed);
             else
                 playerAnimator.SetBool("Idling", playerIdle);
  
             //responds to left input, ensures gravity mid air
             // (default horizontal, set vertical)
-            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveLeft)     
+            if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveLeft)     
             {
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
                 spRender.flipX = true;
@@ -225,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //responds to right input, ensures gravity mid air
-            if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveRight)
+            if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveRight)
             {
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
                 spRender.flipX = false;
@@ -233,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
             
             //if user input is up, check if we're on a ladder layer or just on the foreground to determine behavior and animation
             if (moveUp)
-                if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")))
+                if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")))
                     rb.velocity = new Vector2(rb.velocity.x, verticalMove);
 
 
