@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Everyone Use These Duplicates/AA_Level_Zero.unity.unity
     guid: b17271c94cace42a892e5675e3618cc6
   - enabled: 1
-    path: Assets/SP_Dialogue/Dialogue_Zero_V1.unity
+    path: Assets/Scenes/Dialogue_Zero_V1.unity
     guid: c45846fcc17953d4d96311e118ae19bf
   - enabled: 1
     path: Assets/SP_Dialogue/Dialogue_Zero_V2.unity
