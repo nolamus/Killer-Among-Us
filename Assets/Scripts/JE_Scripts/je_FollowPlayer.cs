@@ -8,7 +8,7 @@ using UnityEngine;
 public class je_FollowPlayer : MonoBehaviour
 {
     public Transform player; // Binds to the Transform component of the player character game object
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 0, -10); // Initializes offset to camera Z position of -10
 
     // Update is called once per frame
     void Update()
