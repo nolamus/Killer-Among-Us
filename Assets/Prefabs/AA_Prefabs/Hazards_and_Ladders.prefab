@@ -483,7 +483,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 5.781143, g: 5.781143, b: 5.781143, a: 5.781143}
   - m_RefCount: 0
-    m_Data: {r: -103.3147, g: -103.3147, b: -103.3147, a: -103.3147}
+    m_Data: {r: -2.2782568e+11, g: -2.2782568e+11, b: -2.2782568e+11, a: -2.2782568e+11}
   - m_RefCount: 2
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
