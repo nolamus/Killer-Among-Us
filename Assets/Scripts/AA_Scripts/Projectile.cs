@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float projectileSpeed = 5f;
+    private float spawnTime;
+    public float spawnDelay = 5f;
+    BoxCollider2D projectile;
+
+    private void Start()
+    { projectile = GetComponent<BoxCollider2D>(); }   
     
-    void update()
+    private void update()
     {
-        transform.Translate(Vector2.down * projectileSpeed * Time.deltaTime);
+        if(projectile.IsTouchingLayers(LayerMask.GetMask("Foreground", "Player")))
+            Destroy(gameObject);
     }
 }

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Broom
+  tags: [Broom]
   layers:
   - Default
   - TransparentFX
@@ -15,8 +14,8 @@ TagManager:
   - 
   - 
   - Background
-  - Enemy
   - Ghost Background
+  - Enemy
   - Player
   - Foreground
   - Climbing
@@ -45,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 1578631745
     locked: 0
+  - name: Ghost Background
+    uniqueID: 1406416475
+    locked: 0
   - name: Enemy
     uniqueID: 2560882353
     locked: 0
@@ -59,7 +61,4 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2593672883
-    locked: 0
-  - name: Ghost Background
-    uniqueID: 1406416475
     locked: 0
