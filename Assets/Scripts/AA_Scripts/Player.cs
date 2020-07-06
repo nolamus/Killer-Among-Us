@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-//EXTRA SCRIPT FOR TESTING CURRENTLY NOT USED
 public class Player : MonoBehaviour
 {
     //Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] Vector2 deathLaunch = new Vector2(1f,1f); 
+    [SerializeField] float climbSpeed = 5f;
 
-    bool isAlive = true;
-    //private bool moveLeft, moveRight, moveUp, moveNext;
+    //Local variables
+    private bool isAlive = true;
 
     //Cached component references
     Rigidbody2D playerRigidBody;
     Animator playerAnimator;
-    CapsuleCollider2D bodyCollider;
-    void Start()
+    CapsuleCollider2D bodyCollider;             
+    BoxCollider2D feetCollider;                 //Collider to determine if feet are touching ground to prevent wall jumps
+    SpriteRenderer playerSprite;                //used to change character color apon death
+
+    void Start()    //grab components from player
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
-
-        //moveLeft = moveRight = moveNext = moveUp = false;
+        feetCollider = GetComponent<BoxCollider2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
 
         Run();
         Jump();
+        Climb();
         flipSprite();
         Death();
     }
@@ -41,20 +44,30 @@ public class Player : MonoBehaviour
     private void Run()
     {
         float controlRun = CrossPlatformInputManager.GetAxis("Horizontal"); // [-1,1] allows for us to use input regardless of platform
-        Vector2 playerVelocity = new Vector2(controlRun * runSpeed, playerRigidBody.velocity.y);
-        playerRigidBody.velocity = playerVelocity;
+        Vector2 runVelocity = new Vector2(controlRun * runSpeed, playerRigidBody.velocity.y);       //create a new position of the speed/direction the player is moving
+        playerRigidBody.velocity = runVelocity;                                                     
 
-        bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon;
-        playerAnimator.SetBool("Running", playerHasHorizontalSpeed);
+        bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon;      //checks if player is moving
+        playerAnimator.SetBool("Running", playerHasHorizontalSpeed);                                //Triggers run animation
     }
 
     private void Jump()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Jump") && bodyCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping  
+        if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping  
         {
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
         }
+    }
+
+    private void Climb()
+    {
+        if(!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))   //if player isn't touching ladder return
+            return;
+
+        float controlClimb = CrossPlatformInputManager.GetAxis("Vertical");
+        Vector2 climbVelocity = new Vector2(playerRigidBody.velocity.x, controlClimb * climbSpeed);
+        playerRigidBody.velocity = climbVelocity;
     }
 
     private void Death()
@@ -62,8 +75,9 @@ public class Player : MonoBehaviour
         if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard"))) //if player is touching enemy layer
         {
             isAlive = false;
-            playerAnimator.SetTrigger("Dying");
-            GetComponent<Rigidbody2D>().velocity = deathLaunch;            
+            playerAnimator.SetTrigger("Dying");                 //players death animation
+            playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
+            Time.timeScale = 0f;            
         }
     }
 

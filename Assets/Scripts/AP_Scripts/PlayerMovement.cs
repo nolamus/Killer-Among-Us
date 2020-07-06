@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = 0;                 // no horizontal
             verticalMove = speedY;              // vertical speed is (+)
-            if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+            if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
                 playerAnimator.Play("playerClimb");
         }
 
@@ -204,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
             else
                 playerAnimator.SetBool("Idling", playerIdle);
  
-            //responds to left input, ensures gravity mid air
+            
             // (default horizontal, set vertical)
             if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveLeft)     
             {
@@ -212,19 +212,21 @@ public class PlayerMovement : MonoBehaviour
                 spRender.flipX = true;
             }
 
+            //responds to left input, ensures gravity mid air
             if (playerHasVerticalSpeed && moveLeft)                          //flips sprite if left or right pressed mid-air
             {
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
                 spRender.flipX = true;
             }
 
+            //responds to right input, ensures gravity mid air
             if (playerHasVerticalSpeed && moveRight)                         //flips sprite if left or right pressed mid-air
             {
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
                 spRender.flipX = false;
             }
 
-            //responds to right input, ensures gravity mid air
+            
             if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground")) && moveRight)
             {
                 rb.velocity = new Vector2(rb.velocity.x, verticalMove); 
@@ -253,13 +255,4 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = deathLaunch;
         }
     }
-
-    /*private void Climb()
-    {
-        if(!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) return;
-        else
-        {
-            float controlThrow = 
-        }
-    }*/
 }

@@ -32,16 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JE_Scenes/je_Settings.unity
     guid: a96302bdd5690544cad32703d73742ed
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/MainMenu.unity
-    guid: 005a30f567e78a043bee7a2ed591daf3
-  - enabled: 1
-    path: Assets/Level_Zero.unity
+    path: Assets/Dummy Scene.unity
     guid: 8f33540451dce164093878ea7172c09b
   - enabled: 0
-    path: Assets/Scenes/TutorialScene.unity
+    path: Assets/TutorialScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/TutorialScene.unity
+    path: Assets/TutorialScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
