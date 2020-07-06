@@ -7,8 +7,8 @@ public class ProjectileSpawn : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float minDelay = 1f;
     [SerializeField] float maxDelay = 5f;
-    [SerializeField] Projectile projectileType;
-    [SerializeField] float despawnDelay = 5f;
+    [SerializeField] float despawnDelay = 1.0f;
+    public GameObject projectileType;
     
     bool spawn = true;
     IEnumerator Start()
@@ -17,14 +17,13 @@ public class ProjectileSpawn : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minDelay, maxDelay)); 
             spawnProjectile();
-            //yield return new WaitForSeconds(despawnDelay);
-            //Destroy(projectileType);
         }
 
     }
 
     private void spawnProjectile()
     {
-        Instantiate(projectileType, transform.position, transform.rotation);    
+        GameObject clone = (GameObject)Instantiate(projectileType, transform.position, transform.rotation);         //clones gameobject and instantiates in game
+        Destroy (clone, despawnDelay);              //delete gameobject after despawnDelay seconds
     }
 }

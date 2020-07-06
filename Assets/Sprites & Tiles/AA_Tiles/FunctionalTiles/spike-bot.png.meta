@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 5965674dc7cff6e4ca686c8fea174264
+guid: 56b80d052011d4b48ab5bbd9eca42b5e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -27,7 +27,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -45,19 +45,19 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -99,7 +99,19 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: -6, y: 16}
+      - {x: -6, y: 12}
+      - {x: -5, y: 5}
+      - {x: -3, y: -6}
+      - {x: -2, y: -12}
+      - {x: -1, y: -16}
+      - {x: 0, y: -16}
+      - {x: 1, y: -12}
+      - {x: 2, y: -6}
+      - {x: 4, y: 5}
+      - {x: 5, y: 12}
+      - {x: 5, y: 16}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
