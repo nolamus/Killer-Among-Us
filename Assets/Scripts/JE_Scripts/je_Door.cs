@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class je_Door : MonoBehaviour
+{
+
+    public Scene Rooms;
+    public int LvlNumber;
+    public bool LadderRoomDoor;
+    public bool IsKeyRoom;
+    public static int Lvl2KeyTracker = 0;
+    public int Lvl2KeyPermission;
+    public Vector3 Lvl2MovePlayer;
+    public Sprite DoorOpen;
+    public Sprite DoorClosed;
+    public SpriteRenderer Door;
+    public Transform Player;
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Door = GetComponent<SpriteRenderer>();
+        Lvl2KeyTracker = 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log("Lvl2Tracker = "+Lvl2KeyTracker.ToString());
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log("MouseDown");
+        if (LadderRoomDoor)
+        {
+            if (Lvl2KeyTracker == 1 || Lvl2KeyTracker == 3 || Lvl2KeyTracker == 5 || Lvl2KeyTracker == 7)
+            {
+                UnlockLvl2Door();
+            }
+            else if (Lvl2KeyTracker >= Lvl2KeyPermission)
+            {
+                OpenLvl2Ladder();
+            }
+
+        }
+        else
+        {
+            OpenLevelDoor();
+        }
+    }
+    public void OpenLevelDoor()
+    {
+        if(IsKeyRoom)
+        {
+
+        }
+        else
+        {
+            SceneManager.LoadScene(Rooms.ToString());
+        }
+    }
+
+    public void UnlockLvl2Door()
+    {
+        Debug.Log("Ladder Unlocked");
+        /*
+         * Lvl2KeyTracker == 0 means the no keys have been found
+         * Lvl2KeyTracker == 1 key to ladder room of floor 1 has been found
+         * Lvl2KeyTracker == 3 key to ladder room of floor 2 has been found
+         * Lvl2KeyTracker == 5 key to ladder room of floor 3 has been found
+         * Lvl2KeyTracker == 7 key to boss room of floor 4 has been found
+         * Lvl2KeyTracker == 2,4,6,or 8 means that the door below it have been unlocked
+         */
+        Door.sprite = DoorOpen;
+        Lvl2KeyTracker++; // Signal that the door has been unlocked
+    }
+
+    public void OpenLvl2Ladder()
+    {
+        Debug.Log("Ladder Door Used");
+        Player.position = Lvl2MovePlayer;
+    }
+}
