@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Checkpoint
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -47,18 +49,18 @@ TagManager:
   - name: Enemy
     uniqueID: 2560882353
     locked: 0
+  - name: Ghost Background
+    uniqueID: 1406416475
+    locked: 0
   - name: Hazard
     uniqueID: 1474450225
     locked: 0
   - name: Climbing
     uniqueID: 3202623835
     locked: 0
-  - name: Player
-    uniqueID: 2912759157
-    locked: 0
   - name: Foreground
     uniqueID: 2593672883
     locked: 0
-  - name: Ghost Background
-    uniqueID: 1406416475
+  - name: Player
+    uniqueID: 2912759157
     locked: 0
