@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// This is the main script for running the dialogue in the text-based scene
-// Used for scene "Dialogue_Zero_V1"
+// This is the main script for running the dialogue in scene "Dialogue_Zero_V1"
 
 public class Dialogue : MonoBehaviour
 {
