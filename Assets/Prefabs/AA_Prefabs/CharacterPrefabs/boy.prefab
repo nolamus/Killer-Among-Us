@@ -182,6 +182,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 5
+  jumpSpeed: 8
   climbSpeed: 5
-  deathLaunch: {x: 1, y: 1}
