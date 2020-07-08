@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿/*  SCRIPT COMMENTED OUT:
+This method for running the dialogue in the text-based scene was not used.
+*/
+
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// This method for running the dialogue in the text-based scene was not used
 
 [System.Serializable]
 public class V2_Dialogue
@@ -12,3 +15,4 @@ public class V2_Dialogue
     // For loading into queue
     public string[] sentences;
 }
+*/
