@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Checkpoint, Dirt, Broom, Challenge1_Item, Challenge1_noItem, Enemy]
+  tags:
+  - Checkpoint
+  - Dirt
+  - Broom
+  - Challenge1_Item
+  - Challenge1_noItem
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +25,7 @@ TagManager:
   - Player
   - Foreground
   - Climbing
-  - 
+  - Checkpoint
   - 
   - 
   - 
@@ -43,6 +49,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1578631745
+    locked: 0
+  - name: Checkpoint
+    uniqueID: 544749059
     locked: 0
   - name: Enemy
     uniqueID: 2560882353
