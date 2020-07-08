@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 using System.Collections.Specialized;
 
+// This is the main script for running all dialogue scenes that use Ink stories
+
 public class InkRunner : MonoBehaviour
 {
 	public static event Action<Story> OnCreateStory;
