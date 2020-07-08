@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement; // for shifting scenes
 using UnityEngine.UI; // for using UI element
 
 // script to attach to player for level 2
-public class ItemPickup2 : MonoBehaviour
+public class ItemPickupLvl2 : MonoBehaviour
 {
     [SerializeField] public Image screenOverlay; // represents dirty screen overlay
     public bool hasItem = false; // tracks if item was picked up
