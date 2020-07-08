@@ -7,17 +7,21 @@ using UnityEngine.SceneManagement;
 public class je_Door : MonoBehaviour
 {
 
-    public Scene Rooms;
-    public int LvlNumber;
+    public static bool ReturnFromAnotherRoom;
+    public string BehindDoorSceneName;
+    public bool ReturnToPreviousRoom;
+    public string PreviousSceneName;
     public bool LadderRoomDoor;
+    public static bool RevealKey;
     public bool IsKeyRoom;
     public static int Lvl2KeyTracker = 0;
     public int Lvl2KeyPermission;
     public Vector3 Lvl2MovePlayer;
+    public static Vector3 PreviousPlayerPosition;
     public Sprite DoorOpen;
     public Sprite DoorClosed;
     public SpriteRenderer Door;
-    public Transform Player;
+    public GameObject PlayerObject;
     
 
     // Start is called before the first frame update
@@ -25,6 +29,7 @@ public class je_Door : MonoBehaviour
     {
         Door = GetComponent<SpriteRenderer>();
         Lvl2KeyTracker = 1;
+        
     }
 
     // Update is called once per frame
@@ -55,14 +60,23 @@ public class je_Door : MonoBehaviour
     }
     public void OpenLevelDoor()
     {
-        if(IsKeyRoom)
+        RevealKey = IsKeyRoom;
+        
+        
+        if(ReturnToPreviousRoom)
         {
-
+            ReturnFromAnotherRoom = true;
+            Debug.Log("Moving Player to position: " + je_Door.PreviousPlayerPosition);
+            SceneManager.LoadScene(PreviousSceneName);
+           
         }
         else
         {
-            SceneManager.LoadScene(Rooms.ToString());
+            //DontDestroyOnLoad(PlayerObject);
+            PreviousPlayerPosition = PlayerObject.transform.position;
+            SceneManager.LoadScene(BehindDoorSceneName);
         }
+        
     }
 
     public void UnlockLvl2Door()
@@ -83,6 +97,7 @@ public class je_Door : MonoBehaviour
     public void OpenLvl2Ladder()
     {
         Debug.Log("Ladder Door Used");
-        Player.position = Lvl2MovePlayer;
+        PlayerObject.transform.position = Lvl2MovePlayer;
+        
     }
 }
