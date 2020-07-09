@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 using System.Collections.Specialized;
+using UnityEngine.SceneManagement;
 
 // This is the main script for running all dialogue scenes that use Ink stories
 
@@ -63,9 +64,10 @@ public class InkRunner : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			Button choice = CreateChoiceView("End of story.\nRestart?");
+			Button choice = CreateChoiceView("Return to Level Select");
 			choice.onClick.AddListener(delegate {
-				StartStory();
+				// Load level selection scene once dialogue scene is done
+				SceneManager.LoadScene("tv_LevelSelect");
 			});
 		}
 	}
