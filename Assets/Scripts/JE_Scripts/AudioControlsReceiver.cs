@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AudioControlsReceiver : MonoBehaviour
 {
-    static float BGMusicVolume = 1f;
+    [SerializeField]static float BGMusicVolume = 1f;
     public AudioSource BackgroundMusic;
     // Update is called once per frame
     void Update()

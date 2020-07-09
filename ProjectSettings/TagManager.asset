@@ -7,9 +7,12 @@ TagManager:
   - Checkpoint
   - Dirt
   - Broom
-  - Challenge1_Item
-  - Challenge1_noItem
   - Enemy
+  - Challenge_Item
+  - Challenge_noItem
+  - NoKeyDoor
+  - Bell
+  - DialogueScene
   layers:
   - Default
   - TransparentFX

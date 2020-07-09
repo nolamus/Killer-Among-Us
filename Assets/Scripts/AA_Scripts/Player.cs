@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isAlive)        //if player is dead, disable player control
+        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead, disable player control
             return;
-
+        
         Run();
         Jump();
         Climb();

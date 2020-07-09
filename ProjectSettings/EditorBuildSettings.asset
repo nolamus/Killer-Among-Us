@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/je_MainMenu.unity
     guid: d5c74f82e5ccb434a8e32264114193d7
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_LevelSelect.unity
+    path: Assets/Scenes/JE_Scenes/je_LevelSelect.unity
     guid: 21f490de825c5c74aa3568dfca307447
   - enabled: 1
     path: Assets/Scenes/Final Scenes/je_Settings.unity
