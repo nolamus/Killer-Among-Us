@@ -13,7 +13,7 @@ public class ItemPickupLvl1 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Bell")) // ** -----------> create tag for item, attach
+        if (item.gameObject.CompareTag("Bell"))
         {
             hasItem = true; // item obtained
 
@@ -47,7 +47,7 @@ public class ItemPickupLvl1 : MonoBehaviour
         }
 
         // end of level reached, go to dialogue scene
-        if (item.gameObject.CompareTag("DialogueScene")) // ** -----------> tag dialogue scene with this
+        if (item.gameObject.CompareTag("DialogueScene"))
         {
             Destroy(item.gameObject);
 
