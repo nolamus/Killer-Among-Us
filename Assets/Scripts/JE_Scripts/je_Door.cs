@@ -7,38 +7,43 @@ using UnityEngine.SceneManagement;
 public class je_Door : MonoBehaviour
 {
 
-    public static bool ReturnFromAnotherRoom;
-    public string BehindDoorSceneName;
-    public bool ReturnToPreviousRoom;
-    public string PreviousSceneName;
+    //public static bool ReturnFromAnotherRoom;
+    //public string BehindDoorSceneName;
+    //public bool ReturnToPreviousRoom;
+    //public string PreviousSceneName;
     public bool LadderRoomDoor;
-    public static bool RevealKey;
-    public bool IsKeyRoom;
+    //public static bool RevealKey;
+    //public bool IsKeyRoom;
     public static int Lvl2KeyTracker = 0;
     public int Lvl2KeyPermission;
     public Vector3 Lvl2MovePlayer;
-    public static Vector3 PreviousPlayerPosition;
+    //public static Vector3 PreviousPlayerPosition;
     public Sprite DoorOpen;
     public Sprite DoorClosed;
     public SpriteRenderer Door;
     public GameObject PlayerObject;
-    public CapsuleCollider2D playerCollider;
-    public CompositeCollider2D NoKeyDoor;
+    //public CapsuleCollider2D playerCollider;
+    //public CompositeCollider2D NoKeyDoor;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Door = GetComponent<SpriteRenderer>();
-        Lvl2KeyTracker = 1;
+        //Lvl2KeyTracker = 1; Use Only During Testing
         
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         Debug.Log("Lvl2Tracker = "+Lvl2KeyTracker.ToString());
-    }
+        if (Input.GetButtonDown("Submit")  && NoKeyDoor.IsTouching(playerCollider))
+        {
+            //Debug.Log("GameObject2 collided with " + playerCollider.name);
+            OpenLevelDoor();
+        }
+    }*/
 
     void OnMouseDown()
     {
@@ -54,15 +59,9 @@ public class je_Door : MonoBehaviour
                 OpenLvl2Ladder();
             }
 
-        }
-        else if (NoKeyDoor.IsTouching(playerCollider))
-        {
-            Debug.Log("GameObject2 collided with " + playerCollider.name);
-            OpenLevelDoor();
-        }
-        
+        } 
     }
-    public void OpenLevelDoor()
+    /*public void OpenLevelDoor()
     {
         RevealKey = IsKeyRoom;
         
@@ -81,7 +80,7 @@ public class je_Door : MonoBehaviour
             SceneManager.LoadScene(BehindDoorSceneName);
         }
         
-    }
+    }*/
 
     public void UnlockLvl2LadderDoor()
     {

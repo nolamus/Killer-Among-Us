@@ -12,12 +12,12 @@ public class je_FollowPlayer : MonoBehaviour
 
     void Start()
     {
-        if (je_Door.ReturnFromAnotherRoom)
+        if (KeyDoor.ReturnFromAnotherRoom)
         {
             Debug.Log("Checked for returning from another room");
-            Debug.Log("Update: PreviousPosition is: " + je_Door.PreviousPlayerPosition);
-            player.position = je_Door.PreviousPlayerPosition;   // Position player in location from before changing scenes
-            je_Door.ReturnFromAnotherRoom = false;
+            Debug.Log("Update: PreviousPosition is: " + KeyDoor.PreviousPlayerPosition);
+            player.position = KeyDoor.PreviousPlayerPosition;   // Position player in location from before changing scenes
+            KeyDoor.ReturnFromAnotherRoom = false;
         }
     }
 
