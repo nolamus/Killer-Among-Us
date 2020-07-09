@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+// Handles doors perform a scene transition to rooms that can hold Key GameObjects
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

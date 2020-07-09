@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+// Handles Interactions with doors that restrict access to ladders
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +52,7 @@ public class je_Door : MonoBehaviour
 
     void OnMouseDown()
     {
+        // Unlocks or Opens the Door blocking the way to the ladder to the next floor
         Debug.Log("MouseDown");
         if (LadderRoomDoor)
         {
@@ -82,6 +88,7 @@ public class je_Door : MonoBehaviour
         
     }*/
 
+    // Unlocks door blocking the ladders on Level 2
     public void UnlockLvl2LadderDoor()
     {
         Debug.Log("Ladder Unlocked");
@@ -97,6 +104,7 @@ public class je_Door : MonoBehaviour
         Lvl2KeyTracker++; // Signal that the door has been unlocked
     }
 
+    // Opens door blocking the ladders on Level 2
     public void OpenLvl2Ladder()
     {
         Debug.Log("Ladder Door Used");

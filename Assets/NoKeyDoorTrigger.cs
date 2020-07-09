@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+// Tests Collider Collisions before use in System
+// DEPRECATED
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -21,4 +28,4 @@ public class NoKeyDoorTrigger : MonoBehaviour
     }
 
     
-}
+}*/
