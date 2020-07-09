@@ -7,15 +7,15 @@ public class ProjectileSpawn : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float minDelay = 1f;
     [SerializeField] float maxDelay = 5f;
-    [SerializeField] float despawnDelay = 1.0f;
-    public GameObject projectileType;
+    [SerializeField] float despawnDelay = 1.0f;     
+    public GameObject projectileType;               //object which will be spawned
     
     bool spawn = true;
     IEnumerator Start()
     {
         while(spawn)
         {
-            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay)); 
+            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));      //random spawning
             spawnProjectile();
         }
 

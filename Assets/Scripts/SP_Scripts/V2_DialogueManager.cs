@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿/*  SCRIPT COMMENTED OUT:
+This method for running the dialogue in the text-based scene was not used.
+*/
+
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// This method for running the dialogue in the text-based scene was not used
 
 public class V2_DialogueManager : MonoBehaviour
 {
@@ -16,3 +19,4 @@ public class V2_DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 }
+*/

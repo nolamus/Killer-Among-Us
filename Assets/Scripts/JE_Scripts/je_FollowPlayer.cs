@@ -10,10 +10,26 @@ public class je_FollowPlayer : MonoBehaviour
     public Transform player; // Binds to the Transform component of the player character game object
     public Vector3 offset = new Vector3(0, 0, -10); // Initializes offset to camera Z position of -10
 
+    void Start()
+    {
+        if (KeyDoor.ReturnFromAnotherRoom)
+        {
+            Debug.Log("Checked for returning from another room");
+            Debug.Log("Update: PreviousPosition is: " + KeyDoor.PreviousPlayerPosition);
+            player.position = KeyDoor.PreviousPlayerPosition;   // Position player in location from before changing scenes
+            KeyDoor.ReturnFromAnotherRoom = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.position + offset; // Update the position of the object to the position of the player
+        
+        //else
+        //{
+            transform.position = player.position + offset; // Update the position of the object to the position of the player
+        //}
+        
         
     }
 }

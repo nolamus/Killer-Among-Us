@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Project: Killer Among Us 
+ * This script was initially created by Joseph Ene
+ */
+// Handles Displaying and Processing Interaction for the Pause Menu
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

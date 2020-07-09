@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 923c3c269b4e90942b0612ef46e21c77
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - DoorOpen: {fileID: 21300000, guid: ebc7c6ccc24fdb04f90c6bb7103c1af0, type: 3}
+  - DoorClosed: {fileID: 21300000, guid: 0f4181a26b911fe4b9dd6693a1fcbc3e, type: 3}
+  - Door: {instanceID: 0}
+  - PlayerObject: {instanceID: 0}
+  - playerCollider: {instanceID: 0}
+  - NoKeyDoor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
