@@ -1,14 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class NoKeyDoorTrigger : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    public CompositeCollider2D NoKeyDoor;
+    public CapsuleCollider2D playerCollider;
+
+    void Update()
     {
-        if(col.gameObject.CompareTag("NoKeyDoor"))
+        //NoKeyFound();
+    }
+    void NoKeyFound()
+    {
+        if(NoKeyDoor.IsTouching(playerCollider))
         {
-            Debug.Log("GameObject2 collided with " + col.name);
+            Debug.Log("GameObject2 collided with " + playerCollider.name);
         }
     }
+
+    
 }

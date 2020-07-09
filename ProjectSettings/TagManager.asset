@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Checkpoint, Dirt, Broom, Enemy, Challenge_Item, Challenge_noItem]
+  tags:
+  - Checkpoint
+  - Dirt
+  - Broom
+  - Enemy
+  - Challenge_Item
+  - Challenge_noItem
+  - NoKeyDoor
   layers:
   - Default
   - TransparentFX

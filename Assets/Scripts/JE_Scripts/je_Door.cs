@@ -22,7 +22,9 @@ public class je_Door : MonoBehaviour
     public Sprite DoorClosed;
     public SpriteRenderer Door;
     public GameObject PlayerObject;
-    
+    public CapsuleCollider2D playerCollider;
+    public CompositeCollider2D NoKeyDoor;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,7 @@ public class je_Door : MonoBehaviour
         {
             if (Lvl2KeyTracker == 1 || Lvl2KeyTracker == 3 || Lvl2KeyTracker == 5 || Lvl2KeyTracker == 7)
             {
-                UnlockLvl2Door();
+                UnlockLvl2LadderDoor();
             }
             else if (Lvl2KeyTracker >= Lvl2KeyPermission)
             {
@@ -53,10 +55,12 @@ public class je_Door : MonoBehaviour
             }
 
         }
-        else
+        else if (NoKeyDoor.IsTouching(playerCollider))
         {
+            Debug.Log("GameObject2 collided with " + playerCollider.name);
             OpenLevelDoor();
         }
+        
     }
     public void OpenLevelDoor()
     {
@@ -79,7 +83,7 @@ public class je_Door : MonoBehaviour
         
     }
 
-    public void UnlockLvl2Door()
+    public void UnlockLvl2LadderDoor()
     {
         Debug.Log("Ladder Unlocked");
         /*
