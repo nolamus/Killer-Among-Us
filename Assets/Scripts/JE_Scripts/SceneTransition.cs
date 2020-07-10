@@ -31,7 +31,15 @@ public class SceneTransition : MonoBehaviour
     // Load the that should be run when Level Zero is selected in je_LevelSelect
     public void LoadGameSceneZero()
     {
-        SceneManager.LoadScene("AA_Level_Zero.unity");
+        SceneManager.LoadScene("AA_Level_Zero.unity.unity");
+    }
+    public void LoadGameSceneOne()
+    {
+        SceneManager.LoadScene("AA_Level_One.unity");
+    }
+    public void LoadGameSceneTwo()
+    {
+        SceneManager.LoadScene("je_Level_Two.unity");
     }
 
     // Exits the game and hold all potential exit game transition sequences
