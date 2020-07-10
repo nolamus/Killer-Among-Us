@@ -48,10 +48,10 @@ public class ItemPickupLvl2 : MonoBehaviour
         }
 
         // end of level reached, go to dialogue scene
-        if (item.gameObject.CompareTag("DialogueScene2")) // ** -----------> tag dialogue scene with this
+        if (item.gameObject.CompareTag("DialogueScene"))
         {
             // move onto dialogue scene
-            //SceneManager.LoadScene(" "); // ** -----------> add dialogue scene name
+            SceneManager.LoadScene("L2_Dialogue");
 
             Destroy(item.gameObject);
         }

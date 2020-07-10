@@ -36489,6 +36489,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1762838737}
     m_Modifications:
+    - target: {fileID: 2385564091175146923, guid: 343c45124d43a65499c1bcc346512180,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5542230421625654752, guid: 343c45124d43a65499c1bcc346512180,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36553,6 +36558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542230421625654767, guid: 343c45124d43a65499c1bcc346512180,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343c45124d43a65499c1bcc346512180, type: 3}
@@ -36651,6 +36661,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 92104147}
   respawnPoint: {fileID: 1786589063}
+--- !u!58 &618465868
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618465860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!4 &624689223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9147145388301218754, guid: 89a87935f48108d4b84c2f5a250cc926,
@@ -38917,7 +38943,7 @@ PrefabInstance:
     - target: {fileID: 7241122747634101489, guid: 2f31e3262fa8f7045b691ef2fcef68e4,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7241122747634101489, guid: 2f31e3262fa8f7045b691ef2fcef68e4,
         type: 3}
@@ -39799,7 +39825,7 @@ PrefabInstance:
     - target: {fileID: 922583233199322077, guid: 6abb0440e736744faa796e89d6a90dc5,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abb0440e736744faa796e89d6a90dc5, type: 3}
@@ -40347,6 +40373,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 566491337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1540081827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9147145388301218765, guid: 89a87935f48108d4b84c2f5a250cc926,
+    type: 3}
+  m_PrefabInstance: {fileID: 1679068745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540081834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540081827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ef3286c86be45ccaa26a248ab4b5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 92104147}
+  respawnPoint: {fileID: 1786589063}
 --- !u!4 &1582346288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9147145388301218754, guid: 89a87935f48108d4b84c2f5a250cc926,
@@ -40552,6 +40598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeed
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370216436344793993, guid: 89a87935f48108d4b84c2f5a250cc926,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147145388301218752, guid: 89a87935f48108d4b84c2f5a250cc926,
         type: 3}
@@ -57036,6 +57087,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1688448120}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2018553034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9147145388301218765, guid: 89a87935f48108d4b84c2f5a250cc926,
+    type: 3}
+  m_PrefabInstance: {fileID: 7222047209658294847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018553041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018553034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ef3286c86be45ccaa26a248ab4b5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 92104147}
+  respawnPoint: {fileID: 1786589063}
 --- !u!4 &2080036706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142783754323394979, guid: c1e62cca6b187444b9edc00f5d41652f,
@@ -57365,6 +57436,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1762838737}
     m_Modifications:
+    - target: {fileID: 1370216436344793993, guid: 89a87935f48108d4b84c2f5a250cc926,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147145388301218754, guid: 89a87935f48108d4b84c2f5a250cc926,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57424,6 +57500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green_Slime_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147145388301218766, guid: 89a87935f48108d4b84c2f5a250cc926,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147145388301218767, guid: 89a87935f48108d4b84c2f5a250cc926,
         type: 3}

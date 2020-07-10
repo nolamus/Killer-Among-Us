@@ -11,6 +11,9 @@ TagManager:
   - Challenge_Item
   - Challenge_noItem
   - NoKeyDoor
+  - Bell
+  - DialogueScene
+  - Flashlight
   layers:
   - Default
   - TransparentFX
