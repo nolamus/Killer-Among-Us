@@ -10,7 +10,8 @@ public class ProjectileSpawn : MonoBehaviour
     [SerializeField] float despawnDelay = 1.0f;     
     public GameObject projectileType;               //object which will be spawned
     
-    bool spawn = true;
+    bool spawn = true;  //find way to enable within anika's script
+
     IEnumerator Start()
     {
         while(spawn)
