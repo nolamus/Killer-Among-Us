@@ -7,6 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class je_MainMenu : MonoBehaviour
 {
+    public GameObject RulesPanel;
+    public GameObject CreditsPanel;
+    private void Start()
+    {
+        RulesPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
+        
+    }
     //SceneTransition transitioner;
     // Function called by main menu scene start button to transition to game scene
     public void StartGame()
@@ -27,6 +35,22 @@ public class je_MainMenu : MonoBehaviour
     public void DiplayMainMenu()
     {
         SceneManager.LoadScene("je_MainMenu");
+    }
+    public void DiplayCreditsPanel()
+    {
+        CreditsPanel.SetActive(true);
+    }
+    public void DiplayRulesPanel()
+    {
+        RulesPanel.SetActive(true);
+    }
+    public void CloseRulesPanel()
+    {
+        RulesPanel.SetActive(false);
+    }
+    public void CloseCreditsPanel()
+    {
+        CreditsPanel.SetActive(false);
     }
     public void ExitGame()
     {
