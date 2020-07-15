@@ -52,6 +52,7 @@ public class je_MainMenu : MonoBehaviour
     {
         CreditsPanel.SetActive(false);
     }
+
     public void ExitGame()
     {
         Application.Quit();
