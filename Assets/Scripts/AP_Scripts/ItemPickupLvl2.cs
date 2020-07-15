@@ -52,8 +52,6 @@ public class ItemPickupLvl2 : MonoBehaviour
         {
             // move onto dialogue scene
             SceneManager.LoadScene("L2_Dialogue");
-
-            Destroy(item.gameObject);
         }
 
     }
