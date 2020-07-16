@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3756961374542480754}
   - component: {fileID: 8442755030514460236}
-  - component: {fileID: 6357754486934297125}
   - component: {fileID: 8328322156400798347}
   - component: {fileID: -3806542976024199835}
   m_Layer: 18
-  m_Name: Projectile_Screw
+  m_Name: screw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,19 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6357754486934297125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7197396324549673994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2f974d02ac620449029d6497440249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnDelay: 5
 --- !u!61 &8328322156400798347
 BoxCollider2D:
   m_ObjectHideFlags: 0

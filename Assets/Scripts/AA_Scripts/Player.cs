@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     BoxCollider2D feetCollider;                 //Collider to determine if feet are touching ground to prevent wall jumps
     SpriteRenderer playerSprite;                //used to change character color apon death
 
+
     void Start()    //grab components from player
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+        
     }
 
     void Update()
@@ -72,7 +75,7 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
-       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard"))) //if player is touching enemy layer
+       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
         {
             isAlive = false;
             playerAnimator.SetTrigger("Dying");                 //players death animation

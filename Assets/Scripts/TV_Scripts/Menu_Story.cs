@@ -31,7 +31,7 @@ public class Menu_Story : MonoBehaviour
     // Load the that should be run when Level Zero is selected in je_LevelSelect
     public void LoadStoryMode()
     {
-      SceneManager.LoadScene("Intro_Dialogue");
+      SceneManager.LoadScene("Dialogue_Zero_V1");
 
     }
 

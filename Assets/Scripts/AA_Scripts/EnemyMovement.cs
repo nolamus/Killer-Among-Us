@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D collision)    //if enemy detects collision, flip localScale to have him move the opposite direction
-    {
+    { 
         transform.localScale = new Vector2(-(Mathf.Sign(enemyRB.velocity.x)), 1f);
     }
 }

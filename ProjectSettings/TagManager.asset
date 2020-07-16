@@ -13,7 +13,6 @@ TagManager:
   - NoKeyDoor
   - Bell
   - DialogueScene
-  - Flashlight
   layers:
   - Default
   - TransparentFX
@@ -30,7 +29,7 @@ TagManager:
   - Foreground
   - Climbing
   - Checkpoint
-  - 
+  - RollingBoulders
   - 
   - 
   - Hazard
@@ -62,6 +61,9 @@ TagManager:
     locked: 0
   - name: Hazard
     uniqueID: 1474450225
+    locked: 0
+  - name: RollingBoulders
+    uniqueID: 1134877651
     locked: 0
   - name: Climbing
     uniqueID: 3202623835
