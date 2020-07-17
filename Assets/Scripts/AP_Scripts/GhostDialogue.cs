@@ -6,7 +6,7 @@ using UnityEngine.UI; // for text component
 public class GhostDialogue : MonoBehaviour
 {
 
-    OnCollisionEnter2D(Collision2D col)
+   /* OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -21,5 +21,5 @@ public class GhostDialogue : MonoBehaviour
         {
             ghostText.gameObject.SetActive(false);
         }
-    }
+    }*/
 }

@@ -7,8 +7,9 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 2
 public class ItemPickupLvl2 : MonoBehaviour
 {
-    [SerializeField] public Image screenOverlay; // represents dirty screen overlay
     public bool hasItem = false; // tracks if item was picked up
+    [SerializeField] public Image itemBroom; // toggles item obtained display
+    [SerializeField] public Image screenOverlay; // represents dirty screen overlay
     // public AudioClip soundEffect;   // pickup sound effect
     // public GameObject pickupEffect; // pickup particle effect
 
@@ -17,6 +18,7 @@ public class ItemPickupLvl2 : MonoBehaviour
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Broom"))
         {
+            itemBroom.enabled = true;
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
