@@ -35,17 +35,7 @@ public class ItemPickupLvl1 : MonoBehaviour
             {
                 // enable falling objects
                 // ** -----------> add code for commencing falling objects
-                /*
-                GameObject[] spawnerArray = new GameObject[19];
-                ProjectileSpawn[] projArray = new ProjectileSpawn[19];
-                for (int i = 0; i < 19; i++)
-                {
-                    Debug.Log("ScrewSpawner_" + i.ToString());
-                    spawnerArray[i] = GameObject.Find("ScrewSpawner_" + i.ToString());
-                    projArray[i] = spawnerArray[i].GetComponent<ProjectileSpawn>();
-                    projArray[i].spawn = true;
-                    Debug.Log(projArray[i].spawn);
-                }*/
+                
             }
 
             Destroy(item.gameObject);
