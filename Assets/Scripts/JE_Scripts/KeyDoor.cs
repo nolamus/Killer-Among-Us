@@ -31,7 +31,7 @@ public class KeyDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Lvl2Tracker = " + je_Door.Lvl2KeyTracker.ToString());
+        //Debug.Log("Lvl2Tracker = " + je_Door.Lvl2KeyTracker.ToString());
         if (Input.GetButtonDown("Submit") && NoKeyDoor.IsTouching(playerCollider))
         {
             //Debug.Log("GameObject2 collided with " + playerCollider.name);
