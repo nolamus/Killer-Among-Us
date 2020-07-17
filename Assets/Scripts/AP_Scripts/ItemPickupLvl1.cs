@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // for shifting scenes
+using UnityEngine.UI; // for using UI element
 
 // script to attach to player for level 1
 public class ItemPickupLvl1 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
+    [SerializeField] public Image itemBell; // toggles item obtained display
     // public AudioClip soundEffect;   // pickup sound effect
     // public GameObject pickupEffect; // pickup particle effect
-
-    void Start()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Bell"))
         {
+            itemBell.enabled = true;
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);

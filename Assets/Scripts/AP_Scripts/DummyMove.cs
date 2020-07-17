@@ -7,7 +7,6 @@ public class DummyMove : MonoBehaviour
 {
     Animator animator;
     Rigidbody2D rb;
-    private float moveSpeed = 3;
 
     // Start is called before the first frame update
     void Start()

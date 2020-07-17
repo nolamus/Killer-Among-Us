@@ -5,14 +5,12 @@ using UnityEngine.UI; // for text component
 
 public class GhostDialogue : MonoBehaviour
 {
-    public Text ghostText;
 
-    // create a rectangular space to detect player approaching ghost
-    void OnTriggerEnter2D(Collider2D item)
+   /* OnCollisionEnter2D(Collision2D col)
     {
-        if (item.gameObject.CompareTag("Player"))
+        if (col.gameObject.tag == "Player")
         {
-            ghostText.gameObject.SetActive(true);
+            rigidbody.detectCollisions = false;
         }
     }
 
@@ -23,5 +21,5 @@ public class GhostDialogue : MonoBehaviour
         {
             ghostText.gameObject.SetActive(false);
         }
-    }
+    }*/
 }
