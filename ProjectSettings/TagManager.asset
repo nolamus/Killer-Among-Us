@@ -17,6 +17,10 @@ TagManager:
   - Challenge1_noItem
   - Challenge1_Item
   - Ghost1
+  - Ghost2
+  - Ghost3
+  - Ghost4
+  - Ghost5
   layers:
   - Default
   - TransparentFX
