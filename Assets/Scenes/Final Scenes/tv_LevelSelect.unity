@@ -360,7 +360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 809843142}
-        m_MethodName: LoadGameSceneZero
+        m_MethodName: LoadGameSceneTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1662,7 +1662,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1817583383}
-        m_MethodName: LoadGameSceneZero
+        m_MethodName: LoadGameSceneOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

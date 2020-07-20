@@ -13,6 +13,7 @@ TagManager:
   - NoKeyDoor
   - Bell
   - DialogueScene
+  - Flashlight
   layers:
   - Default
   - TransparentFX
