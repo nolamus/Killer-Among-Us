@@ -41,6 +41,9 @@ public class KeyDoor : MonoBehaviour
 
     public void OpenLevelDoor()
     {
+
+        
+
         RevealKey = IsKeyRoom;
 
 
