@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 using Ink.Runtime;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -8,11 +9,17 @@ using System.Diagnostics;
 using System.Collections.Specialized;
 using UnityEngine.SceneManagement;
 
-// This is the main script for running all dialogue scenes that use Ink stories
+// Script for running "Intro_Dialogue" scene, which uses Ink stories
 
-public class InkRunner : MonoBehaviour
+public class Intro_InkRunner : MonoBehaviour
 {
 	public static event Action<Story> OnCreateStory;
+	private string text = "";
+	//public Camera blankCam;
+	//public Camera cam1;
+	//public Camera cam2;
+	//public Camera cam3;
+	//public Camera cam4;
 
 	void Awake()
 	{
@@ -37,11 +44,31 @@ public class InkRunner : MonoBehaviour
 		// Remove all the UI on screen
 		RemoveChildren();
 
+		// Method for switching cameras
+		/*if (text == "Concierge: You're stronger than you look.")
+		{
+			cam1.enabled = false;
+			cam2.enabled = true;
+
+			Button choice = CreateChoiceView("Change Camera");
+			bool clicked = false;
+
+			choice.onClick.AddListener(delegate
+			{
+				UnityEngine.Debug.Log("Button pressed");
+				cam1.enabled = true;
+				cam2.enabled = false;
+				clicked = true;
+
+				Destroy(choice.gameObject);
+			});
+		}*/
+
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
 		{
 			// Continue gets the next line of the story
-			string text = story.Continue();
+			text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
 			// Display the text on screen!

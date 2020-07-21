@@ -241,7 +241,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1382208139
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 8674177449705145901, guid: 39bf7b8acdfd1d84f947c2aa09469aa9,
     type: 3}
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1382208139
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4802302210962627547, guid: e719f043a7ad20040ad9240b963234f5,
     type: 3}
@@ -442,31 +442,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1482195896}
   - component: {fileID: 1482195895}
-  - component: {fileID: 1482195893}
-  - component: {fileID: 1482195892}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Scene 1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1482195892
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482195891}
-  m_Enabled: 1
---- !u!124 &1482195893
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482195891}
-  m_Enabled: 1
 --- !u!20 &1482195895
 Camera:
   m_ObjectHideFlags: 0
@@ -477,7 +459,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -674,10 +656,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2009679603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92ef3ba58996af43836290718363814, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8160590c75a554c838e0a3254a7810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: 7545d4034036f5746a881cc2d32e3d9d, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: b4b3dc1d9a3f6294d9ad172de845d3ee, type: 3}
   canvas: {fileID: 1908123726}
   textPrefab: {fileID: 11456674, guid: 291aaeae7b1bb744e8e013f3f6f536ce, type: 3}
   buttonPrefab: {fileID: 11455116, guid: a59a7ac2e87453b498ab8016378473aa, type: 3}
