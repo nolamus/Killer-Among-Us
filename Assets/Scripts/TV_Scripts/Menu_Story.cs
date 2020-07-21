@@ -12,8 +12,12 @@ using UnityEngine.SceneManagement;
 public class Menu_Story : MonoBehaviour
 {
     public static bool IsStoryMode = false;
-    
 
+    void Start()
+    {
+        // Reset Story Mode flag to false once LevelSelect Scene is loaded
+        IsStoryMode = false;
+    }
     public static Stack SceneHistory;
     // Load a scene using the scene name while handling general scene transitions
 
@@ -34,6 +38,7 @@ public class Menu_Story : MonoBehaviour
     // Load the that should be run when Level Zero is selected in je_LevelSelect
     public void LoadStoryMode()
     {
+      IsStoryMode = true;
       SceneManager.LoadScene("Intro_Dialogue");
 
     }
