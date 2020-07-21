@@ -14,6 +14,14 @@ TagManager:
   - Bell
   - DialogueScene
   - Platform
+  - Challenge1_noItem
+  - Challenge1_Item
+  - Ghost1
+  - Ghost2
+  - Ghost3
+  - Ghost4
+  - Ghost5
+  - Flashlight
   layers:
   - Default
   - TransparentFX

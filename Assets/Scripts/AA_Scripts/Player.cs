@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead, disable player control
+        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
             return;
         
         Run();
@@ -58,6 +58,11 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
+            if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
+                jumpSpeed = 10f;
+            else
+                jumpSpeed = 5f;
+
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
         }
@@ -81,6 +86,7 @@ public class Player : MonoBehaviour
             playerAnimator.SetTrigger("Dying");                 //players death animation
             playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
             Time.timeScale = 0f;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
