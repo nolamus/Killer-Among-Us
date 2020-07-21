@@ -63,11 +63,15 @@ public class Player : MonoBehaviour
             string sceneName;
             L4Scene = SceneManager.GetActiveScene();
             sceneName = L4Scene.name;
-            
+
+            // level 4 super jump
             if (sceneName == "AA_Level_Four")
             {
+                // if item has been obtained, use super jump
                 if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
                     jumpSpeed = 10f;
+
+                // if no item or item has expired, regular jump
                 else
                     jumpSpeed = 5f;
             }
