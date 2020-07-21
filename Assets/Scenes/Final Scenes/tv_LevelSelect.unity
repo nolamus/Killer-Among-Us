@@ -217,7 +217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 49845711}
-        m_MethodName: LoadGameSceneTwo
+        m_MethodName: LoadGameSceneThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2110,7 +2110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1522080859}
-        m_MethodName: LoadGameSceneTwo
+        m_MethodName: LoadGameSceneFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2636,7 +2636,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2000963424}
-        m_MethodName: LoadGameSceneTwo
+        m_MethodName: LoadGameSceneFour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
