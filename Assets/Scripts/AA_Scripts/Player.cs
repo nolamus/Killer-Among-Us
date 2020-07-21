@@ -58,6 +58,11 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
+            if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
+                jumpSpeed = 10f;
+            else
+                jumpSpeed = 5f;
+
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
         }
