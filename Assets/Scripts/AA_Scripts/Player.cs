@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead, disable player control
+        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
             return;
         
         Run();
@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
             playerAnimator.SetTrigger("Dying");                 //players death animation
             playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
             Time.timeScale = 0f;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
