@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
                 // if no item or item has expired, regular jump
                 else
-                    jumpSpeed = 5f;
+                    jumpSpeed = 8f;
             }
 
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
