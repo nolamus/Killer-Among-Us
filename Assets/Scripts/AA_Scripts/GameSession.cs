@@ -35,7 +35,8 @@ public class GameSession : MonoBehaviour
     {
         lives--;
         var currentCheckPoint = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(2);
+        livesText.text = lives.ToString();
+        //SceneManager.LoadScene(2);
     }
 
     private void ResetGameSession()
