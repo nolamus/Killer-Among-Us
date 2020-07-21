@@ -1,70 +1,67 @@
 fileFormatVersion: 2
-guid: 874a7ae7faa3ff1458fb1ef726d0b89e
+guid: 16b5a5f9ffd82fd4099f97ea80cb043d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2612393188395333635
-    second: VIPSleepy_0
+      213: 5180533081213797246
+    second: DeadAngry_0
   - first:
-      213: 8066600116882125080
-    second: VIPSleepy_1
+      213: 6271073330346445797
+    second: DeadAngry_1
   - first:
-      213: -4743515397094410234
-    second: VIPSleepy_2
+      213: -7430532047725599711
+    second: DeadAngry_2
   - first:
-      213: -6315689660131688034
-    second: VIPSleepy_3
+      213: 2330036969740851910
+    second: DeadAngry_3
   - first:
-      213: -4724531157524201661
-    second: VIPSleepy_4
+      213: -2148261402821869551
+    second: DeadAngry_4
   - first:
-      213: -1879347170557242989
-    second: VIPSleepy_5
+      213: -1841621276331923297
+    second: DeadAngry_5
   - first:
-      213: 5403562100173096535
-    second: VIPSleepy_6
+      213: 793367405041773767
+    second: DeadAngry_6
   - first:
-      213: -3534848675837724249
-    second: VIPSleepy_7
+      213: 7435451184949910829
+    second: DeadAngry_7
   - first:
-      213: -8575017867527309367
-    second: VIPSleepy_8
+      213: 1447871867669357856
+    second: DeadAngry_8
   - first:
-      213: -2302756997230116459
-    second: VIPSleepy_9
+      213: -1749082991984875766
+    second: DeadAngry_9
   - first:
-      213: -8251696327794904217
-    second: VIPSleepy_10
+      213: -1107575190958535091
+    second: DeadAngry_10
   - first:
-      213: -8861177836078029580
-    second: VIPSleepy_11
+      213: -5898553794475222357
+    second: DeadAngry_11
   - first:
-      213: -2344175100036582049
-    second: VIPSleepy_12
+      213: -552444250023985491
+    second: DeadAngry_12
   - first:
-      213: 2699412696046571582
-    second: VIPSleepy_13
+      213: 4352969350346519354
+    second: DeadAngry_13
   - first:
-      213: -3467242838936427873
-    second: VIPSleepy_14
+      213: -1343246935335640001
+    second: DeadAngry_14
   - first:
-      213: -5255786855810320097
-    second: VIPSleepy_15
+      213: 3621794143350949579
+    second: DeadAngry_15
   - first:
-      213: 355672613921556288
-    second: VIPSleepy_16
+      213: 7924788812525756642
+    second: DeadAngry_16
   - first:
-      213: 1980957035046941935
-    second: VIPSleepy_17
+      213: 2842765462373418482
+    second: DeadAngry_17
   - first:
-      213: -2898602040366294922
-    second: VIPSleepy_18
+      213: 2485667925304448592
+    second: DeadAngry_18
   - first:
-      213: -2807346798120989373
-    second: VIPSleepy_19
-  - first:
-      213: 7150078951247153104
-    second: VIPSleepy_20
+      213: 522366979164241848
+    second: DeadAngry_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -174,442 +171,421 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VIPSleepy_0
+      name: DeadAngry_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 22
         y: 0
-        width: 81
-        height: 260
+        width: 69
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df7cb087c3aeebbd0800000000000000
-      internalID: -2612393188395333635
+      spriteID: e7388e4c363f4e740800000000000000
+      internalID: 5180533081213797246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_1
+      name: DeadAngry_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 124
         y: 0
-        width: 82
-        height: 260
+        width: 69
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81132ef411252ff60800000000000000
-      internalID: 8066600116882125080
+      spriteID: 5ebc9b7e7f3570750800000000000000
+      internalID: 6271073330346445797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_2
+      name: DeadAngry_2
       rect:
         serializedVersion: 2
-        x: 236
+        x: 228
         y: 0
-        width: 81
-        height: 260
+        width: 69
+        height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6087799e0e5ab2eb0800000000000000
-      internalID: -4743515397094410234
+      spriteID: 124e823a87271e890800000000000000
+      internalID: -7430532047725599711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_3
+      name: DeadAngry_3
       rect:
         serializedVersion: 2
-        x: 342
-        y: 0
-        width: 82
-        height: 260
+        x: 329
+        y: 2
+        width: 69
+        height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e914e3057b92a58a0800000000000000
-      internalID: -6315689660131688034
+      spriteID: 6ca5ee66744f55020800000000000000
+      internalID: 2330036969740851910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_4
+      name: DeadAngry_4
       rect:
         serializedVersion: 2
-        x: 448
+        x: 432
         y: 0
-        width: 80
-        height: 260
+        width: 67
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f3181a1f71f6eb0800000000000000
-      internalID: -4724531157524201661
+      spriteID: 110ce18d2a7df22e0800000000000000
+      internalID: -2148261402821869551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_5
+      name: DeadAngry_5
       rect:
         serializedVersion: 2
-        x: 555
+        x: 533
         y: 0
-        width: 80
-        height: 260
+        width: 67
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 391dc41a4b73be5e0800000000000000
-      internalID: -1879347170557242989
+      spriteID: f982f6dd43f3176e0800000000000000
+      internalID: -1841621276331923297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_6
+      name: DeadAngry_6
       rect:
         serializedVersion: 2
-        x: 661
+        x: 632
         y: 0
-        width: 79
-        height: 260
+        width: 68
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 756c49ec91f4dfa40800000000000000
-      internalID: 5403562100173096535
+      spriteID: 7cc63e1937b920b00800000000000000
+      internalID: 793367405041773767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_7
+      name: DeadAngry_7
       rect:
         serializedVersion: 2
-        x: 767
+        x: 732
         y: 0
-        width: 80
-        height: 260
+        width: 68
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9bee59bd1b1fec0800000000000000
-      internalID: -3534848675837724249
+      spriteID: d2d52bf3577003760800000000000000
+      internalID: 7435451184949910829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_8
+      name: DeadAngry_8
       rect:
         serializedVersion: 2
-        x: 873
+        x: 831
         y: 0
-        width: 80
-        height: 260
+        width: 68
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c7386f8eaa6ff880800000000000000
-      internalID: -8575017867527309367
+      spriteID: 025a6b0eacfd71410800000000000000
+      internalID: 1447871867669357856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_9
+      name: DeadAngry_9
       rect:
         serializedVersion: 2
-        x: 980
+        x: 930
         y: 0
-        width: 79
-        height: 260
+        width: 68
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 591cd0826b6fa00e0800000000000000
-      internalID: -2302756997230116459
+      spriteID: a07601c29420ab7e0800000000000000
+      internalID: -1749082991984875766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_10
+      name: DeadAngry_10
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 1030
         y: 0
-        width: 77
-        height: 260
+        width: 69
+        height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763b363c8e51c7d80800000000000000
-      internalID: -8251696327794904217
+      spriteID: d4e81e46b3a11a0f0800000000000000
+      internalID: -1107575190958535091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_11
+      name: DeadAngry_11
       rect:
         serializedVersion: 2
-        x: 1196
+        x: 1130
         y: 0
-        width: 75
-        height: 260
+        width: 69
+        height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f42105e4b5c60580800000000000000
-      internalID: -8861177836078029580
+      spriteID: baa95c76390242ea0800000000000000
+      internalID: -5898553794475222357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_12
+      name: DeadAngry_12
       rect:
         serializedVersion: 2
-        x: 1304
+        x: 1230
         y: 0
-        width: 73
-        height: 260
+        width: 69
+        height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f55f00f9a21d77fd0800000000000000
-      internalID: -2344175100036582049
+      spriteID: daefc1fa1e25558f0800000000000000
+      internalID: -552444250023985491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_13
+      name: DeadAngry_13
       rect:
         serializedVersion: 2
-        x: 1413
+        x: 1329
         y: 0
+        width: 69
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a333195af8ad86c30800000000000000
+      internalID: 4352969350346519354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadAngry_14
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 0
+        width: 69
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34efa57704db5de0800000000000000
+      internalID: -1343246935335640001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadAngry_15
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 0
+        width: 69
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc606049592334230800000000000000
+      internalID: 3621794143350949579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadAngry_16
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 0
+        width: 69
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0669a00718afd60800000000000000
+      internalID: 7924788812525756642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadAngry_17
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 2
         width: 70
-        height: 260
+        height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3019028b8d367520800000000000000
-      internalID: 2699412696046571582
+      spriteID: 2f5448c5028837720800000000000000
+      internalID: 2842765462373418482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_14
+      name: DeadAngry_18
       rect:
         serializedVersion: 2
-        x: 1521
-        y: 0
-        width: 68
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f926d2b1201e1efc0800000000000000
-      internalID: -3467242838936427873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VIPSleepy_15
-      rect:
-        serializedVersion: 2
-        x: 1627
+        x: 1824
         y: 0
         width: 69
-        height: 260
+        height: 129
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f19324473b1bf07b0800000000000000
-      internalID: -5255786855810320097
+      spriteID: 0569a55fecdde7220800000000000000
+      internalID: 2485667925304448592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIPSleepy_16
+      name: DeadAngry_19
       rect:
         serializedVersion: 2
-        x: 1734
-        y: 1
-        width: 68
-        height: 259
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0470121ab5a9fe400800000000000000
-      internalID: 355672613921556288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VIPSleepy_17
-      rect:
-        serializedVersion: 2
-        x: 1839
+        x: 1922
         y: 0
         width: 69
-        height: 260
+        height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4b8458de5cd7b10800000000000000
-      internalID: 1980957035046941935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VIPSleepy_18
-      rect:
-        serializedVersion: 2
-        x: 1946
-        y: 0
-        width: 68
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6789ebe3dc816c7d0800000000000000
-      internalID: -2898602040366294922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VIPSleepy_19
-      rect:
-        serializedVersion: 2
-        x: 2051
-        y: 0
-        width: 68
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34d0ba806fc4a09d0800000000000000
-      internalID: -2807346798120989373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VIPSleepy_20
-      rect:
-        serializedVersion: 2
-        x: 2158
-        y: 0
-        width: 68
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d785156cee2a3360800000000000000
-      internalID: 7150078951247153104
+      spriteID: 8bf7a7bfff1df3700800000000000000
+      internalID: 522366979164241848
       vertices: []
       indices: 
       edges: []
