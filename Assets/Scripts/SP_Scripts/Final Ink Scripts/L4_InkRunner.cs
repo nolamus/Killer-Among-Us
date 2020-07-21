@@ -91,11 +91,24 @@ public class L4_InkRunner : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			Button choice = CreateChoiceView("Return to Level Select");
-			choice.onClick.AddListener(delegate {
-				// Load level selection scene once dialogue scene is done
-				SceneManager.LoadScene("tv_LevelSelect");
-			});
+			if (Menu_Story.isStoryMode)
+			{
+				Button choice = CreateChoiceView("Continue Story");
+				choice.onClick.AddListener(delegate
+				{
+					// Since we are in story mode, load next dialogue scene
+					SceneManager.LoadScene("L5_Dialogue");
+				});
+			}
+			else
+			{
+				Button choice = CreateChoiceView("Return to Level Select");
+				choice.onClick.AddListener(delegate
+				{
+					// Load level selection scene once dialogue scene is done
+					SceneManager.LoadScene("tv_LevelSelect");
+				});
+			}
 		}
 	}
 
