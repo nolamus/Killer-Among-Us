@@ -90,7 +90,7 @@ public class L3_InkRunner : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			if (Menu_Story.isStoryMode)
+			if (Menu_Story.IsStoryMode)
 			{
 				Button choice = CreateChoiceView("Continue Story");
 				choice.onClick.AddListener(delegate
