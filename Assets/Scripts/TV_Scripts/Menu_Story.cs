@@ -11,6 +11,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Story : MonoBehaviour
 {
+    public static bool IsStoryMode = false;
+    
+
     public static Stack SceneHistory;
     // Load a scene using the scene name while handling general scene transitions
 
