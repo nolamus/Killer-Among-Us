@@ -42,6 +42,18 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene("je_Level_Two");
     }
+    public void LoadGameSceneThree()
+    {
+        SceneManager.LoadScene("AA_Level_Three");
+    }
+    public void LoadGameSceneFour()
+    {
+        SceneManager.LoadScene("AA_Level_Four");
+    }
+    public void LoadGameSceneFive()
+    {
+        SceneManager.LoadScene("AA_Level_Five");
+    }
 
     // Exits the game and hold all potential exit game transition sequences
     public void ExitGame()
