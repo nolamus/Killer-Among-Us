@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 using System.Collections.Specialized;
 using UnityEngine.SceneManagement;
+using System.ComponentModel.Design;
 
 // Script for running "L1_Dialogue" scene, which uses Ink stories
 
@@ -45,10 +46,10 @@ public class L1_InkRunner : MonoBehaviour
 		RemoveChildren();
 
 		// Method for switching cameras
-		if (text == "Concierge: You're stronger than you look.")
+		if (text == "Bellhop: I guess you have a right to know. Ok, fine. I'll tell you about it.")
 		{
-			cam1.enabled = false;
-			cam2.enabled = true;
+			blankCam.enabled = false;
+			cam1.enabled = true;
 
 			Button choice = CreateChoiceView("Change Camera");
 			bool clicked = false;
@@ -56,15 +57,14 @@ public class L1_InkRunner : MonoBehaviour
 			choice.onClick.AddListener(delegate
 			{
 				UnityEngine.Debug.Log("Button pressed");
-				cam1.enabled = true;
-				cam2.enabled = false;
+				blankCam.enabled = true;
+				cam1.enabled = false;
 				clicked = true;
 
 				Destroy(choice.gameObject);
 			});
 		}
-		
-		
+
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
 		{
@@ -75,9 +75,6 @@ public class L1_InkRunner : MonoBehaviour
 			// Display the text on screen!
 			CreateContentView(text);
 		}
-		
-
-		
 
 		// Display all the choices, if there are any!
 		if (story.currentChoices.Count > 0)
@@ -95,11 +92,24 @@ public class L1_InkRunner : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			Button choice = CreateChoiceView("Return to Level Select");
-			choice.onClick.AddListener(delegate {
-				// Load level selection scene once dialogue scene is done
-				SceneManager.LoadScene("tv_LevelSelect");
-			});
+			if (Menu_Story.isStoryMode)
+			{
+				Button choice = CreateChoiceView("Continue Story");
+				choice.onClick.AddListener(delegate
+				{
+					// Since we are in story mode, load next dialogue scene
+					SceneManager.LoadScene("L2_Dialogue");
+				});
+			}
+			else
+			{
+				Button choice = CreateChoiceView("Return to Level Select");
+				choice.onClick.AddListener(delegate
+				{
+					// Load level selection scene once dialogue scene is done
+					SceneManager.LoadScene("tv_LevelSelect");
+				});
+			}
 		}
 	}
 
