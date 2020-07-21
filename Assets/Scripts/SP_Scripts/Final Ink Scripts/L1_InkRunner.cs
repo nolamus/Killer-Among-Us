@@ -63,7 +63,8 @@ public class L1_InkRunner : MonoBehaviour
 				Destroy(choice.gameObject);
 			});
 		}
-
+		
+		
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
 		{
@@ -74,6 +75,9 @@ public class L1_InkRunner : MonoBehaviour
 			// Display the text on screen!
 			CreateContentView(text);
 		}
+		
+
+		
 
 		// Display all the choices, if there are any!
 		if (story.currentChoices.Count > 0)
