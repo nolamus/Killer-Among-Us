@@ -39404,7 +39404,7 @@ PrefabInstance:
     - target: {fileID: 7241122747634101489, guid: 2f31e3262fa8f7045b691ef2fcef68e4,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7241122747634101489, guid: 2f31e3262fa8f7045b691ef2fcef68e4,
         type: 3}
@@ -41236,7 +41236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasItem: 0
-  superJump: 1
   itemBell: {fileID: 1049057577}
 --- !u!4 &1600325538 stripped
 Transform:
