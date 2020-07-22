@@ -54,8 +54,6 @@ public class ItemPickupLvl5 : MonoBehaviour
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
-            Destroy(item.gameObject);
-
             // move onto dialogue scene
             SceneManager.LoadScene("L5_Dialogue");
         }
