@@ -1,15 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class playercopy : MonoBehaviour
 {
     //Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] Vector3 startPos;
 
     //Local variables
     private bool isAlive = true;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         session = FindObjectOfType<GameSession>();
+        respawnPoint = startPos;
     }
 
     void Update()
