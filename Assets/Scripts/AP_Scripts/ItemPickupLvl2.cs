@@ -13,7 +13,7 @@ public class ItemPickupLvl2 : MonoBehaviour
     // public AudioClip soundEffect;   // pickup sound effect
     // public GameObject pickupEffect; // pickup particle effect
 
-    void OnTriggerEnter2D(Collider2D item)
+    IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Broom"))
@@ -26,25 +26,24 @@ public class ItemPickupLvl2 : MonoBehaviour
             //Instantiate(pickupEffect, transform.position, type+particleeffectname)
         }
 
-        // challenge first checkpoint, player does not have item; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_noItem"))
+        // challenge checkpoint; initiates challenge based on item possession
+        if (item.gameObject.CompareTag("Challenge"))
         {
             // if player does not have item, start challenge
             if (hasItem == false)
             {
                 // enable dirty screen challenge
                 screenOverlay.enabled = true;
-                // screenOverlay.SetActive(true;
             }
 
-            Destroy(item.gameObject);
-        }
+            // otherwise, item delays challenge
+            else
+            {
+                yield return new WaitForSeconds(10);
 
-        // challenge second checkpoint, challenge begins for item user; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_Item"))
-        {
-            // enable dirty screen challenge
-            screenOverlay.enabled = true;
+                // enable dirty screen challenge
+                screenOverlay.enabled = true;
+            }
 
             Destroy(item.gameObject);
         }
