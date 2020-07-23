@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameSession : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] int lives = 3;
+    [SerializeField] public int lives = 5;
     [SerializeField] Text livesText;
 
     private void Awake()
@@ -25,7 +25,8 @@ public class GameSession : MonoBehaviour
 
     public void ProcessPlayerDeath()
     {
-        if(lives > 1)
+        Debug.Log("Lives: " + lives);
+        if(lives >= 1)
             TakeLife();
         else
             ResetGameSession();         
@@ -34,14 +35,12 @@ public class GameSession : MonoBehaviour
     private void TakeLife()
     {
         lives--;
-        var currentCheckPoint = SceneManager.GetActiveScene().buildIndex;
-        livesText.text = lives.ToString();
-        //SceneManager.LoadScene(2);
+        livesText.text = lives.ToString();              
     }
 
     private void ResetGameSession()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);      //loads main menu if player runs out of lives
         Destroy(gameObject);
     }
 }

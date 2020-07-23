@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2884408635907837592}
   - component: {fileID: 1295591658}
   m_Layer: 15
-  m_Name: boulder_for_spawn
-  m_TagString: Untagged
+  m_Name: rolly_boulder
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
