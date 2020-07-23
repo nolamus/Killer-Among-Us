@@ -14,7 +14,7 @@ public class Respawn : MonoBehaviour
         {
             player.transform.position = respawnPoint.transform.position;
             lives--;
-            if(lives < 0)
+            if(lives < 1)
               SceneManager.LoadScene("je_MainMenu");
         }
 
