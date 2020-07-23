@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7590794923487336972}
   m_Layer: 18
   m_Name: fires_0
-  m_TagString: Untagged
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
