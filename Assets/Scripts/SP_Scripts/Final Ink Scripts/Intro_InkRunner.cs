@@ -26,6 +26,9 @@ public class Intro_InkRunner : MonoBehaviour
 		// Remove the default message
 		RemoveChildren();
 		StartStory();
+
+		// Make sure game status is not paused
+		je_PauseMenu.isPaused = false;
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -115,6 +118,10 @@ public class Intro_InkRunner : MonoBehaviour
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton(Choice choice)
 	{
+		// Do not allow the player to choose choices if the game is paused
+		if (je_PauseMenu.isPaused)
+			return;
+
 		story.ChooseChoiceIndex(choice.index);
 		RefreshView();
 	}

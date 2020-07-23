@@ -23,6 +23,7 @@ TagManager:
   - Ghost5
   - Flashlight
   - Hazards
+  - Challenge
   layers:
   - Default
   - TransparentFX
