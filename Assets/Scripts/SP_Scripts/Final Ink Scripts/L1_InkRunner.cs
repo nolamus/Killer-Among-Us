@@ -22,11 +22,16 @@ public class L1_InkRunner : MonoBehaviour
 	public Camera cam3;
 	public Camera cam4;
 
+	bool clicked = false;
+
 	void Awake()
 	{
 		// Remove the default message
 		RemoveChildren();
 		StartStory();
+
+		// Make sure game status is not paused
+		je_PauseMenu.isPaused = false;
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -42,9 +47,13 @@ public class L1_InkRunner : MonoBehaviour
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView()
 	{
+		UnityEngine.Debug.Log("Function rerun");
+
 		// Remove all the UI on screen
 		RemoveChildren();
 
+
+		/*
 		// Method for switching cameras
 		if (text == "Bellhop: I guess you have a right to know. Ok, fine. I'll tell you about it.")
 		{
@@ -52,18 +61,38 @@ public class L1_InkRunner : MonoBehaviour
 			cam1.enabled = true;
 
 			Button choice = CreateChoiceView("Change Camera");
-			bool clicked = false;
+
+			if(clicked)
+				UnityEngine.Debug.Log("CLICKED TRUE");
+			else
+				UnityEngine.Debug.Log("CLICKED FALSE");
 
 			choice.onClick.AddListener(delegate
 			{
 				UnityEngine.Debug.Log("Button pressed");
 				blankCam.enabled = true;
 				cam1.enabled = false;
-				clicked = true;
-
-				Destroy(choice.gameObject);
+				//clicked = true;
+				//text = "";
+				//return;
+				//choice.onClick.RemoveAllListeners();
+				UnityEngine.Debug.Log("Button pressed end");
+				return;
+				//Destroy(choice.gameObject);
 			});
+
+			UnityEngine.Debug.Log("BREAK OUT BUTTON");
+			if (!clicked)
+			{
+				UnityEngine.Debug.Log("Button not pressed");
+				return;
+			}
 		}
+
+		*/
+
+		//UnityEngine.Debug.Log("Reached");
+		//clicked = false;
 
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
@@ -116,6 +145,10 @@ public class L1_InkRunner : MonoBehaviour
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton(Choice choice)
 	{
+		// Do not allow the player to choose choices if the game is paused
+		if (je_PauseMenu.isPaused)
+			return;
+
 		story.ChooseChoiceIndex(choice.index);
 		RefreshView();
 	}

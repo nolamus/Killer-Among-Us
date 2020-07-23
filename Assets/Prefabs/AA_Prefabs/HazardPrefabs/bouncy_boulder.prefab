@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8858961772359787021}
   - component: {fileID: -999682174205963913}
   m_Layer: 18
-  m_Name: boulder_bouncy
-  m_TagString: Untagged
+  m_Name: bouncy_boulder
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
