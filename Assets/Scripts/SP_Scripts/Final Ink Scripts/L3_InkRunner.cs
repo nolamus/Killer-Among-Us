@@ -20,6 +20,8 @@ public class L3_InkRunner : MonoBehaviour
 	public Camera cam2;
 	public Camera cam3;
 
+	bool clicked = false;
+
 	void Awake()
 	{
 		// Remove the default message
@@ -45,26 +47,6 @@ public class L3_InkRunner : MonoBehaviour
 	{
 		// Remove all the UI on screen
 		RemoveChildren();
-
-		// Method for switching cameras
-		if (text == "Concierge: You're stronger than you look.")
-		{
-			cam1.enabled = false;
-			cam2.enabled = true;
-
-			Button choice = CreateChoiceView("Change Camera");
-			bool clicked = false;
-
-			choice.onClick.AddListener(delegate
-			{
-				UnityEngine.Debug.Log("Button pressed");
-				cam1.enabled = true;
-				cam2.enabled = false;
-				clicked = true;
-
-				Destroy(choice.gameObject);
-			});
-		}
 
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
@@ -128,6 +110,32 @@ public class L3_InkRunner : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
+		// Method for switching cameras
+		if (text == "This is dummy text.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam1.enabled = true;
+
+			// Create button
+			Button choice = CreateChoiceView("CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam1.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+
 		Text storyText = Instantiate(textPrefab) as Text;
 		storyText.text = text;
 		storyText.transform.SetParent(canvas.transform, false);

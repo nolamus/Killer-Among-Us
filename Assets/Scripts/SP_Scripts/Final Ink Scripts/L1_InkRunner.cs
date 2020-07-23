@@ -47,52 +47,8 @@ public class L1_InkRunner : MonoBehaviour
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView()
 	{
-		UnityEngine.Debug.Log("Function rerun");
-
 		// Remove all the UI on screen
 		RemoveChildren();
-
-
-		/*
-		// Method for switching cameras
-		if (text == "Bellhop: I guess you have a right to know. Ok, fine. I'll tell you about it.")
-		{
-			blankCam.enabled = false;
-			cam1.enabled = true;
-
-			Button choice = CreateChoiceView("Change Camera");
-
-			if(clicked)
-				UnityEngine.Debug.Log("CLICKED TRUE");
-			else
-				UnityEngine.Debug.Log("CLICKED FALSE");
-
-			choice.onClick.AddListener(delegate
-			{
-				UnityEngine.Debug.Log("Button pressed");
-				blankCam.enabled = true;
-				cam1.enabled = false;
-				//clicked = true;
-				//text = "";
-				//return;
-				//choice.onClick.RemoveAllListeners();
-				UnityEngine.Debug.Log("Button pressed end");
-				return;
-				//Destroy(choice.gameObject);
-			});
-
-			UnityEngine.Debug.Log("BREAK OUT BUTTON");
-			if (!clicked)
-			{
-				UnityEngine.Debug.Log("Button not pressed");
-				return;
-			}
-		}
-
-		*/
-
-		//UnityEngine.Debug.Log("Reached");
-		//clicked = false;
 
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
@@ -156,6 +112,32 @@ public class L1_InkRunner : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
+		// Method for switching cameras
+		if (text == "This is dummy text.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam1.enabled = true;
+
+			// Create button
+			Button choice = CreateChoiceView("CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam1.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+
 		Text storyText = Instantiate(textPrefab) as Text;
 		storyText.text = text;
 		storyText.transform.SetParent(canvas.transform, false);
