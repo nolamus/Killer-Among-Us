@@ -63,7 +63,7 @@ public class je_MainMenu : MonoBehaviour
     }
     public void DisplayLevelSelect()
     {
-        SceneManager.LoadScene("je_LevelSelect");
+        SceneManager.LoadScene("tv_LevelSelect");
         
     }
     public void DiplayMainMenu()
