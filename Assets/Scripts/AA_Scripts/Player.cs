@@ -60,10 +60,30 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
+<<<<<<< HEAD
             /*if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
                 jumpSpeed = 10f;
             else
                 jumpSpeed = 5f;*/
+=======
+            // checks if scene matches Level 4 to account for challenge
+            Scene L4Scene;
+            string sceneName;
+            L4Scene = SceneManager.GetActiveScene();
+            sceneName = L4Scene.name;
+
+            // level 4 super jump
+            if (sceneName == "AA_Level_Four")
+            {
+                // if item has been obtained, use super jump
+                if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
+                    jumpSpeed = 10f;
+
+                // if no item or item has expired, regular jump
+                else
+                    jumpSpeed = 8f;
+            }
+>>>>>>> fb8375feb59812c9cfa14f022dac3f2dabac0d62
 
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
