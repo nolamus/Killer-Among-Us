@@ -51,6 +51,7 @@ public class ItemPickupLvl4 : MonoBehaviour
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
+            je_MainMenu.Lvl4Cleared = true;
             // move onto dialogue scene
             SceneManager.LoadScene("L4_Dialogue");
         }

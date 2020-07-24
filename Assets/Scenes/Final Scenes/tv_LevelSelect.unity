@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152073318}
   - component: {fileID: 152073319}
+  - component: {fileID: 152073320}
   m_Layer: 5
   m_Name: ButtonCollection
   m_TagString: Untagged
@@ -347,6 +348,24 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &152073320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152073317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93ac01f3bdd82244ac1654b8c13ae78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level0Button: {fileID: 1017449109}
+  Level1Button: {fileID: 1817583381}
+  Level2Button: {fileID: 809843140}
+  Level3Button: {fileID: 49845709}
+  Level4Button: {fileID: 2000963422}
+  Level5Button: {fileID: 1522080857}
 --- !u!1 &424439438
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,12 +891,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RulesPanel: {fileID: 0}
   CreditsPanel: {fileID: 0}
-  Lvl0Cleared: 0
-  Lvl1Cleared: 0
-  Lvl2Cleared: 0
-  Lvl3Cleared: 0
-  Lvl4Cleared: 0
-  Lvl5Cleared: 0
 --- !u!114 &865588860
 MonoBehaviour:
   m_ObjectHideFlags: 0
