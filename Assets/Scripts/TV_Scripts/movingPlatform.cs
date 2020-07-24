@@ -8,12 +8,14 @@ public class movingPlatform : MonoBehaviour
   public float speed;
   public Transform startPos;
 
+
   private bool moving;
 
   Vector3 nextPos;
     // Start is called before the first frame update
     void Start()
     {
+
         nextPos = startPos.position;
 
 
@@ -42,9 +44,12 @@ public class movingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+      //Vector3 scale = player.transform.localScale;
       if(collision.gameObject.tag == "Player"){
         moving = true;
-        //collision.collider.transform.SetParent(transform);
+
+        collision.collider.transform.SetParent(transform);
+
       }
     }
     private void OnCollisionExit2D(Collision2D collision)

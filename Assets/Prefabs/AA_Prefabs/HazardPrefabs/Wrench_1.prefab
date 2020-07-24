@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8210890948685651301}
   m_Layer: 18
   m_Name: Wrench_1
-  m_TagString: Untagged
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

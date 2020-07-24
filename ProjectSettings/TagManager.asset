@@ -22,6 +22,9 @@ TagManager:
   - Ghost4
   - Ghost5
   - Flashlight
+  - Hazards
+  - ChallengeStart
+  - ChallengeEnd
   layers:
   - Default
   - TransparentFX

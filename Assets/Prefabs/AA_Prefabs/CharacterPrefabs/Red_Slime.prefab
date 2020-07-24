@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 7537325226063394064}
   - component: {fileID: 2385564091175146923}
   m_Layer: 10
-  m_Name: Slime_6
-  m_TagString: Untagged
+  m_Name: Red_Slime
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
