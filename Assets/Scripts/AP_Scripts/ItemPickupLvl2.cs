@@ -58,6 +58,7 @@ public class ItemPickupLvl2 : MonoBehaviour
                 itemBroom.enabled = false;
                 yield return new WaitForSeconds(1);
                 itemBroom.enabled = true;
+                yield return new WaitForSeconds(1);
                 itemBroom.enabled = false;
 
                 // item expired, enable dirty screen challenge

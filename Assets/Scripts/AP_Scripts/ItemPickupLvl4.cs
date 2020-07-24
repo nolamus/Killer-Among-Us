@@ -9,16 +9,16 @@ public class ItemPickupLvl4 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
     public bool superJump = false; // tracks if super jump can be activated
-    [SerializeField] public Image itemBell; // toggles item obtained display
+    [SerializeField] public Image itemShoe; // toggles item obtained display
     // public AudioClip soundEffect;   // pickup sound effect
     // public GameObject pickupEffect; // pickup particle effect
 
-    void OnTriggerEnter2D(Collider2D item)
+    IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Bell"))
+        if (item.gameObject.CompareTag("Shoe"))
         {
-            itemBell.enabled = true;
+            itemShoe.enabled = true;
             
             hasItem = true; // item obtained
 
@@ -27,22 +27,39 @@ public class ItemPickupLvl4 : MonoBehaviour
             //Instantiate(pickupEffect, transform.position, type+particleeffectname)
         }
 
-        // challenge first checkpoint, if player has item, allow it to aid them
-        if (item.gameObject.CompareTag("Challenge_noItem"))
+        // challenge start checkpoint; initiates challenge based on item possession
+        if (item.gameObject.CompareTag("ChallengeStart"))
         {
-            // if player has item, activate
-            if(hasItem == true)
+            // if player has item, activate helper
+            if (hasItem == true)
             {
                 superJump = true;
+
+                yield return new WaitForSeconds(7);
+
+                // item expiring, warning 1
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+
+                // item expiring, warning 2
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+
+                // item expiring, warning 3
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
             }
 
-            Destroy(item.gameObject);
-        }
+            // item expired, helper deactivates
 
-        // challenge second checkpoint, item no longer useful, 
-        if (item.gameObject.CompareTag("Challenge_Item"))
-        {
-            // item power de
             superJump = false;
 
             Destroy(item.gameObject);

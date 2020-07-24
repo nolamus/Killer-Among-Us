@@ -86,11 +86,11 @@ public class L2_InkRunner : MonoBehaviour
 			}
 			else
 			{
-				Button choice = CreateChoiceView("Return to Level Select");
+				Button choice = CreateChoiceView("Next Level");
 				choice.onClick.AddListener(delegate
 				{
 					// Load level selection scene once dialogue scene is done
-					SceneManager.LoadScene("tv_LevelSelect");
+					SceneManager.LoadScene("AA_Level_Three");
 				});
 			}
 		}
