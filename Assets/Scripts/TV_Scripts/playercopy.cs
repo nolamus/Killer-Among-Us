@@ -10,10 +10,11 @@ public class playercopy : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-    [SerializeField] Vector3 startPos;
+  //  [SerializeField] Vector3 startPos;
 
     //Local variables
-    private bool isAlive = true;
+    public static bool isAlive;
+    public static int life;
 
     //Cached component references
     Rigidbody2D playerRigidBody;
@@ -21,7 +22,7 @@ public class playercopy : MonoBehaviour
     CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;                 //Collider to determine if feet are touching ground to prevent wall jumps
     SpriteRenderer playerSprite;                //used to change character color apon death
-    private GameSession session;
+    private GameSessionCopy session;
     public Vector3 respawnPoint;
 
 
@@ -32,8 +33,11 @@ public class playercopy : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         playerSprite = GetComponent<SpriteRenderer>();
-        session = FindObjectOfType<GameSession>();
-        respawnPoint = startPos;
+        session = FindObjectOfType<GameSessionCopy>();
+        respawnPoint = transform.position;
+
+        isAlive = GameSessionCopy.alive;
+
     }
 
     void Update()
@@ -134,8 +138,10 @@ public class playercopy : MonoBehaviour
     {
         if (collider.tag == "Hazards")
         {
-            transform.position = respawnPoint;
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+
+              FindObjectOfType<GameSessionCopy>().ProcessPlayerDeath();
+              transform.position = respawnPoint;
+
         }
         if (collider.tag == "Checkpoint")
         {

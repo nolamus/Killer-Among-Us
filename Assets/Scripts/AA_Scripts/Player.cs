@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         session = FindObjectOfType<GameSession>();
+
     }
 
     void Update()
