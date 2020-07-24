@@ -59,18 +59,21 @@ public class je_PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        isPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Settings()
     {
         Time.timeScale = 1f;
+        isPaused = false;
         SceneManager.LoadScene("je_Settings");
     }
 
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        isPaused = false;
         SceneManager.LoadScene("je_MainMenu");
     }
 

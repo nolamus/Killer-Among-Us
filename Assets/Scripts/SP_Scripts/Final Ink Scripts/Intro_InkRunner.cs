@@ -15,11 +15,13 @@ public class Intro_InkRunner : MonoBehaviour
 {
 	public static event Action<Story> OnCreateStory;
 	private string text = "";
-	//public Camera blankCam;
-	//public Camera cam1;
-	//public Camera cam2;
-	//public Camera cam3;
-	//public Camera cam4;
+	public Camera blankCam;
+	public Camera cam1;
+	public Camera cam2;
+	public Camera cam3;
+	public Camera cam4;
+
+	bool clicked = false;
 
 	void Awake()
 	{
@@ -46,26 +48,6 @@ public class Intro_InkRunner : MonoBehaviour
 	{
 		// Remove all the UI on screen
 		RemoveChildren();
-
-		// Method for switching cameras
-		/*if (text == "Concierge: You're stronger than you look.")
-		{
-			cam1.enabled = false;
-			cam2.enabled = true;
-
-			Button choice = CreateChoiceView("Change Camera");
-			bool clicked = false;
-
-			choice.onClick.AddListener(delegate
-			{
-				UnityEngine.Debug.Log("Button pressed");
-				cam1.enabled = true;
-				cam2.enabled = false;
-				clicked = true;
-
-				Destroy(choice.gameObject);
-			});
-		}*/
 
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
@@ -105,11 +87,11 @@ public class Intro_InkRunner : MonoBehaviour
 			}
 			else
 			{
-				Button choice = CreateChoiceView("Return to Level Select");
+				Button choice = CreateChoiceView("Next Level");
 				choice.onClick.AddListener(delegate
 				{
 					// Load level selection scene once dialogue scene is done
-					SceneManager.LoadScene("tv_LevelSelect");
+					SceneManager.LoadScene("AA_Level_One");
 				});
 			}
 		}
@@ -129,6 +111,32 @@ public class Intro_InkRunner : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
+		// Method for switching cameras
+		if (text == "This is dummy text.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam1.enabled = true;
+
+			// Create button
+			Button choice = CreateChoiceView("CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam1.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+
 		Text storyText = Instantiate(textPrefab) as Text;
 		storyText.text = text;
 		storyText.transform.SetParent(canvas.transform, false);

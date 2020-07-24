@@ -23,7 +23,9 @@ TagManager:
   - Ghost5
   - Flashlight
   - Hazards
-  - Challenge
+  - ChallengeStart
+  - ChallengeEnd
+  - Shoe
   layers:
   - Default
   - TransparentFX

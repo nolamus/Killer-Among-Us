@@ -26,8 +26,8 @@ public class ItemPickupLvl2 : MonoBehaviour
             //Instantiate(pickupEffect, transform.position, type+particleeffectname)
         }
 
-        // challenge checkpoint; initiates challenge based on item possession
-        if (item.gameObject.CompareTag("Challenge"))
+        // challenge start checkpoint; initiates challenge based on item possession
+        if (item.gameObject.CompareTag("ChallengeStart"))
         {
             // if player does not have item, start challenge
             if (hasItem == false)
@@ -39,11 +39,40 @@ public class ItemPickupLvl2 : MonoBehaviour
             // otherwise, item delays challenge
             else
             {
-                yield return new WaitForSeconds(10);
+                yield return new WaitForSeconds(7);
 
-                // enable dirty screen challenge
+                // item expiring, warning 1
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+
+                // item expiring, warning 2
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+
+                // item expiring, warning 3
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+
+                // item expired, enable dirty screen challenge
                 screenOverlay.enabled = true;
             }
+
+            Destroy(item.gameObject);
+        }
+
+        // challenge end checkpoint; deactivate challenge
+        if (item.gameObject.CompareTag("ChallengEnd"))
+        {
+            // enable dirty screen challenge
+            screenOverlay.enabled = false;
 
             Destroy(item.gameObject);
         }
@@ -51,6 +80,7 @@ public class ItemPickupLvl2 : MonoBehaviour
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
+            je_MainMenu.Lvl2Cleared = true;
             // move onto dialogue scene
             SceneManager.LoadScene("L2_Dialogue");
         }

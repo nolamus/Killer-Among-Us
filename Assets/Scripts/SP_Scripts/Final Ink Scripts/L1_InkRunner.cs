@@ -47,52 +47,8 @@ public class L1_InkRunner : MonoBehaviour
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView()
 	{
-		UnityEngine.Debug.Log("Function rerun");
-
 		// Remove all the UI on screen
 		RemoveChildren();
-
-
-		/*
-		// Method for switching cameras
-		if (text == "Bellhop: I guess you have a right to know. Ok, fine. I'll tell you about it.")
-		{
-			blankCam.enabled = false;
-			cam1.enabled = true;
-
-			Button choice = CreateChoiceView("Change Camera");
-
-			if(clicked)
-				UnityEngine.Debug.Log("CLICKED TRUE");
-			else
-				UnityEngine.Debug.Log("CLICKED FALSE");
-
-			choice.onClick.AddListener(delegate
-			{
-				UnityEngine.Debug.Log("Button pressed");
-				blankCam.enabled = true;
-				cam1.enabled = false;
-				//clicked = true;
-				//text = "";
-				//return;
-				//choice.onClick.RemoveAllListeners();
-				UnityEngine.Debug.Log("Button pressed end");
-				return;
-				//Destroy(choice.gameObject);
-			});
-
-			UnityEngine.Debug.Log("BREAK OUT BUTTON");
-			if (!clicked)
-			{
-				UnityEngine.Debug.Log("Button not pressed");
-				return;
-			}
-		}
-
-		*/
-
-		//UnityEngine.Debug.Log("Reached");
-		//clicked = false;
 
 		// Read all the content until we can't continue any more
 		while (story.canContinue)
@@ -132,11 +88,11 @@ public class L1_InkRunner : MonoBehaviour
 			}
 			else
 			{
-				Button choice = CreateChoiceView("Return to Level Select");
+				Button choice = CreateChoiceView("Next Level");
 				choice.onClick.AddListener(delegate
 				{
 					// Load level selection scene once dialogue scene is done
-					SceneManager.LoadScene("tv_LevelSelect");
+					SceneManager.LoadScene("je_Level_Two");
 				});
 			}
 		}
@@ -156,9 +112,141 @@ public class L1_InkRunner : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
-		Text storyText = Instantiate(textPrefab) as Text;
-		storyText.text = text;
-		storyText.transform.SetParent(canvas.transform, false);
+		// METHODS FOR SWITCHING ALL CAMERAS
+		if (text == "DUMMY TEXT SCENE 1.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam1.enabled = true;
+
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam1.enabled = false;
+
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 2.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam2.enabled = true;
+
+			cam1.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam2.enabled = false;
+
+				cam1.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 3.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam3.enabled = true;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam4.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam3.enabled = false;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam4.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 4.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam4.enabled = true;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam4.enabled = false;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else
+		{
+			Text storyText = Instantiate(textPrefab) as Text;
+			storyText.text = text;
+			storyText.transform.SetParent(canvas.transform, false);
+		}
 	}
 
 	// Creates a button showing the choice text
