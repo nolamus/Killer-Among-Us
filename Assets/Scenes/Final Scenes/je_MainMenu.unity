@@ -333,39 +333,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Developers
-
-    ________________
-
-    Supriya Palli
-
-    Anika Patel
-
-    Thuyvan
-    Vulam
-
-    Alec Amico
-
-    Joseph Ene
-
-
-    Sprite and Tiles Assets Credit
-
-    ________________
-
-
-    Audio
-    Assets Credit
-
-    ________________
-
-
-    Miscellaneous Assets Credit
-
-    ________________
-
-
-'
+  m_text: "Developers\n________________\nSupriya Palli\nAnika Patel\nThuyvan Vulam\nAlec
+    Amico\nJoseph Ene\n\nSprite and Tiles Assets Credit\n________________\nAw0\nansimuz\nGlitch
+    the Game\nKenny\nAndrew Morris\nMark Powell\nJoseth\n\nAudio Assets Credit\n________________\nHeated
+    Lands by Jonathan Shaw\nEncounter of Misdeeds by Jonathan Shaw \nVast Darkness
+    by Ryan McG\nA Tale of Water by Jonathan Shaw\nA Slave to No One by Jonathan
+    Shaw \nLast Confession by ISAo\n\nMiscellaneous Assets Credit\n________________\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -434,12 +407,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 159041862}
-    characterCount: 224
+    characterCount: 480
     spriteCount: 0
-    spaceCount: 30
-    wordCount: 22
+    spaceCount: 78
+    wordCount: 68
     linkCount: 0
-    lineCount: 17
+    lineCount: 34
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
