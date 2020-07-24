@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5297192664036519831}
   - component: {fileID: 5297192664036519824}
   - component: {fileID: 5297192664036519825}
+  - component: {fileID: 5014940175070089128}
   m_Layer: 0
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -130,6 +131,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5014940175070089128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297192664036519827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd854cc178875549a691a1661af7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 8300000, guid: f3c481f619b4273449cf3778a6d5d2b9, type: 3}
 --- !u!1 &5297192664173922781
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +156,7 @@ GameObject:
   - component: {fileID: 5297192664173922769}
   - component: {fileID: 5297192664173922770}
   - component: {fileID: 5297192664173922771}
+  - component: {fileID: 4125780131178892813}
   m_Layer: 0
   m_Name: RestartButton
   m_TagString: Untagged
@@ -260,6 +275,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4125780131178892813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297192664173922781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd854cc178875549a691a1661af7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 8300000, guid: f3c481f619b4273449cf3778a6d5d2b9, type: 3}
 --- !u!1 &5297192664305682957
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +694,7 @@ GameObject:
   - component: {fileID: 5297192664990385817}
   - component: {fileID: 5297192664990385818}
   - component: {fileID: 5297192664990385819}
+  - component: {fileID: 6658479233387189398}
   m_Layer: 0
   m_Name: QuitButton
   m_TagString: Untagged
@@ -784,6 +813,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6658479233387189398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297192664990385797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd854cc178875549a691a1661af7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 8300000, guid: f3c481f619b4273449cf3778a6d5d2b9, type: 3}
 --- !u!1 &5297192665521392328
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +994,7 @@ GameObject:
   - component: {fileID: 5297192665593360123}
   - component: {fileID: 5297192665593360100}
   - component: {fileID: 5297192665593360101}
+  - component: {fileID: 5079649139389317089}
   m_Layer: 0
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1070,6 +1113,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5079649139389317089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297192665593360103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd854cc178875549a691a1661af7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 8300000, guid: f3c481f619b4273449cf3778a6d5d2b9, type: 3}
 --- !u!1 &5297192665619668074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1606,7 @@ GameObject:
   - component: {fileID: 5297192666019207247}
   - component: {fileID: 5297192666019207240}
   - component: {fileID: 5297192666019207241}
+  - component: {fileID: 2266519279212600215}
   m_Layer: 0
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -1668,3 +1725,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2266519279212600215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297192666019207243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd854cc178875549a691a1661af7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 8300000, guid: f3c481f619b4273449cf3778a6d5d2b9, type: 3}
