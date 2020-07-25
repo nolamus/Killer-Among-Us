@@ -13,7 +13,7 @@ public class ItemPickupLvl2 : MonoBehaviour
     // public AudioClip soundEffect;   // pickup sound effect
     // public GameObject pickupEffect; // pickup particle effect
 
-    void OnTriggerEnter2D(Collider2D item)
+    IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Broom"))
@@ -26,25 +26,53 @@ public class ItemPickupLvl2 : MonoBehaviour
             //Instantiate(pickupEffect, transform.position, type+particleeffectname)
         }
 
-        // challenge first checkpoint, player does not have item; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_noItem"))
+        // challenge start checkpoint; initiates challenge based on item possession
+        if (item.gameObject.CompareTag("ChallengeStart"))
         {
             // if player does not have item, start challenge
             if (hasItem == false)
             {
                 // enable dirty screen challenge
                 screenOverlay.enabled = true;
-                // screenOverlay.SetActive(true;
+            }
+
+            // otherwise, item delays challenge
+            else
+            {
+                yield return new WaitForSeconds(7);
+
+                // item expiring, warning 1
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+
+                // item expiring, warning 2
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+
+                // item expiring, warning 3
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = true;
+                yield return new WaitForSeconds(1);
+                itemBroom.enabled = false;
+
+                // item expired, enable dirty screen challenge
+                screenOverlay.enabled = true;
             }
 
             Destroy(item.gameObject);
         }
 
-        // challenge second checkpoint, challenge begins for item user; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_Item"))
+        // challenge end checkpoint; deactivate challenge
+        if (item.gameObject.CompareTag("ChallengEnd"))
         {
             // enable dirty screen challenge
-            screenOverlay.enabled = true;
+            screenOverlay.enabled = false;
 
             Destroy(item.gameObject);
         }
@@ -52,6 +80,7 @@ public class ItemPickupLvl2 : MonoBehaviour
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
+            je_MainMenu.Lvl2Cleared = true;
             // move onto dialogue scene
             SceneManager.LoadScene("L2_Dialogue");
         }

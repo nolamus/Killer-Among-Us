@@ -10,23 +10,35 @@ public class je_MainMenu : MonoBehaviour
 {
     public GameObject RulesPanel;
     public GameObject CreditsPanel;
-    public bool Lvl0Cleared;
-    public bool Lvl1Cleared;
-    public bool Lvl2Cleared;
-    public bool Lvl3Cleared;
-    public bool Lvl4Cleared;
-    public bool Lvl5Cleared;
+    public static bool Lvl0Cleared;
+    public static bool Lvl1Cleared;
+    public static bool Lvl2Cleared;
+    public static bool Lvl3Cleared;
+    public static bool Lvl4Cleared;
+    public static bool Lvl5Cleared;
+    public static bool FirstRunCompleted;
     private void Awake()
     {
-        Lvl0Cleared = EasySave.Load<bool>("Lvl0Cleared");
-        Lvl1Cleared = EasySave.Load<bool>("Lvl1Cleared");
-        Lvl2Cleared = EasySave.Load<bool>("Lvl2Cleared");
-        Lvl3Cleared = EasySave.Load<bool>("Lvl3Cleared");
-        Lvl4Cleared = EasySave.Load<bool>("Lvl4Cleared");
-        Lvl5Cleared = EasySave.Load<bool>("Lvl5Cleared");
+        
+        if(EasySave.HasKey<bool>("FirstRun"))
+        {
+            Lvl0Cleared = EasySave.Load<bool>("Lvl0Cleared");
+            Lvl1Cleared = EasySave.Load<bool>("Lvl1Cleared");
+            Lvl2Cleared = EasySave.Load<bool>("Lvl2Cleared");
+            Lvl3Cleared = EasySave.Load<bool>("Lvl3Cleared");
+            Lvl4Cleared = EasySave.Load<bool>("Lvl4Cleared");
+            Lvl5Cleared = EasySave.Load<bool>("Lvl5Cleared");
+        }
+        
     }
     private void Start()
     {
+        FirstRunCompleted = true;
+        if(!FirstRunCompleted)
+        {
+            FirstRunCompleted = true;
+            EasySave.Save("FirstRun", FirstRunCompleted);
+        }
         RulesPanel.SetActive(false);
         CreditsPanel.SetActive(false);
         
@@ -80,6 +92,7 @@ public class je_MainMenu : MonoBehaviour
     }
     public void CloseRulesPanel()
     {
+        Debug.Log("This script ran");
         RulesPanel.SetActive(false);
     }
     public void CloseCreditsPanel()
