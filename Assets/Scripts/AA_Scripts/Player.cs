@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isAlive || je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
+        if(je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
             return;
         
         Run();
@@ -60,12 +60,6 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
-<<<<<<< HEAD
-            /*if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
-                jumpSpeed = 10f;
-            else
-                jumpSpeed = 5f;*/
-=======
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
             string sceneName;
@@ -83,7 +77,6 @@ public class Player : MonoBehaviour
                 else
                     jumpSpeed = 8f;
             }
->>>>>>> fb8375feb59812c9cfa14f022dac3f2dabac0d62
 
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
@@ -105,13 +98,15 @@ public class Player : MonoBehaviour
        if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
         {
             //if(session.lives < 1)
-                //isAlive = false;
+                //session.ResetGameSession();
+            //transform.position = respawnPoint;          
+            isAlive = false;
+            
             //playerAnimator.SetTrigger("Dying");                 //players death animation
             //playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
             //Time.timeScale = 0f;
             //FindObjectOfType<GameSession>().ProcessPlayerDeath();
-            //session.ProcessPlayerDeath();
-            
+            //session.ProcessPlayerDeath();            
         }
     }
 
@@ -130,10 +125,11 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Hazards")
+        if (collider.tag == "Hazards" && !isAlive)
         {
             transform.position = respawnPoint;
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            isAlive = true;
         }
         if (collider.tag == "Checkpoint")
         {
