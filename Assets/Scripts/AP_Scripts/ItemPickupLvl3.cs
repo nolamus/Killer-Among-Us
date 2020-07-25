@@ -61,9 +61,9 @@ public class ItemPickupLvl3 : MonoBehaviour
             {
                 // lights flicker on and off randomly
                 darkOverlay.enabled = false;
-                yield return new WaitForSeconds(Random.Range(1, 5));
+                yield return new WaitForSeconds(Random.Range(2, 5));
                 darkOverlay.enabled = true;
-                yield return new WaitForSeconds(Random.Range(1, 5));
+                yield return new WaitForSeconds(Random.Range(2, 5));
             }
             
             Destroy(item.gameObject);
