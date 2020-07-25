@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AA_scenes/AA_Level_Three.unity
     guid: 10a2c87aa3cd348449d44b2df6e1d957
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Duplicate Level 2/AP_Level_Two.unity
+    guid: a4798c9ec1feb3f419aa96d19ae63039
   m_configObjects: {}
