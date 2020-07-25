@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/AA_Level_Zero.unity.unity
     guid: 5cbb8c248378d6642b681cb743698ea5
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_Level_Two.unity
+    path: Assets/Scenes/AA_scenes/je_Level_Two.unity
     guid: 05749ee7cac418241b62bd325dadba87
   - enabled: 1
     path: Assets/Scenes/Final Scenes/je_MainMenu.unity
