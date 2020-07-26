@@ -61,15 +61,11 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
-<<<<<<< HEAD
-=======
-//<<<<<<< HEAD
             /*if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
                 jumpSpeed = 10f;
             else
                 jumpSpeed = 5f;*/
-//=======
->>>>>>> 87b9cfa6a24e51a677a0a13c6f5bfc07bdf609a5
+
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
             string sceneName;
@@ -87,10 +83,6 @@ public class Player : MonoBehaviour
                 else
                     jumpSpeed = 8f;
             }
-<<<<<<< HEAD
-=======
-//>>>>>>> fb8375feb59812c9cfa14f022dac3f2dabac0d62
->>>>>>> 87b9cfa6a24e51a677a0a13c6f5bfc07bdf609a5
 
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
@@ -120,12 +112,8 @@ public class Player : MonoBehaviour
             //playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
             //Time.timeScale = 0f;
             //FindObjectOfType<GameSession>().ProcessPlayerDeath();
-<<<<<<< HEAD
-            //session.ProcessPlayerDeath();            
-=======
-            //session.ProcessPlayerDeath();
 
->>>>>>> 87b9cfa6a24e51a677a0a13c6f5bfc07bdf609a5
+            //session.ProcessPlayerDeath();
         }
     }
 
