@@ -1,6 +1,11 @@
-Boy: Oh, hello.
--> intro
+-> Scene1
+=== Scene1 === 
+DUMMY TEXT SCENE 1.
++ [Then, continue.] -> intro
+
+
 === intro ===
+Boy: Oh, hello.
 Concierge: What are you doing here?
 + [Hmph. I should be asking you that question.] -> agg
 + [Sorry, I just saw what was happening outside...] -> soft

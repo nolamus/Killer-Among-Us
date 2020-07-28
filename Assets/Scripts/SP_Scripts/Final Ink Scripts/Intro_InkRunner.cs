@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 using System.Collections.Specialized;
 using UnityEngine.SceneManagement;
+using System.ComponentModel.Design;
 
 // Script for running "Intro_Dialogue" scene, which uses Ink stories
 
@@ -17,9 +18,9 @@ public class Intro_InkRunner : MonoBehaviour
 	private string text = "";
 	public Camera blankCam;
 	public Camera cam1;
-	public Camera cam2;
-	public Camera cam3;
-	public Camera cam4;
+	//public Camera cam2;
+	//public Camera cam3;
+	//public Camera cam4;
 
 	bool clicked = false;
 
@@ -111,21 +112,29 @@ public class Intro_InkRunner : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
-		// Method for switching cameras
-		if (text == "This is dummy text.")
+		// METHODS FOR SWITCHING ALL CAMERAS
+		if (text == "DUMMY TEXT SCENE 1.")
 		{
 			// Switch cameras
 			blankCam.enabled = false;
 			cam1.enabled = true;
 
+			//cam2.enabled = false;
+			//cam3.enabled = false;
+			//cam4.enabled = false;
+
 			// Create button
-			Button choice = CreateChoiceView("CLICK ME!");
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
 
 			choice.onClick.AddListener(delegate
 			{
 				// Switch back cameras
 				blankCam.enabled = true;
 				cam1.enabled = false;
+
+				//cam2.enabled = false;
+				//cam3.enabled = false;
+				//cam4.enabled = false;
 				// Set boolean value
 				clicked = true;
 				// Destroy button after it's clicked
@@ -136,10 +145,12 @@ public class Intro_InkRunner : MonoBehaviour
 			if (!clicked)
 				return;
 		}
-
-		Text storyText = Instantiate(textPrefab) as Text;
-		storyText.text = text;
-		storyText.transform.SetParent(canvas.transform, false);
+		else
+		{
+			Text storyText = Instantiate(textPrefab) as Text;
+			storyText.text = text;
+			storyText.transform.SetParent(canvas.transform, false);
+		}
 	}
 
 	// Creates a button showing the choice text
