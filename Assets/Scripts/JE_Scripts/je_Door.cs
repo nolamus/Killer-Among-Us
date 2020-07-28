@@ -21,12 +21,15 @@ public class je_Door : MonoBehaviour
     //public bool IsKeyRoom;
     public static int Lvl2KeyTracker = 0;
     public int Lvl2KeyPermission;
-    public Vector3 Lvl2MovePlayer;
+    
     //public static Vector3 PreviousPlayerPosition;
     public Sprite DoorOpen;
     public Sprite DoorClosed;
     public SpriteRenderer Door;
     public GameObject PlayerObject;
+
+    // Determines the Position of the Door that the current door will teleport player to
+    public GameObject OtherDoor;
     //public CapsuleCollider2D playerCollider;
     //public CompositeCollider2D NoKeyDoor;
 
@@ -108,7 +111,7 @@ public class je_Door : MonoBehaviour
     public void OpenLvl2Ladder()
     {
         Debug.Log("Ladder Door Used");
-        PlayerObject.transform.position = Lvl2MovePlayer;
+        PlayerObject.transform.position = OtherDoor.transform.position;
         
     }
 }

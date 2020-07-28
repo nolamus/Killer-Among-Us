@@ -14,8 +14,6 @@ TagManager:
   - Bell
   - DialogueScene
   - Platform
-  - Challenge1_noItem
-  - Challenge1_Item
   - Ghost1
   - Ghost2
   - Ghost3
@@ -26,6 +24,11 @@ TagManager:
   - ChallengeStart
   - ChallengeEnd
   - Shoe
+  - Ghost6
+  - Ghost7
+  - Ghost8
+  - Ghost9
+  - Ghost10
   layers:
   - Default
   - TransparentFX

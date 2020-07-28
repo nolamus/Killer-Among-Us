@@ -25,14 +25,16 @@ public class je_KeyManager : MonoBehaviour
         KeyCollider = GetComponent<BoxCollider2D>();
         NotificationPanel.SetActive(false);
         Debug.Log("Is level 2 is: " + IsLevelTwo);
-        if (KeyDoor.RevealKey)
+        
+        /*DEPRECATED
+         * if (KeyDoor.RevealKey)
         {
             Key.SetActive(true);
         }
         else
         {
             Key.SetActive(false);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -40,7 +42,8 @@ public class je_KeyManager : MonoBehaviour
     {
         // Allows User to Collect a Key Using The Submit Button
         // TODO: The Submit Button is still not responding to this condition
-        if (Input.GetButtonDown("Submit") && KeyCollider.IsTouching(playerCollider))
+        //if (Input.GetButtonDown("Submit") && KeyCollider.IsTouching(playerCollider))
+        if (KeyCollider.IsTouching(playerCollider))
         {
             ObtainKey();
         }

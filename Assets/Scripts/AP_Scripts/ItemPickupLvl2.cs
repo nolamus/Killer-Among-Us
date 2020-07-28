@@ -29,15 +29,8 @@ public class ItemPickupLvl2 : MonoBehaviour
         // challenge start checkpoint; initiates challenge based on item possession
         if (item.gameObject.CompareTag("ChallengeStart"))
         {
-            // if player does not have item, start challenge
-            if (hasItem == false)
-            {
-                // enable dirty screen challenge
-                screenOverlay.enabled = true;
-            }
-
-            // otherwise, item delays challenge
-            else
+            // if player has item, delay challenge
+            if (hasItem == true)
             {
                 yield return new WaitForSeconds(7);
 
@@ -60,16 +53,16 @@ public class ItemPickupLvl2 : MonoBehaviour
                 itemBroom.enabled = true;
                 yield return new WaitForSeconds(1);
                 itemBroom.enabled = false;
-
-                // item expired, enable dirty screen challenge
-                screenOverlay.enabled = true;
             }
+
+            // item expired, enable dirty screen challenge
+            screenOverlay.enabled = true;
 
             Destroy(item.gameObject);
         }
 
         // challenge end checkpoint; deactivate challenge
-        if (item.gameObject.CompareTag("ChallengEnd"))
+        if (item.gameObject.CompareTag("ChallengeEnd"))
         {
             // enable dirty screen challenge
             screenOverlay.enabled = false;
