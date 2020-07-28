@@ -366,6 +366,7 @@ MonoBehaviour:
   Level3Button: {fileID: 49845709}
   Level4Button: {fileID: 2000963422}
   Level5Button: {fileID: 1522080857}
+  StoryMode: {fileID: 424439438}
 --- !u!1 &424439438
 GameObject:
   m_ObjectHideFlags: 0
