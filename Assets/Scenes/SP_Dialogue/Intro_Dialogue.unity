@@ -436,12 +436,12 @@ PrefabInstance:
     - target: {fileID: 5297192664305682956, guid: 65b8b7e21344e2f49892277bfe25a6c7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 667
+      value: 419
       objectReference: {fileID: 0}
     - target: {fileID: 5297192664305682956, guid: 65b8b7e21344e2f49892277bfe25a6c7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -375
+      value: -159
       objectReference: {fileID: 0}
     - target: {fileID: 5297192664305682956, guid: 65b8b7e21344e2f49892277bfe25a6c7,
         type: 3}
@@ -1122,6 +1122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8160590c75a554c838e0a3254a7810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blankCam: {fileID: 0}
+  cam1: {fileID: 0}
+  cam2: {fileID: 0}
+  cam3: {fileID: 0}
+  cam4: {fileID: 0}
   inkJSONAsset: {fileID: 4900000, guid: b4b3dc1d9a3f6294d9ad172de845d3ee, type: 3}
   canvas: {fileID: 1908123726}
   textPrefab: {fileID: 11456674, guid: 291aaeae7b1bb744e8e013f3f6f536ce, type: 3}
