@@ -6,6 +6,8 @@ using UnityEngine.UI; // for using UI element
 
 public class ItemPickupLvl3 : MonoBehaviour
 {
+    bool inChallenge = false;
+    bool lightsOn = false;
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemFlashlight; // toggles item obtained display
     [SerializeField] public Image darkOverlay; // represents dirty screen overlay
@@ -27,6 +29,13 @@ public class ItemPickupLvl3 : MonoBehaviour
 
         // challenge start checkpoint; initiates challenge based on item possession
         if (item.gameObject.CompareTag("ChallengeStart"))
+        {
+            inChallenge = true;
+
+            Destroy(item.gameObject);
+        }
+
+        if (!item.gameObject.CompareTag("ChallengeStart") && inChallenge == true && lightsOn == false)
         {
             // if player has item, delay challenge
             if (hasItem == true)
@@ -53,6 +62,8 @@ public class ItemPickupLvl3 : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 itemFlashlight.enabled = false;
 
+                hasItem = false;
+
                 // item expired, enable challenge
             }
 
@@ -65,12 +76,13 @@ public class ItemPickupLvl3 : MonoBehaviour
                 darkOverlay.enabled = true;
                 yield return new WaitForSeconds(Random.Range(2, 5));
             }
-            
-            Destroy(item.gameObject);
+
+            darkOverlay.enabled = false;
+            lightsOn = true;
+
             Destroy(item.gameObject);
         }
         
-
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
