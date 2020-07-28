@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class playercopy : MonoBehaviour
 {
-    //Config
+
+  //not used
+  /*  //Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
@@ -73,7 +75,7 @@ public class playercopy : MonoBehaviour
                 jumpSpeed = 5f;*/
 //=======
             // checks if scene matches Level 4 to account for challenge
-            Scene L4Scene;
+        /*    Scene L4Scene;
             string sceneName;
             L4Scene = SceneManager.GetActiveScene();
             sceneName = L4Scene.name;
@@ -148,7 +150,7 @@ public class playercopy : MonoBehaviour
             respawnPoint = collider.transform.position;
         }
     }
-
+*/
 
 
 }
