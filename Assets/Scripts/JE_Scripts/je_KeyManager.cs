@@ -42,7 +42,8 @@ public class je_KeyManager : MonoBehaviour
     {
         // Allows User to Collect a Key Using The Submit Button
         // TODO: The Submit Button is still not responding to this condition
-        if (Input.GetButtonDown("Submit") && KeyCollider.IsTouching(playerCollider))
+        //if (Input.GetButtonDown("Submit") && KeyCollider.IsTouching(playerCollider))
+        if (KeyCollider.IsTouching(playerCollider))
         {
             ObtainKey();
         }
