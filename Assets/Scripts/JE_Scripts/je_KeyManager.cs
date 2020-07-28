@@ -25,14 +25,16 @@ public class je_KeyManager : MonoBehaviour
         KeyCollider = GetComponent<BoxCollider2D>();
         NotificationPanel.SetActive(false);
         Debug.Log("Is level 2 is: " + IsLevelTwo);
-        if (KeyDoor.RevealKey)
+        
+        /*DEPRECATED
+         * if (KeyDoor.RevealKey)
         {
             Key.SetActive(true);
         }
         else
         {
             Key.SetActive(false);
-        }
+        }*/
     }
 
     // Update is called once per frame
