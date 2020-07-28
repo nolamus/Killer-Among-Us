@@ -61,6 +61,14 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
+<<<<<<< HEAD
+=======
+            /*if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
+                jumpSpeed = 10f;
+            else
+                jumpSpeed = 5f;*/
+
+>>>>>>> 1d07b5b1872ef9ef12ce1d9d6727ccb779c2c7ad
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
             string sceneName;
@@ -97,7 +105,23 @@ public class Player : MonoBehaviour
     private void Death()
     {
       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+<<<<<<< HEAD
         isAlive = false;
+=======
+        {
+            //if(session.lives < 1)
+                //session.ResetGameSession();
+            //transform.position = respawnPoint;          
+            isAlive = false;
+            
+            //playerAnimator.SetTrigger("Dying");                 //players death animation
+            //playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
+            //Time.timeScale = 0f;
+            //FindObjectOfType<GameSession>().ProcessPlayerDeath();
+
+            //session.ProcessPlayerDeath();
+        }
+>>>>>>> 1d07b5b1872ef9ef12ce1d9d6727ccb779c2c7ad
     }
 
     private void flipSprite()
