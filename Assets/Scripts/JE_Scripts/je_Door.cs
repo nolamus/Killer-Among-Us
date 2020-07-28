@@ -27,6 +27,8 @@ public class je_Door : MonoBehaviour
     public Sprite DoorClosed;
     public SpriteRenderer Door;
     public GameObject PlayerObject;
+
+    // Determines the Position of the Door that the current door will teleport player to
     public GameObject OtherDoor;
     //public CapsuleCollider2D playerCollider;
     //public CompositeCollider2D NoKeyDoor;
