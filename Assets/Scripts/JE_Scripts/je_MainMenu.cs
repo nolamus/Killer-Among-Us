@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class je_MainMenu : MonoBehaviour
 {
-    public GameObject RulesPanel;
     public GameObject CreditsPanel;
     public static bool Lvl0Cleared;
     public static bool Lvl1Cleared;
@@ -33,13 +32,15 @@ public class je_MainMenu : MonoBehaviour
     }
     private void Start()
     {
+        // Get Rid of this line of code when game is finished
         FirstRunCompleted = true;
+
+
         if(!FirstRunCompleted)
         {
             FirstRunCompleted = true;
             EasySave.Save("FirstRun", FirstRunCompleted);
         }
-        RulesPanel.SetActive(false);
         CreditsPanel.SetActive(false);
         
     }
@@ -86,15 +87,7 @@ public class je_MainMenu : MonoBehaviour
     {
         CreditsPanel.SetActive(true);
     }
-    public void DiplayRulesPanel()
-    {
-        RulesPanel.SetActive(true);
-    }
-    public void CloseRulesPanel()
-    {
-        Debug.Log("This script ran");
-        RulesPanel.SetActive(false);
-    }
+    
     public void CloseCreditsPanel()
     {
         CreditsPanel.SetActive(false);
@@ -103,6 +96,7 @@ public class je_MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+        Debug.Log("Game has QUIT");
         //transitioner.ExitGame();
     }
 }
