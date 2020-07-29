@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class GameSessionCopy : MonoBehaviour
 {
+  //not used
   // Start is called before the first frame update
-  [SerializeField] public int lives = 3;
+  /*[SerializeField] public int lives = 3;
   [SerializeField] Text livesText;
   public static bool alive = true;
 
@@ -22,8 +23,8 @@ public class GameSessionCopy : MonoBehaviour
         }
       else
           DontDestroyOnLoad(gameObject); */
-  }
-  void Start()
+//  }
+  /*void Start()
   {
       livesText.text = lives.ToString();
   }
@@ -55,5 +56,5 @@ public class GameSessionCopy : MonoBehaviour
   {
       SceneManager.LoadScene(5);      //loads main menu if player runs out of lives
       Destroy(gameObject);
-  }
+  } */
 }
