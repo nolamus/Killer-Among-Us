@@ -8,11 +8,17 @@ using UnityEngine.UI; // for using UI element
 public class ItemPickupLvl4 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
+<<<<<<< HEAD
     public bool superJump = false; // tracks if super jump can be activated
 
     [SerializeField] public Image itemSpring; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
 
+=======
+    public bool superJump = false; // tracks if super jump can be activate
+    [SerializeField] public Image itemSpring; // toggles item obtained display
+    public AudioClip soundEffect;   // pickup sound effect
+>>>>>>> 7d65ed08393eadd3135b38a8e6b9be88d732abb7
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
