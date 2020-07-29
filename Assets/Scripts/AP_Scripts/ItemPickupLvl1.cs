@@ -7,47 +7,57 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 1
 public class ItemPickupLvl1 : MonoBehaviour
 {
+    public Rigidbody rb;
     public bool hasItem = false; // tracks if item was picked up
-    [SerializeField] public Image itemBell; // toggles item obtained display
-    // public AudioClip soundEffect;   // pickup sound effect
-    // public GameObject pickupEffect; // pickup particle effect
+    [SerializeField] public Image itemWatch; // toggles item obtained display
+    public AudioClip soundEffect;   // pickup sound effect
 
-    void OnTriggerEnter2D(Collider2D item)
+    IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Bell"))
+        if (item.gameObject.CompareTag("Watch"))
         {
-            itemBell.enabled = true;
+            itemWatch.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
-            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
-            //Instantiate(pickupEffect, transform.position, type+particleeffectname)
+            AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         }
 
         // challenge first checkpoint, player does not have item; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_noItem"))
+        if (item.gameObject.CompareTag("ChallengeStart"))
         {
             // if player does not have item, start challenge
-            if(hasItem == false)
-            {
-                // enable falling objects
-                // ** -----------> add code for commencing falling objects
-                
-            }
-
-            Destroy(item.gameObject);
-        }
-
-        // challenge second checkpoint, challenge begins for item user; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_Item"))
-        {
-            // enable falling objects
-            // ** -----------> add code for commencing falling objects
             if(hasItem == true)
             {
+                Time.timeScale = 0f;
+                Time.fixedDeltaTime = 1f;
 
+                yield return new WaitForSeconds(7);
+
+                // item expiring, warning 1
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = true;
+
+                // item expiring, warning 2
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = true;
+
+                // item expiring, warning 3
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = true;
+                yield return new WaitForSeconds(1);
+                itemWatch.enabled = false;
             }
+
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = 1f;
 
             Destroy(item.gameObject);
         }

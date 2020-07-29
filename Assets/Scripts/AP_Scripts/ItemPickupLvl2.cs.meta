@@ -3,7 +3,10 @@ guid: 4a65ff58520f44d06a58c365c8763339
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - itemBroom: {instanceID: 0}
+  - screenOverlay: {instanceID: 0}
+  - soundEffect: {fileID: 8300000, guid: c53b23aef34e64244a7f7a8d29d83ac0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

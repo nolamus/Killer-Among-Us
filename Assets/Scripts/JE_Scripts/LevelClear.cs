@@ -10,6 +10,7 @@ public class LevelClear : MonoBehaviour
     public GameObject Level3Button;
     public GameObject Level4Button;
     public GameObject Level5Button;
+    public GameObject StoryMode;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +51,12 @@ public class LevelClear : MonoBehaviour
         if (je_MainMenu.Lvl5Cleared)
         {
             Level5Button.SetActive(true);
+            StoryMode.SetActive(true);
         }
         else
         {
             Level5Button.SetActive(false);
+            StoryMode.SetActive(false);
         }
     }
 

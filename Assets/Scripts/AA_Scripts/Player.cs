@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         session = FindObjectOfType<GameSession>();
 
+        respawnPoint = transform.position;
+
     }
 
     void Update()

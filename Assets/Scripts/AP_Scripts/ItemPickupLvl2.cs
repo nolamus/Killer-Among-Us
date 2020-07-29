@@ -10,20 +10,18 @@ public class ItemPickupLvl2 : MonoBehaviour
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemBroom; // toggles item obtained display
     [SerializeField] public Image screenOverlay; // represents dirty screen overlay
-    // public AudioClip soundEffect;   // pickup sound effect
-    // public GameObject pickupEffect; // pickup particle effect
+    public AudioClip soundEffect;   // pickup sound effect
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Broom"))
         {
-            itemBroom.enabled = true;
+            itemBroom.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
-            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
-            //Instantiate(pickupEffect, transform.position, type+particleeffectname)
+            AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         }
 
         // challenge start checkpoint; initiates challenge based on item possession

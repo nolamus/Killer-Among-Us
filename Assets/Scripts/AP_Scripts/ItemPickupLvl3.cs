@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // for shifting scenes
 using UnityEngine.UI; // for using UI element
 
+// script to attach to player for level 3
 public class ItemPickupLvl3 : MonoBehaviour
 {
     bool inChallenge = false;
@@ -11,20 +12,18 @@ public class ItemPickupLvl3 : MonoBehaviour
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemFlashlight; // toggles item obtained display
     [SerializeField] public Image darkOverlay; // represents dirty screen overlay
-    // public AudioClip soundEffect;   // pickup sound effect
-    // public GameObject pickupEffect; // pickup particle effect
+     public AudioClip soundEffect;   // pickup sound effect
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Flashlight"))
         {
-            itemFlashlight.enabled = true;
+            itemFlashlight.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
-            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
-            //Instantiate(pickupEffect, transform.position, type+particleeffectname)
+            AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         }
 
         // challenge start checkpoint; initiates challenge based on item possession
