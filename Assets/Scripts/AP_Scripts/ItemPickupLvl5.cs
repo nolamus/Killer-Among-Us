@@ -8,48 +8,64 @@ using UnityEngine.UI; // for using UI element
 public class ItemPickupLvl5 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
+<<<<<<< HEAD
     [SerializeField] public Image itemBell; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
+=======
+    public bool superJump = false; // tracks if super jump can be activated
+    [SerializeField] public Image itemShoe; // toggles item obtained display
+    // public AudioClip soundEffect;   // pickup sound effect
+>>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
 
-    void OnTriggerEnter2D(Collider2D item)
+    IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Bell"))
+        if (item.gameObject.CompareTag("Shoe"))
         {
-            itemBell.enabled = true; // item obtained image on Canvas
+            itemShoe.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
             //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
             Destroy(item.gameObject);
             
         }
 
-        // challenge first checkpoint, player does not have item; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_noItem"))
+        // challenge start checkpoint; initiates challenge based on item possession
+        if (item.gameObject.CompareTag("ChallengeStart"))
         {
-            // if player does not have item, start challenge
-            if (hasItem == false)
-            {
-                // enable falling objects
-                // ** -----------> add code for commencing falling objects
-
-            }
-
-            Destroy(item.gameObject);
-        }
-
-        // challenge second checkpoint, challenge begins for item user; initiate challenge
-        if (item.gameObject.CompareTag("Challenge_Item"))
-        {
-            // enable falling objects
-            // ** -----------> add code for commencing falling objects
+            // if player has item, activate helper
             if (hasItem == true)
             {
+                superJump = true;
 
+                yield return new WaitForSeconds(7);
+
+                // item expiring, warning 1
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+
+                // item expiring, warning 2
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+
+                // item expiring, warning 3
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = true;
+                yield return new WaitForSeconds(1);
+                itemShoe.enabled = false;
             }
+
+            // item expired, helper deactivates
+
+            superJump = false;
 
             Destroy(item.gameObject);
         }
-
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {

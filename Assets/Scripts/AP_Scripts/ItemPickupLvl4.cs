@@ -9,15 +9,20 @@ public class ItemPickupLvl4 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
     public bool superJump = false; // tracks if super jump can be activated
+<<<<<<< HEAD
     [SerializeField] public Image itemShoe; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
+=======
+    [SerializeField] public Image itemSpring; // toggles item obtained display
+    // public AudioClip soundEffect;   // pickup sound effect
+>>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Shoe"))
+        if (item.gameObject.CompareTag("Spring"))
         {
-            itemShoe.enabled = true; // item obtained image on Canvas
+            itemSpring.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
@@ -36,23 +41,23 @@ public class ItemPickupLvl4 : MonoBehaviour
 
                 // item expiring, warning 1
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = false;
+                itemSpring.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = true;
+                itemSpring.enabled = true;
 
                 // item expiring, warning 2
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = false;
+                itemSpring.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = true;
+                itemSpring.enabled = true;
 
                 // item expiring, warning 3
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = false;
+                itemSpring.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = true;
+                itemSpring.enabled = true;
                 yield return new WaitForSeconds(1);
-                itemShoe.enabled = false;
+                itemSpring.enabled = false;
             }
 
             // item expired, helper deactivates
