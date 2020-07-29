@@ -8,7 +8,6 @@ using UnityEngine.UI; // for using UI element
 public class ItemPickupLvl1 : MonoBehaviour
 {
     public Rigidbody rb;
-    public bool useGravity = true;
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemWatch; // toggles item obtained display
     // public AudioClip soundEffect;   // pickup sound effect
@@ -31,10 +30,8 @@ public class ItemPickupLvl1 : MonoBehaviour
             // if player does not have item, start challenge
             if(hasItem == true)
             {
-                //Time.timeScale = 0f;
-                //Time.fixedDeltaTime = 1f;
-                Physics2D.gravity = Vector2.zero;
-                rb.GetComponent<Rigidbody2D>().gravityScale = 1f;
+                Time.timeScale = 0f;
+                Time.fixedDeltaTime = 1f;
 
                 yield return new WaitForSeconds(7);
 
@@ -59,8 +56,8 @@ public class ItemPickupLvl1 : MonoBehaviour
                 itemWatch.enabled = false;
             }
 
-            //Time.timeScale = 1f;
-            //Time.fixedDeltaTime = 1f;
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = 1f;
 
             Destroy(item.gameObject);
         }
