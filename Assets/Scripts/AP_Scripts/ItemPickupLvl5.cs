@@ -4,24 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // for shifting scenes
 using UnityEngine.UI; // for using UI element
 
+// script to attach to player for level 5
 public class ItemPickupLvl5 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemBell; // toggles item obtained display
     // public AudioClip soundEffect;   // pickup sound effect
-    // public GameObject pickupEffect; // pickup particle effect
 
     void OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Bell"))
         {
-            itemBell.enabled = true;
+            itemBell.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
             //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
-            //Instantiate(pickupEffect, transform.position, type+particleeffectname)
         }
 
         // challenge first checkpoint, player does not have item; initiate challenge
