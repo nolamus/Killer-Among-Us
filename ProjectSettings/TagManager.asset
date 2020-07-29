@@ -8,8 +8,6 @@ TagManager:
   - Dirt
   - Broom
   - Enemy
-  - Challenge_Item
-  - Challenge_noItem
   - NoKeyDoor
   - Bell
   - DialogueScene
@@ -30,6 +28,7 @@ TagManager:
   - Ghost9
   - Ghost10
   - Watch
+  - Spring
   layers:
   - Default
   - TransparentFX
