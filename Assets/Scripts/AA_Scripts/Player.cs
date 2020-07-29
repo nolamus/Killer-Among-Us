@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         session = FindObjectOfType<GameSession>();
 
+        respawnPoint = transform.position;
+
     }
 
     void Update()
@@ -97,7 +99,23 @@ public class Player : MonoBehaviour
     private void Death()
     {
       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+
+        {
+            //if(session.lives < 1)
+                //session.ResetGameSession();
+            //transform.position = respawnPoint;
+            isAlive = false;
+
+            //playerAnimator.SetTrigger("Dying");                 //players death animation
+            //playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
+            //Time.timeScale = 0f;
+            //FindObjectOfType<GameSession>().ProcessPlayerDeath();
+
+            //session.ProcessPlayerDeath();
+        }
+
         isAlive = false;
+
     }
 
     private void flipSprite()

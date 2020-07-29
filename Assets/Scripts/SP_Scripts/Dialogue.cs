@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 
 // This is the main script for running the dialogue in scene "Dialogue_Zero_V1"
+// However, this script is no longer being used for the game as "Intro_Dialogue"
+    // is being used in place of "Dialogue_Zero_V1"
 
 public class Dialogue : MonoBehaviour
 {
