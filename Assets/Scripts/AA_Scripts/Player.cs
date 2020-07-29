@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     private void Death()
     {
       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
-<<<<<<< HEAD
+
         {
             //if(session.lives < 1)
                 //session.ResetGameSession();
@@ -113,9 +113,9 @@ public class Player : MonoBehaviour
 
             //session.ProcessPlayerDeath();
         }
-=======
+
         isAlive = false;
->>>>>>> 8e321be1fc3f131bd76c9d7677813910afef607c
+
     }
 
     private void flipSprite()
