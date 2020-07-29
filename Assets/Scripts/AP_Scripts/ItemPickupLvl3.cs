@@ -12,7 +12,7 @@ public class ItemPickupLvl3 : MonoBehaviour
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemFlashlight; // toggles item obtained display
     [SerializeField] public Image darkOverlay; // represents dirty screen overlay
-     public AudioClip soundEffect;   // pickup sound effect
+    public AudioClip soundEffect;   // pickup sound effect
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {

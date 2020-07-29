@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.SceneManagement;
 
 public class je_PauseMenu : MonoBehaviour
@@ -27,7 +28,7 @@ public class je_PauseMenu : MonoBehaviour
     {
         // Binds Pause functionality to a key
         //TODO Need to revise code to accept game standard input controls
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(CrossPlatformInputManager.GetButtonDown("Pause"))
         {
             if(isPaused)
             {
