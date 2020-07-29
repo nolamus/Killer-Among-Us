@@ -10,7 +10,7 @@ public class ItemPickupLvl4 : MonoBehaviour
     public bool hasItem = false; // tracks if item was picked up
     public bool superJump = false; // tracks if super jump can be activated
     [SerializeField] public Image itemShoe; // toggles item obtained display
-    // public AudioClip soundEffect;   // pickup sound effect
+    public AudioClip soundEffect;   // pickup sound effect
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
@@ -21,7 +21,7 @@ public class ItemPickupLvl4 : MonoBehaviour
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
-            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+            AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         }
 
         // challenge start checkpoint; initiates challenge based on item possession

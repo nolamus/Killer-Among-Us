@@ -9,7 +9,7 @@ public class ItemPickupLvl5 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemBell; // toggles item obtained display
-    // public AudioClip soundEffect;   // pickup sound effect
+    public AudioClip soundEffect;   // pickup sound effect
 
     void OnTriggerEnter2D(Collider2D item)
     {
@@ -18,9 +18,9 @@ public class ItemPickupLvl5 : MonoBehaviour
         {
             itemBell.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
-
-            Destroy(item.gameObject);
             //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+            Destroy(item.gameObject);
+            
         }
 
         // challenge first checkpoint, player does not have item; initiate challenge
