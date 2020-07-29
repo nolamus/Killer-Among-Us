@@ -8,21 +8,16 @@ using UnityEngine.UI; // for using UI element
 public class ItemPickupLvl5 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
-<<<<<<< HEAD
-    [SerializeField] public Image itemBell; // toggles item obtained display
-    public AudioClip soundEffect;   // pickup sound effect
-=======
     public bool superJump = false; // tracks if super jump can be activated
     [SerializeField] public Image itemShoe; // toggles item obtained display
-    // public AudioClip soundEffect;   // pickup sound effect
->>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
+    public AudioClip soundEffect;   // pickup sound effect
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Shoe"))
         {
-            Debug.Log("Shoe detected");
+            //Debug.Log("Shoe detected");
             itemShoe.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
             //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
