@@ -8,7 +8,6 @@ using UnityEngine.UI; // for using UI element
 public class ItemPickupLvl5 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
-
     public bool superJump = false; // tracks if super jump can be activated
     [SerializeField] public Image itemShoe; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
