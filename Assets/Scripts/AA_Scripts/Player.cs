@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
 
     //Local variables
-    private bool isAlive = true;
+    public bool isAlive = true;
 
     //Cached component references
     Rigidbody2D playerRigidBody;
@@ -63,11 +63,6 @@ public class Player : MonoBehaviour
     {
         if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
-            /*if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
-                jumpSpeed = 10f;
-            else
-                jumpSpeed = 5f;*/
-
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
             string sceneName;
@@ -104,6 +99,7 @@ public class Player : MonoBehaviour
     private void Death()
     {
       if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+<<<<<<< HEAD
         {
             //if(session.lives < 1)
                 //session.ResetGameSession();
@@ -117,6 +113,9 @@ public class Player : MonoBehaviour
 
             //session.ProcessPlayerDeath();
         }
+=======
+        isAlive = false;
+>>>>>>> 8e321be1fc3f131bd76c9d7677813910afef607c
     }
 
     private void flipSprite()
@@ -126,9 +125,9 @@ public class Player : MonoBehaviour
         if(playerHasHorizontalSpeed)
         {
             if(Mathf.Sign(playerRigidBody.velocity.x) > 0)
-                transform.localScale = new Vector2(1f, 1f); //- left or + right
+                transform.localScale = new Vector2(1f, 1f); //moving right
             else
-                transform.localScale = new Vector2(-1f, 1f); //- left or + right
+                transform.localScale = new Vector2(-1f, 1f); //moving left
         }
     }
 
