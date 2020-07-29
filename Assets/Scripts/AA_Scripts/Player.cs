@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         session = FindObjectOfType<GameSession>();
 
+        respawnPoint = transform.position;
+
     }
 
     void Update()
@@ -105,9 +107,9 @@ public class Player : MonoBehaviour
         {
             //if(session.lives < 1)
                 //session.ResetGameSession();
-            //transform.position = respawnPoint;          
+            //transform.position = respawnPoint;
             isAlive = false;
-            
+
             //playerAnimator.SetTrigger("Dying");                 //players death animation
             //playerSprite.color = new Color(1, 0, 0, 1);         //set color to red when player dies
             //Time.timeScale = 0f;
