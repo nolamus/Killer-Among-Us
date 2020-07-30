@@ -78,6 +78,7 @@ public class ItemPickupLvl5 : MonoBehaviour
             Destroy(itemShoe.gameObject);
             Destroy(item.gameObject);
         }
+
         // end of level reached, go to dialogue scene
         if (item.gameObject.CompareTag("DialogueScene"))
         {
@@ -86,6 +87,5 @@ public class ItemPickupLvl5 : MonoBehaviour
             // move onto dialogue scene
             SceneManager.LoadScene("L5_Dialogue");
         }
-
     }
 }

@@ -11,6 +11,7 @@ public class ItemPickupLvl1 : MonoBehaviour
     bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
     public bool slowTime = false; // tracks
+    public bool inivicibility = false; // tracks
     [SerializeField] public Image itemWatch; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
 
@@ -21,7 +22,7 @@ public class ItemPickupLvl1 : MonoBehaviour
         if (aliveStatus == false && inChallenge == true && hasItem == true)
         {
             hasItem = false;
-            slowTime = false;
+            inivicibility = false;
             inChallenge = false;
             Destroy(itemWatch.gameObject);
         }
@@ -47,7 +48,7 @@ public class ItemPickupLvl1 : MonoBehaviour
             // if player does not have item, start challenge
             if (hasItem == true)
             {
-                slowTime = true; // activate time slower
+                inivicibility = true; // activate time slower
 
                 yield return new WaitForSeconds(7);
 
@@ -71,7 +72,7 @@ public class ItemPickupLvl1 : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 itemWatch.enabled = false;
 
-                slowTime = false; // time slower expired
+                inivicibility = false; // time slower expired
                 hasItem = false; // item can only be used once
             }
 
