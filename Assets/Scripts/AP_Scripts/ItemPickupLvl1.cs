@@ -7,10 +7,25 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 1
 public class ItemPickupLvl1 : MonoBehaviour
 {
-    public Rigidbody rb;
+    bool aliveStatus;
+    bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
+    public bool slowTime = false; // tracks
     [SerializeField] public Image itemWatch; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
+
+    private void Update()
+    {
+        // if player dies within challenge, item is gone
+        aliveStatus = gameObject.GetComponent<Player>().isAlive;
+        if (aliveStatus == false && inChallenge == true && hasItem == true)
+        {
+            hasItem = false;
+            slowTime = false;
+            inChallenge = false;
+            Destroy(itemWatch.gameObject);
+        }
+    }
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
@@ -27,11 +42,12 @@ public class ItemPickupLvl1 : MonoBehaviour
         // challenge first checkpoint, player does not have item; initiate challenge
         if (item.gameObject.CompareTag("ChallengeStart"))
         {
+            inChallenge = true; // player has entered challenge area
+
             // if player does not have item, start challenge
-            if(hasItem == true)
+            if (hasItem == true)
             {
-                Time.timeScale = 0f;
-                Time.fixedDeltaTime = 1f;
+                slowTime = true; // activate time slower
 
                 yield return new WaitForSeconds(7);
 
@@ -54,11 +70,13 @@ public class ItemPickupLvl1 : MonoBehaviour
                 itemWatch.enabled = true;
                 yield return new WaitForSeconds(1);
                 itemWatch.enabled = false;
+
+                slowTime = false; // time slower expired
+                hasItem = false; // item can only be used once
             }
 
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = 1f;
-
+            // item expired, helper deactivates
+            Destroy(itemWatch.gameObject);
             Destroy(item.gameObject);
         }
 
