@@ -10,6 +10,16 @@ public class ItemPickupLvl4 : MonoBehaviour
     bool aliveStatus; // tracks alive status of player
     bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
+//<<<<<<< HEAD
+  //  public bool superJump = false; // tracks if super jump can be activated
+//<<<<<<< HEAD
+    [SerializeField] public Image itemShoe; // toggles item obtained display
+    //public AudioClip soundEffect;   // pickup sound effect
+//=======
+    //[SerializeField] public Image itemSpring; // toggles item obtained display
+    // public AudioClip soundEffect;   // pickup sound effect
+//>>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
+//=======
     public bool superJump = false; // tracks if super jump can be activate
     [SerializeField] public Image itemSpring; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
@@ -26,6 +36,7 @@ public class ItemPickupLvl4 : MonoBehaviour
             Destroy(itemSpring.gameObject);
         }
     }
+//>>>>>>> 084e56211a0ff0f613b3d3df3e10c7096edfd5a6
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {

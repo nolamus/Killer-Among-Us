@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_MainMenu.unity
-    guid: d5c74f82e5ccb434a8e32264114193d7
+    path: Assets/Scenes/SP_Dialogue/L2_Dialogue.unity
+    guid: 3d275d215a2613348825e7e60767acaa
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_Level_Two.unity
-    guid: 9145f30178a090a4a8cbe73bd46997c4
+    path: Assets/Scenes/Final Scenes/je_Level_Two_SideRoom.unity
+    guid: 1247c41c757baf644ae93a112ce04a62
   - enabled: 1
     path: Assets/Scenes/Final Scenes/AA_Level_One.unity
     guid: 2ec6b7163d0a6b541af3369dbe4e2c83
@@ -18,38 +18,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/AA_Level_Zero.unity.unity
     guid: 5cbb8c248378d6642b681cb743698ea5
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_Level_Two_SideRoom.unity
-    guid: 1247c41c757baf644ae93a112ce04a62
-  - enabled: 1
-    path: Assets/Scenes/Final Scenes/je_Settings.unity
-    guid: a96302bdd5690544cad32703d73742ed
-  - enabled: 1
-    path: Assets/Scenes/AA_scenes/AA_Level_Five.unity
-    guid: 717afec6b88fff443b8b88b7d891a173
-  - enabled: 1
-    path: Assets/Scenes/AA_scenes/AA_Level_Four.unity
-    guid: 213a0d23da704984d8bff1c98add5ae6
-  - enabled: 1
-    path: Assets/Scenes/AA_scenes/AA_Level_Three.unity
-    guid: 10a2c87aa3cd348449d44b2df6e1d957
-  - enabled: 1
     path: Assets/Scenes/AA_scenes/je_Level_Two.unity
     guid: 05749ee7cac418241b62bd325dadba87
   - enabled: 1
     path: Assets/Scenes/SP_Dialogue/Dialogue_Zero_V1.unity
     guid: bdf0f2a1fe47c45e5831e9a00709e7cc
   - enabled: 1
-    path: Assets/Scenes/SP_Dialogue/Ending_Dialogue.unity
-    guid: cb2be75b67d9536459f2f4906cafda5c
+    path: Assets/Scenes/Final Scenes/je_MainMenu.unity
+    guid: d5c74f82e5ccb434a8e32264114193d7
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/je_Level_Two.unity
+    guid: 9145f30178a090a4a8cbe73bd46997c4
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/je_Settings.unity
+    guid: a96302bdd5690544cad32703d73742ed
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/tv_LevelSelect.unity
+    guid: 4df39365214b446929b8cd38139ef480
   - enabled: 1
     path: Assets/Scenes/SP_Dialogue/Intro_Dialogue.unity
     guid: 80811b718e7a83348b011a45c99ec37e
   - enabled: 1
     path: Assets/Scenes/SP_Dialogue/L1_Dialogue.unity
     guid: 0b70c27c7264bb049a754740a04277d0
-  - enabled: 1
-    path: Assets/Scenes/SP_Dialogue/L2_Dialogue.unity
-    guid: 3d275d215a2613348825e7e60767acaa
   - enabled: 1
     path: Assets/Scenes/SP_Dialogue/L3_Dialogue.unity
     guid: abc4d5027f3f72644822ef56b1f0fa36
@@ -60,6 +51,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SP_Dialogue/L5_Dialogue.unity
     guid: 9e4da42e51552ad40abdfa0745608a88
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/tv_LevelSelect.unity
-    guid: 4df39365214b446929b8cd38139ef480
+    path: Assets/Scenes/SP_Dialogue/Ending_Dialogue.unity
+    guid: cb2be75b67d9536459f2f4906cafda5c
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/AA_Level_Five.unity
+    guid: 717afec6b88fff443b8b88b7d891a173
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/AA_Level_Four.unity
+    guid: 213a0d23da704984d8bff1c98add5ae6
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/AA_Level_Three.unity
+    guid: 10a2c87aa3cd348449d44b2df6e1d957
   m_configObjects: {}

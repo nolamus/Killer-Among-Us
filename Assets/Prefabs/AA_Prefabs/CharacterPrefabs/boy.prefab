@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7241122747634101490}
   m_Layer: 11
   m_Name: boy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1382208139
-  m_SortingLayer: 5
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1416604817420825889, guid: 02e022a31be72ad428a8cc8168fd5027,
     type: 3}
@@ -184,3 +184,5 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 8
   climbSpeed: 5
+  isAlive: 1
+  respawnPoint: {x: 0, y: 0, z: 0}
