@@ -9,13 +9,13 @@ public class ItemPickupLvl4 : MonoBehaviour
 {
     public bool hasItem = false; // tracks if item was picked up
     public bool superJump = false; // tracks if super jump can be activated
-<<<<<<< HEAD
+//<<<<<<< HEAD
     [SerializeField] public Image itemShoe; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
-=======
+//=======
     [SerializeField] public Image itemSpring; // toggles item obtained display
     // public AudioClip soundEffect;   // pickup sound effect
->>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
+//>>>>>>> 1050b9cb2f1a63d8b115a1cbba6eb071c0033a1b
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
