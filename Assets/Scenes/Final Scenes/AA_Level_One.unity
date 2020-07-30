@@ -37995,7 +37995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasItem: 0
   inivicibility: 0
-  itemWatch: {fileID: 0}
+  itemShield: {fileID: 1845731865}
   soundEffect: {fileID: 8300000, guid: c53b23aef34e64244a7f7a8d29d83ac0, type: 3}
 --- !u!1 &757030990
 GameObject:

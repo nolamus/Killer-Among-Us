@@ -7,7 +7,7 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 2
 public class ItemPickupLvl2 : MonoBehaviour
 {
-    bool aliveStatus;
+    bool aliveStatus; // tracks alive status of player
     bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemBroom; // toggles item obtained display
@@ -68,7 +68,10 @@ public class ItemPickupLvl2 : MonoBehaviour
                 hasItem = false; // item can only be used once
             }
 
-            // item expired, enable dirty screen challenge
+            // item expired, enable challenge
+            Destroy(itemBroom.gameObject);
+
+            // enable dirty screen
             screenOverlay.enabled = true;
 
         }

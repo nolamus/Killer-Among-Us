@@ -76,8 +76,6 @@ public class ItemPickupLvl4 : MonoBehaviour
 
             // item expired, helper deactivates
             Destroy(itemSpring.gameObject);
-
-            superJump = false;
             Destroy(item.gameObject);
 
         }
