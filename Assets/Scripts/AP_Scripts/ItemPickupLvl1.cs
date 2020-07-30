@@ -7,12 +7,11 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 1
 public class ItemPickupLvl1 : MonoBehaviour
 {
-    bool aliveStatus;
+    bool aliveStatus; // tracks alive status of player
     bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
-    public bool slowTime = false; // tracks
-    public bool inivicibility = false; // tracks
-    [SerializeField] public Image itemWatch; // toggles item obtained display
+    public bool inivicibility = false; // tracks invincibility can activate
+    [SerializeField] public Image itemShield; // toggles item obtained display
     public AudioClip soundEffect;   // pickup sound effect
 
     private void Update()
@@ -24,7 +23,7 @@ public class ItemPickupLvl1 : MonoBehaviour
             hasItem = false;
             inivicibility = false;
             inChallenge = false;
-            Destroy(itemWatch.gameObject);
+            Destroy(itemShield.gameObject);
         }
     }
 
@@ -33,7 +32,7 @@ public class ItemPickupLvl1 : MonoBehaviour
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Watch"))
         {
-            itemWatch.enabled = true; // item obtained image on Canvas
+            itemShield.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
 
             Destroy(item.gameObject);
@@ -48,36 +47,37 @@ public class ItemPickupLvl1 : MonoBehaviour
             // if player does not have item, start challenge
             if (hasItem == true)
             {
-                inivicibility = true; // activate time slower
+                inivicibility = true; // activate invincibility
 
-                yield return new WaitForSeconds(7);
+                yield return new WaitForSeconds(5);
 
                 // item expiring, warning 1
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = false;
+                itemShield.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = true;
+                itemShield.enabled = true;
 
                 // item expiring, warning 2
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = false;
+                itemShield.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = true;
+                itemShield.enabled = true;
 
                 // item expiring, warning 3
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = false;
+                itemShield.enabled = false;
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = true;
+                itemShield.enabled = true;
                 yield return new WaitForSeconds(1);
-                itemWatch.enabled = false;
+                itemShield.enabled = false;
 
-                inivicibility = false; // time slower expired
+                inivicibility = false; // invincibility expired
                 hasItem = false; // item can only be used once
             }
 
             // item expired, helper deactivates
-            Destroy(itemWatch.gameObject);
+            Destroy(GameObject.FindWithTag("TimedZone"));
+            Destroy(itemShield.gameObject);
             Destroy(item.gameObject);
         }
 

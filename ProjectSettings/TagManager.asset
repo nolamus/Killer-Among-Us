@@ -29,6 +29,8 @@ TagManager:
   - Ghost10
   - Watch
   - Spring
+  - TimedZone
+  - Shield
   layers:
   - Default
   - TransparentFX

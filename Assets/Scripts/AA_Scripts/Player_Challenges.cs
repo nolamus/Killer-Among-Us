@@ -1,4 +1,5 @@
-﻿/*using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -13,10 +14,6 @@ public class Player : MonoBehaviour
 
     //Local variables
     public bool isAlive = true;
-    public float timeScale = 1f; // default timescale
-    public float deltaTime = 0.2f; // default deltatime
-
-
 
     //Cached component references
     Rigidbody2D playerRigidBody;
@@ -51,60 +48,10 @@ public class Player : MonoBehaviour
         Climb();
         flipSprite();
         Death();
-
-        Time.timeScale = 0.5f;
-        Time.fixedDeltaTime = 0.02F * Time.timeScale;
-
     }
-
-    //-----------------------------New-----------------------------
-    public void ChangeTime()
-    {
-        // checks if scene matches Level 1 to account for challenge
-        Scene L1Scene;
-        string sceneName1;
-        L1Scene = SceneManager.GetActiveScene();
-        sceneName1 = L1Scene.name;
-
-        // level 4 super jump
-        if (sceneName1 == "AA_Level_One")
-        {
-            if (gameObject.GetComponent<ItemPickupLvl1>().slowTime == true)
-            {
-                Time.timeScale = 0.5f;
-                Time.fixedDeltaTime = 0.02F * Time.timeScale;
-            }
-            else
-            {
-                Time.timeScale = 1f;
-                Time.fixedDeltaTime = 1F * Time.timeScale;
-            }
-        }
-    }
-    //-----------------------------End New-----------------------------
 
     private void Run()
     {
-
-        //-----------------------------New-----------------------------
-        // checks if scene matches Level 1 to account for challenge
-        Scene L1Scene;
-        string sceneName1;
-        L1Scene = SceneManager.GetActiveScene();
-        sceneName1 = L1Scene.name;
-
-        // level 4 super jump
-        if (sceneName1 == "AA_Level_One")
-        {
-            // if item has been obtained, use slowed speed
-            if (gameObject.GetComponent<ItemPickupLvl1>().slowTime == true)
-                runSpeed = runSpeed * Time.deltaTime / Time.timeScale;
-
-            // if no item or item has expired, regular speed
-            else
-                runSpeed = 5f;
-        }
-
         // checks if scene matches Level 5 to account for challenge
         Scene L5Scene;
         string sceneName5;
@@ -122,7 +69,6 @@ public class Player : MonoBehaviour
             else
                 runSpeed = 5f;
         }
-        //-----------------------------End New-----------------------------
 
         float controlRun = CrossPlatformInputManager.GetAxis("Horizontal"); // [-1,1] allows for us to use input regardless of platform
         Vector2 runVelocity = new Vector2(controlRun * runSpeed, playerRigidBody.velocity.y);       //create a new position of the speed/direction the player is moving
@@ -136,27 +82,6 @@ public class Player : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
-            //-----------------------------New-----------------------------
-            // checks if scene matches Level 1 to account for challenge
-            Scene L1Scene;
-            string sceneName1;
-            L1Scene = SceneManager.GetActiveScene();
-            sceneName1 = L1Scene.name;
-
-            // level 4 super jump
-            if (sceneName1 == "AA_Level_One")
-            {
-                // if item has been obtained, use slowed speed
-                if (gameObject.GetComponent<ItemPickupLvl1>().slowTime == true)
-                    jumpSpeed = jumpSpeed / Time.timeScale;
-
-                // if no item or item has expired, regular speed
-                else
-                    jumpSpeed = 8f;
-            }
-            //-----------------------------End New-----------------------------
-
-            //-----------------------------New (exists in original but adjusted)-----------------------------
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
             string sceneName4;
@@ -174,7 +99,6 @@ public class Player : MonoBehaviour
                 else
                     jumpSpeed = 8f;
             }
-            //-----------------------------End New (exists in original but adjusted)-----------------------------
 
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             playerRigidBody.velocity += jumpVelocity;
@@ -199,13 +123,19 @@ public class Player : MonoBehaviour
         L1Scene = SceneManager.GetActiveScene();
         sceneName1 = L1Scene.name;
 
-        /* // level 1 super jump
-         if (sceneName1 == "AA_Level_One")
-         {
-             // if item has been obtained, use slowed speed
-             if (gameObject.GetComponent<ItemPickupLvl1>().inivicibility == true)
-                 goto ZeroDeath;
-         }
+        // level 1 invincibility
+        if (sceneName1 == "AA_Level_One")
+        {
+            // if item has been obtained, use make character ignore enemies
+            if (gameObject.GetComponent<ItemPickupLvl1>().inivicibility == true)
+                return;
+
+            // if no item or item has expired, player will detect enemies
+            else if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+            {
+                isAlive = false;
+            }
+        }
 
         if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
         {
@@ -239,8 +169,5 @@ public class Player : MonoBehaviour
             respawnPoint = collider.transform.position;
         }
     }
-
-
-
 }
 */
