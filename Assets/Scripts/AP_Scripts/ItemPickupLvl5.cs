@@ -17,10 +17,11 @@ public class ItemPickupLvl5 : MonoBehaviour
         // if level item is picked up, destroy and record item obtained status
         if (item.gameObject.CompareTag("Shoe"))
         {
+            Destroy(item.gameObject);
             itemShoe.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained
             
-            Destroy(item.gameObject);
+            
             AudioSource.PlayClipAtPoint(soundEffect, transform.position);
 
         }
