@@ -91,7 +91,7 @@ public class L4_InkRunner : MonoBehaviour
 				Button choice = CreateChoiceView("Next Level");
 				choice.onClick.AddListener(delegate
 				{
-					// Load level selection scene once dialogue scene is done
+					// Load next level scene once dialogue scene is done
 					SceneManager.LoadScene("AA_Level_Five");
 				});
 			}

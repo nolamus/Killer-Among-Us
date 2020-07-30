@@ -156,6 +156,5 @@ Boy: I...I did it mom. Are you proud of me?
 + [...] -> ending
 
 === ending
--Killer Among Us-
 The End
 -> END
