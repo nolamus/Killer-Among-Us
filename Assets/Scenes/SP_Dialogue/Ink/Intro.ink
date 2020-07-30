@@ -39,6 +39,31 @@ Concierge: I heard that a lot of the hotel guests have died in the fire. And you
 
 === knot1 ===
 Concierge: I don't know who did this. But I don't know if it is safe for you to be hanging around here. People have been reporting strange things happening around the hotel...like ghost sightings.
++ [...] -> Scene2
+
+
+=== Scene2 ===
+DUMMY TEXT SCENE 2.
++ [Then, continue.] -> Scene3
+
+
+=== Scene3 ===
+DUMMY TEXT SCENE 3.
++ [Then, continue.] -> Scene4
+
+
+=== Scene4 ===
+DUMMY TEXT SCENE 4.
++ [Then, continue.] -> Scene5
+
+
+=== Scene5 ===
+DUMMY TEXT SCENE 5.
++ [Then, continue.] -> knot2
+
+
+=== knot2 ===
+Concierge: ...
 + [Is that supposed to scare me?] -> agg2
 + [I have to know the truth.] -> soft2
 
