@@ -90,7 +90,7 @@ public class L5_InkRunner : MonoBehaviour
 				Button choice = CreateChoiceView("Conclusion");
 				choice.onClick.AddListener(delegate
 				{
-					// Load level selection scene once dialogue scene is done
+					// Load next level scene once dialogue scene is done
 					SceneManager.LoadScene("Ending_Dialogue");
 				});
 			}
