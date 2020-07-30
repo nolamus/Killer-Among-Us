@@ -205,7 +205,7 @@ public class Player : MonoBehaviour
              // if item has been obtained, use slowed speed
              if (gameObject.GetComponent<ItemPickupLvl1>().inivicibility == true)
                  goto ZeroDeath;
-         }*/
+         }
 
         if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
         {
