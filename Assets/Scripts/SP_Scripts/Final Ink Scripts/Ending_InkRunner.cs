@@ -21,6 +21,12 @@ public class Ending_InkRunner : MonoBehaviour
 	public Camera cam2;
 	public Camera cam3;
 	public Camera cam4;
+	public Camera cam5;
+	public Camera cam6;
+	public Camera cam7;
+	public Camera cam8;
+	public Camera cam9;
+	public Camera cam10;
 
 	bool clicked = false;
 
@@ -77,11 +83,24 @@ public class Ending_InkRunner : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			Button choice = CreateChoiceView("Return to Level Select");
-			choice.onClick.AddListener(delegate {
-				// Load level selection scene once dialogue scene is done
-				SceneManager.LoadScene("tv_LevelSelect");
-			});
+			if (Menu_Story.IsStoryMode)
+			{
+				Button choice = CreateChoiceView("Continue Story");
+				choice.onClick.AddListener(delegate
+				{
+					// Since we are in story mode, load next dialogue scene
+					SceneManager.LoadScene("L2_Dialogue");
+				});
+			}
+			else
+			{
+				Button choice = CreateChoiceView("Next Level");
+				choice.onClick.AddListener(delegate
+				{
+					// Load level selection scene once dialogue scene is done
+					SceneManager.LoadScene("je_Level_Two");
+				});
+			}
 		}
 	}
 
@@ -104,11 +123,17 @@ public class Ending_InkRunner : MonoBehaviour
 		{
 			// Switch cameras
 			blankCam.enabled = false;
-			cam1.enabled = true;
 
+			cam1.enabled = true;
 			cam2.enabled = false;
 			cam3.enabled = false;
 			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
 
 			// Create button
 			Button choice = CreateChoiceView("FIRST, CLICK ME!");
@@ -117,11 +142,17 @@ public class Ending_InkRunner : MonoBehaviour
 			{
 				// Switch back cameras
 				blankCam.enabled = true;
-				cam1.enabled = false;
 
+				cam1.enabled = false;
 				cam2.enabled = false;
 				cam3.enabled = false;
 				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
 				// Set boolean value
 				clicked = true;
 				// Destroy button after it's clicked
@@ -136,11 +167,17 @@ public class Ending_InkRunner : MonoBehaviour
 		{
 			// Switch cameras
 			blankCam.enabled = false;
-			cam2.enabled = true;
 
 			cam1.enabled = false;
+			cam2.enabled = true;
 			cam3.enabled = false;
 			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
 
 			// Create button
 			Button choice = CreateChoiceView("FIRST, CLICK ME!");
@@ -149,11 +186,369 @@ public class Ending_InkRunner : MonoBehaviour
 			{
 				// Switch back cameras
 				blankCam.enabled = true;
-				cam2.enabled = false;
 
 				cam1.enabled = false;
+				cam2.enabled = false;
 				cam3.enabled = false;
 				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 3.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = true;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 4.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = true;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 5.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = true;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 6.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = true;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 7.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = true;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 8.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = true;
+			cam9.enabled = false;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 9.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = true;
+			cam10.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 10.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+			cam6.enabled = false;
+			cam7.enabled = false;
+			cam8.enabled = false;
+			cam9.enabled = false;
+			cam10.enabled = true;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				cam6.enabled = false;
+				cam7.enabled = false;
+				cam8.enabled = false;
+				cam9.enabled = false;
+				cam10.enabled = false;
 				// Set boolean value
 				clicked = true;
 				// Destroy button after it's clicked

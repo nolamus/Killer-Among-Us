@@ -7,10 +7,23 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 2
 public class ItemPickupLvl2 : MonoBehaviour
 {
+    bool aliveStatus;
+    bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
     [SerializeField] public Image itemBroom; // toggles item obtained display
     [SerializeField] public Image screenOverlay; // represents dirty screen overlay
     public AudioClip soundEffect;   // pickup sound effect
+
+    private void Update()
+    {
+        // if player dies within challenge, item is gone
+        aliveStatus = gameObject.GetComponent<Player>().isAlive;
+        if (aliveStatus == false && inChallenge == true && hasItem == true)
+        {
+            hasItem = false;
+            Destroy(itemBroom.gameObject);
+        }
+    }
 
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
@@ -51,12 +64,13 @@ public class ItemPickupLvl2 : MonoBehaviour
                 itemBroom.enabled = true;
                 yield return new WaitForSeconds(1);
                 itemBroom.enabled = false;
+
+                hasItem = false; // item can only be used once
             }
 
             // item expired, enable dirty screen challenge
             screenOverlay.enabled = true;
 
-            Destroy(item.gameObject);
         }
 
         // challenge end checkpoint; deactivate challenge

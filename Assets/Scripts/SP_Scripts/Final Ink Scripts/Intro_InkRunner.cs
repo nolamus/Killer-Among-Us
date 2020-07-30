@@ -18,9 +18,10 @@ public class Intro_InkRunner : MonoBehaviour
 	private string text = "";
 	public Camera blankCam;
 	public Camera cam1;
-	//public Camera cam2;
-	//public Camera cam3;
-	//public Camera cam4;
+	public Camera cam2;
+	public Camera cam3;
+	public Camera cam4;
+	public Camera cam5;
 
 	bool clicked = false;
 
@@ -119,9 +120,10 @@ public class Intro_InkRunner : MonoBehaviour
 			blankCam.enabled = false;
 			cam1.enabled = true;
 
-			//cam2.enabled = false;
-			//cam3.enabled = false;
-			//cam4.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
 
 			// Create button
 			Button choice = CreateChoiceView("FIRST, CLICK ME!");
@@ -132,9 +134,146 @@ public class Intro_InkRunner : MonoBehaviour
 				blankCam.enabled = true;
 				cam1.enabled = false;
 
-				//cam2.enabled = false;
-				//cam3.enabled = false;
-				//cam4.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 2.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam2.enabled = true;
+
+			cam1.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam2.enabled = false;
+
+				cam1.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 3.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam3.enabled = true;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam4.enabled = false;
+			cam5.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam3.enabled = false;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam4.enabled = false;
+				cam5.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 4.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam4.enabled = true;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam5.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam4.enabled = false;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam5.enabled = false;
+				// Set boolean value
+				clicked = true;
+				// Destroy button after it's clicked
+				Destroy(choice.gameObject);
+			});
+
+			// Check against boolean value to see if button was clicked
+			if (!clicked)
+				return;
+		}
+		else if (text == "DUMMY TEXT SCENE 5.")
+		{
+			// Switch cameras
+			blankCam.enabled = false;
+			cam5.enabled = true;
+
+			cam1.enabled = false;
+			cam2.enabled = false;
+			cam3.enabled = false;
+			cam4.enabled = false;
+
+			// Create button
+			Button choice = CreateChoiceView("FIRST, CLICK ME!");
+
+			choice.onClick.AddListener(delegate
+			{
+				// Switch back cameras
+				blankCam.enabled = true;
+				cam5.enabled = false;
+
+				cam1.enabled = false;
+				cam2.enabled = false;
+				cam3.enabled = false;
+				cam4.enabled = false;
 				// Set boolean value
 				clicked = true;
 				// Destroy button after it's clicked
