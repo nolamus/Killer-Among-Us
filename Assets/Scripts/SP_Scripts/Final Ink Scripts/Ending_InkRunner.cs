@@ -85,20 +85,20 @@ public class Ending_InkRunner : MonoBehaviour
 		{
 			if (Menu_Story.IsStoryMode)
 			{
-				Button choice = CreateChoiceView("Continue Story");
+				Button choice = CreateChoiceView("Level Select");
 				choice.onClick.AddListener(delegate
 				{
 					// Since we are in story mode, load next dialogue scene
-					SceneManager.LoadScene("L2_Dialogue");
+					SceneManager.LoadScene("tv_LevelSelect");
 				});
 			}
 			else
 			{
-				Button choice = CreateChoiceView("Next Level");
+				Button choice = CreateChoiceView("Level Select");
 				choice.onClick.AddListener(delegate
 				{
 					// Load level selection scene once dialogue scene is done
-					SceneManager.LoadScene("je_Level_Two");
+					SceneManager.LoadScene("tv_LevelSelect");
 				});
 			}
 		}
