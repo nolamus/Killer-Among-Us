@@ -1473,7 +1473,6 @@ GameObject:
   - component: {fileID: 108467369}
   - component: {fileID: 108467368}
   - component: {fileID: 108467367}
-  - component: {fileID: 108467366}
   m_Layer: 12
   m_Name: Ghost2
   m_TagString: Ghost2
@@ -1496,18 +1495,6 @@ Transform:
   m_Father: {fileID: 1645035295}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &108467366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108467364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e142346b00e4f1cafe574d922dfad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &108467367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52766,6 +52753,7 @@ GameObject:
   - component: {fileID: 372620393}
   - component: {fileID: 372620392}
   - component: {fileID: 372620391}
+  - component: {fileID: 372620394}
   m_Layer: 12
   m_Name: Ghost4
   m_TagString: Ghost4
@@ -52878,6 +52866,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &372620394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372620389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e142346b00e4f1cafe574d922dfad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &376774315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58648,7 +58648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1403870599}
   - component: {fileID: 1403870603}
-  - component: {fileID: 1403870602}
   - component: {fileID: 1403870601}
   - component: {fileID: 1403870600}
   m_Layer: 12
@@ -58712,18 +58711,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9498444, y: 1.25}
   m_EdgeRadius: 0
---- !u!114 &1403870602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403870598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e142346b00e4f1cafe574d922dfad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1403870603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59831,6 +59818,28 @@ MonoBehaviour:
   superJump: 0
   itemSpring: {fileID: 830584461}
   soundEffect: {fileID: 8300000, guid: c53b23aef34e64244a7f7a8d29d83ac0, type: 3}
+--- !u!114 &1597606111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597606103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c5508d013d451399e46bc723216bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text1: {fileID: 1809136938}
+  Text2: {fileID: 1475979007}
+  Text3: {fileID: 302270457}
+  Text4: {fileID: 20531788}
+  Text5: {fileID: 1196456860}
+  Text6: {fileID: 781049607}
+  Text7: {fileID: 736693203}
+  Text8: {fileID: 18603526}
+  Text9: {fileID: 0}
+  Text10: {fileID: 0}
 --- !u!1001 &1602353312
 PrefabInstance:
   m_ObjectHideFlags: 0

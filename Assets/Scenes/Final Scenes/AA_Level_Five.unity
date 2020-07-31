@@ -69963,6 +69963,28 @@ MonoBehaviour:
   superSpeed: 0
   itemShoe: {fileID: 2046232762}
   soundEffect: {fileID: 8300000, guid: c53b23aef34e64244a7f7a8d29d83ac0, type: 3}
+--- !u!114 &1597606105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597606103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c5508d013d451399e46bc723216bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text1: {fileID: 1364519576}
+  Text2: {fileID: 849109126}
+  Text3: {fileID: 540226858}
+  Text4: {fileID: 1301468710}
+  Text5: {fileID: 1859612023}
+  Text6: {fileID: 711903890}
+  Text7: {fileID: 1625674785}
+  Text8: {fileID: 722826180}
+  Text9: {fileID: 1747931632}
+  Text10: {fileID: 1913501662}
 --- !u!4 &1600385147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142783754323394979, guid: c1e62cca6b187444b9edc00f5d41652f,
