@@ -7,6 +7,7 @@ using UnityEngine.UI; // for using UI element
 // script to attach to player for level 2
 public class ItemPickupLvl2 : MonoBehaviour
 {
+    Collision other;
     bool aliveStatus; // tracks alive status of player
     bool inChallenge = false; // tracks if player has entered challenge area
     public bool hasItem = false; // tracks if item was picked up
@@ -18,10 +19,15 @@ public class ItemPickupLvl2 : MonoBehaviour
     {
         // if player dies within challenge, item is gone
         aliveStatus = gameObject.GetComponent<Player>().isAlive;
-        if (aliveStatus == false && inChallenge == true && hasItem == true)
+        if (aliveStatus == false && inChallenge == true)
         {
-            hasItem = false;
-            Destroy(itemBroom.gameObject);
+            inChallenge = false;
+
+            if (hasItem == true)
+            {
+                hasItem = false;
+                Destroy(itemBroom.gameObject);
+            }
         }
     }
 
@@ -68,8 +74,7 @@ public class ItemPickupLvl2 : MonoBehaviour
                 hasItem = false; // item can only be used once
             }
 
-            // item expired, enable challenge
-            Destroy(itemBroom.gameObject);
+            inChallenge = true;
 
             // enable dirty screen
             screenOverlay.enabled = true;
@@ -81,7 +86,7 @@ public class ItemPickupLvl2 : MonoBehaviour
         {
             // enable dirty screen challenge
             screenOverlay.enabled = false;
-
+            Destroy(screenOverlay.gameObject);
             Destroy(item.gameObject);
         }
 
@@ -94,4 +99,5 @@ public class ItemPickupLvl2 : MonoBehaviour
         }
 
     }
+
 }

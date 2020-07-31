@@ -55,7 +55,7 @@ public class GhostDialogueBG : MonoBehaviour
     }
 
     // displays text is player is in range of ghost
-    void OnTriggerEnter2D(Collider2D ghost)
+    void OnTriggerStay2D(Collider2D ghost)
     {
         // text1 displays for ghost with tag "Ghost1"
         if (ghost.gameObject.CompareTag("Ghost1"))

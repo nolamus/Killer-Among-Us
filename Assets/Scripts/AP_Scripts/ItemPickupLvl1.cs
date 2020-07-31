@@ -30,7 +30,7 @@ public class ItemPickupLvl1 : MonoBehaviour
     IEnumerator OnTriggerEnter2D(Collider2D item)
     {
         // if level item is picked up, destroy and record item obtained status
-        if (item.gameObject.CompareTag("Watch"))
+        if (item.gameObject.CompareTag("Shield"))
         {
             itemShield.enabled = true; // item obtained image on Canvas
             hasItem = true; // item obtained

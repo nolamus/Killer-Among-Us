@@ -21,12 +21,8 @@ public class ItemPickupLvl3 : MonoBehaviour
         aliveStatus = gameObject.GetComponent<Player>().isAlive;
         if (aliveStatus == false && inChallenge == true)
         {
-            inChallenge = false;
-            lightsOn = false;
-
             if (hasItem == true)
             {
-                lightsOn = false;
                 hasItem = false;
                 Destroy(itemFlashlight.gameObject);
             }
@@ -77,7 +73,6 @@ public class ItemPickupLvl3 : MonoBehaviour
 
                     // item expired, enable challenge
                 }
-            lightsOn = true;
             inChallenge = true; // player has entered challenge area
         }
 
@@ -88,7 +83,7 @@ public class ItemPickupLvl3 : MonoBehaviour
 
         // challenge end checkpoint; deactivate challenge
 
-        while (lightsOn == true && inChallenge == true)
+        while (inChallenge == true)
         {
             // lights flicker on and off randomly
             darkOverlay.enabled = false;

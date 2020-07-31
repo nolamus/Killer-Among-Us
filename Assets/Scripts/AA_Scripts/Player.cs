@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
+        if (je_PauseMenu.isPaused)        //if player is dead or player pauses, disable player control
             return;
 
         Run();
@@ -51,6 +51,24 @@ public class Player : MonoBehaviour
 
     private void Run()
     {
+        // checks if scene matches Level 5 to account for challenge
+        Scene L5Scene;
+        string sceneName5;
+        L5Scene = SceneManager.GetActiveScene();
+        sceneName5 = L5Scene.name;
+
+        // level 5 super jump
+        if (sceneName5 == "AA_Level_Five")
+        {
+            // if item has been obtained, use super speed
+            if (gameObject.GetComponent<ItemPickupLvl5>().superSpeed == true)
+                runSpeed = 8f;
+
+            // if no item or item has expired, regular speed
+            else
+                runSpeed = 5f;
+        }
+
         float controlRun = CrossPlatformInputManager.GetAxis("Horizontal"); // [-1,1] allows for us to use input regardless of platform
         Vector2 runVelocity = new Vector2(controlRun * runSpeed, playerRigidBody.velocity.y);       //create a new position of the speed/direction the player is moving
         playerRigidBody.velocity = runVelocity;
@@ -61,16 +79,16 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
+        if (CrossPlatformInputManager.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"))) //make sure the player is touching the ground before jumping
         {
             // checks if scene matches Level 4 to account for challenge
             Scene L4Scene;
-            string sceneName;
+            string sceneName4;
             L4Scene = SceneManager.GetActiveScene();
-            sceneName = L4Scene.name;
+            sceneName4 = L4Scene.name;
 
             // level 4 super jump
-            if (sceneName == "AA_Level_Four")
+            if (sceneName4 == "AA_Level_Four")
             {
                 // if item has been obtained, use super jump
                 if (gameObject.GetComponent<ItemPickupLvl4>().superJump == true)
@@ -88,7 +106,7 @@ public class Player : MonoBehaviour
 
     private void Climb()
     {
-        if(!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))   //if player isn't touching ladder return
+        if (!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))   //if player isn't touching ladder return
             return;
 
         float controlClimb = CrossPlatformInputManager.GetAxis("Vertical");
@@ -98,17 +116,39 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
-      if(bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
-        isAlive = false;
+        // checks if scene matches Level 1 to account for challenge
+        Scene L1Scene;
+        string sceneName1;
+        L1Scene = SceneManager.GetActiveScene();
+        sceneName1 = L1Scene.name;
+
+        // level 1 invincibility
+        if (sceneName1 == "AA_Level_One")
+        {
+            // if item has been obtained, use make character ignore enemies
+            if (gameObject.GetComponent<ItemPickupLvl1>().inivicibility == true)
+                return;
+
+            // if no item or item has expired, player will detect enemies
+            else if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+            {
+                isAlive = false;
+            }
+        }
+
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "RollingBoulders"))) //if player is touching enemy layer
+        {
+            isAlive = false;
+        }
     }
 
     private void flipSprite()
     {
         //if player is moving horizontally then flip or reverse current scaling of x axis
         bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon; //greater than 0 IE if player is moving
-        if(playerHasHorizontalSpeed)
+        if (playerHasHorizontalSpeed)
         {
-            if(Mathf.Sign(playerRigidBody.velocity.x) > 0)
+            if (Mathf.Sign(playerRigidBody.velocity.x) > 0)
                 transform.localScale = new Vector2(1f, 1f); //moving right
             else
                 transform.localScale = new Vector2(-1f, 1f); //moving left
@@ -128,7 +168,4 @@ public class Player : MonoBehaviour
             respawnPoint = collider.transform.position;
         }
     }
-
-
-
 }
