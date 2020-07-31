@@ -1152,8 +1152,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9193715293693526907, guid: 46ed7bef6a38e4517871269ad6d31491,
     type: 3}
@@ -1517,6 +1517,7 @@ GameObject:
   - component: {fileID: 233783501}
   - component: {fileID: 233783503}
   - component: {fileID: 233783502}
+  - component: {fileID: 233783504}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1586,6 +1587,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233783500}
   m_CullTransparentMesh: 0
+--- !u!223 &233783504
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233783500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_TargetDisplay: 0
 --- !u!1 &234272077
 GameObject:
   m_ObjectHideFlags: 0
@@ -65011,7 +65033,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.6514912, y: 11.444335}
+  m_Offset: {x: -3.0081625, y: 11.444335}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -65022,7 +65044,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.897007, y: 30.08867}
+  m_Size: {x: 1.1836643, y: 30.08867}
   m_EdgeRadius: 0
 --- !u!212 &450795392
 SpriteRenderer:
@@ -66855,8 +66877,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3572347635916052421, guid: d3fe08bd4cce6443eb44a3e9ffa433f7,
     type: 3}
@@ -68388,6 +68410,7 @@ GameObject:
   - component: {fileID: 895668678}
   - component: {fileID: 895668677}
   - component: {fileID: 895668676}
+  - component: {fileID: 895668679}
   m_Layer: 0
   m_Name: darkScreen
   m_TagString: Untagged
@@ -68501,6 +68524,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &895668679
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895668674}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!4 &911465335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3524231126159402060, guid: b824f0e61d1346f4bbfa5bd538c5f749,
@@ -70028,8 +70072,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7711005466596434116, guid: 6c0e0627562fe4d5fb8a40efa38036dd,
     type: 3}
@@ -70578,8 +70622,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7775808941185745737, guid: 554d8028808954b64a028fa0e56a63f7,
     type: 3}
@@ -70875,8 +70919,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 16497204744457744, guid: b81c01aaa651b4a42adb3d817f8fa33b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
@@ -71615,6 +71659,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f588d850485d0ae479d73cf3bd0b7b00,
         type: 3}
+    - target: {fileID: 22300000, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -72113,7 +72161,7 @@ MonoBehaviour:
   hasItem: 0
   itemFlashlight: {fileID: 709151905}
   darkOverlay: {fileID: 895668676}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: c53b23aef34e64244a7f7a8d29d83ac0, type: 3}
 --- !u!114 &1597606105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107117,8 +107165,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 8026134805721173023, guid: 677e68c3ea76f4860b5e095d39e42b19,
     type: 3}
@@ -107504,8 +107552,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 779176642685485925, guid: 3dfca5003cea44cd6bdd9a4be79112f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
@@ -108698,8 +108746,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1701294413
-  m_SortingLayer: 9
+  m_SortingLayerID: 1406416475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7739103360901357101, guid: 2818c5e25a6704873992817fbaf54c59,
     type: 3}
